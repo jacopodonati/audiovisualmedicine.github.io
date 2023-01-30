@@ -2010,19 +2010,28 @@ e.angel = () => {
 
 e.welcome = () => {
   utils.stdDiv().html(`
-  <h2>Greetings</h2>
+  <h2 style="text-align:center">Evidence-Based Audiovisual Medicine</h2>
 
   <p>
-  We are glad you are taking time to visit this site.
-  </p>
-  <p>
-  Please visit the links below to enjoy and reinforce the
-  <b>Æterni</b> initiatives.
-  </p>
-  <p>
-  They are fostered to the advantage of each individual, group and the Cosmos.
+  This website makes available evidence-based, science-backed, audiovisual techniques
+  for health enhancement.
   </p>
 
+  <p>
+  You may promptly estart enjoying <a href="assemblies">the diverse assemblies available</a>, which have specific use and benefit highlights. You are encouraged to check <a href="guidelines">The AVHEALTH Usage Guidelines</a> to better understand how to harness each session.
+  </p>
+
+  <p>
+  The <b>AVHEALTH</b> initiative was born when we noticed <a href="benefits">compelling wellness benefits from specific audiovisual stimulation techniques</a> which are poorly available to the general population.
+  We invite you to skim through the <a href="selected-articles">selected scientific articles</a> to grasp the reality of the benefits broadcasted and the technicalities.
+  </p>
+
+  <p>
+  <b style="color:red">IMPORTANT FOR YOUR SAFETY</b>:
+  you are <b>UNADVISED TO PERFORM THIS WEBSITE'S AUDIOVISUAL SESSIONS IF YOU HAVE A HISTORY OF EPILEPSY/SEISURES</b> (it might ignate episodes).
+  The techniques are considered completely safe otherwise, nevertheless if you are unsure about using the AVHEALTH resources, please contact a doctor and/or <a href="contact">get in touch with the AVHEALTH team</a>. We remind you that the AVHEALTH initiative is not a company and not profit-oriented, and the responsability for the outcome of using it is of the user itself.
+  Also, you are invited to send us reports on how AVHEALTH has impacted your general wellbeing.
+  </p>
   `)
   $('#loading').hide()
 }
@@ -4333,7 +4342,7 @@ Dra. Mariel Elizabeth<br>
 
 e.gstat = () => {
   // const St = window.FooBar // fixme
-  const St = require('stats.js')
+  const St = require('stats-js')
   const stats = new St()
   stats.showPanel(0) // 0: fps, 1: ms, 2: mb, 3+: custom
   document.body.appendChild(stats.dom)

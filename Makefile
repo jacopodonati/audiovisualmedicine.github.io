@@ -1,13 +1,13 @@
 # new va, cleaner, rewritten:
-va2-install:
+i:
 	npm i
-va2-d:
+d:
 	npm run dev
-va2-e:
+e:
 	npm run buildEauto2
-va2-fix:
+fix:
 	npm run fixme
-va2-e-zip:
+e-zip:
 	npm run buildE2 && cd you && zip -vr ../you.zip background_ok.js contentScript_ok.js manifest.json person_.png pop.html pop_ok.js
 
 backup:
