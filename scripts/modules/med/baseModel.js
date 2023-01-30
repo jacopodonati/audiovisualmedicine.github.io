@@ -578,7 +578,7 @@ e.Med = class {
     })
     this.mplay = pset.add({
       play: () => {
-        if (!window.confirm('Are you sure that you prefer to start now instead of waiting for the next Angel hour?')) return
+        if (!window.confirm('Are you sure that you prefer to start now?')) return
         console.log('play')
         const dt = new Date()
         dt.setSeconds(dt.getSeconds() + 3)

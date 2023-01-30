@@ -2008,9 +2008,76 @@ e.angel = () => {
   $('#loading').hide()
 }
 
+e.sequences = () => {
+  // const spheres = {
+  //   culta: 'Λατρεία',
+  //   mistica: 'ಅತೀಂದ್ರಿಯ',
+  //   erudita: 'ልዕለ እውቀት ያለው',
+  //   harmona: 'ਖੇਤਰ ਦਾ ਸੰਗੀਤ',
+  //   frequentia: 'સામાજિક તાકાત'
+  // }
+  const arts = [
+    [
+      'alpha9.15',
+      'Entrain brain to simple and clean 9.15Hz alpha'
+    ],
+    [
+      'betas',
+      'Low-med-high beta waves, found by some to be great got being concentrated and engaged'
+    ],
+    [
+      'gamma40_',
+      'Two simple classic 40Hz, periodic pan transitions, symmetries in 5 and 3.'
+    ],
+    [
+      'midLowAlpha2',
+      '10Hz alpha.'
+    ],
+    [
+      '40-1_sim1-..4__',
+      'Entrain to 40Hz and 1Hz with symmetries'
+    ]
+  ].reduce((a, i) => a + `<li><a href="?.${i[0]}" target="_blank">${i[1]}</a>.</li>`, '')
+  utils.stdDiv().html(`
+  <h1>Audiovisual Sequences for health enhancement</h1>
+
+  You are <b>UNADVISED TO PERFORM THIS WEBSITE'S AUDIOVISUAL SESSIONS IF YOU HAVE A HISTORY OF EPILEPSY/SEISURES</b>.
+  Please refer to <a href="https://www.sciencedirect.com/science/article/pii/B9780123969880000015" targer="_blank"> this writing on nonpharmacological methods of influencing the brain</a>, and <a href="https://www.sciencedirect.com/science/article/pii/B9780128037263000031" target="_blank">this about audio-visual entrainment</a> (what we are doing here).
+
+  In case you want instructions:
+  <ol>
+    <li>
+      You may just click in one of the next links below and enjoy if you manage to start the sequence by yourself.
+    </li>
+    <li>
+      To start the sequence, you click on the "Open Controls" button on the top right, and then in the "... Start now! ..." that appears on the drop-down menu.
+    </li>
+    <li>
+      To enjoy the session, you may just let is sound with or without earphones, you may concentrate on the sequence (maybe meditating) or do something else entirely, such as work, hobby, any task really.
+    </li>
+    <li>
+      In any case, we advise you to breath following the slow oscillatory pattern on the sound (loosely).
+      If you are looking into the screen, there is always an spinning circle going up and down, growing and getting smaller, in the same breathing rhythm.
+      You will find other visual cues for breathing, but it is ok to close your eyes or do something else. The sound is effective enough.
+      Of course, it is fine not to breath in the breathing pattern imprinted in the artifacts, for example if you don't find it comfortable.
+    </li>
+  </ol>
+  <br>
+  <p>Enjoy:
+  <ol>${arts}</ol>
+  </p>
+  :::
+  `)
+  $('#loading').hide()
+}
+
 e.welcome = () => {
   utils.stdDiv().html(`
   <h2 style="text-align:center">Evidence-Based Audiovisual Medicine</h2>
+
+  <p id="uconstruction">
+  *** Under construction ***
+  </p>
 
   <p>
   This website makes available evidence-based, science-backed, audiovisual techniques
@@ -2018,21 +2085,26 @@ e.welcome = () => {
   </p>
 
   <p>
-  You may promptly estart enjoying <a href="assemblies">the diverse assemblies available</a>, which have specific use and benefit highlights. You are encouraged to check <a href="guidelines">The AVHEALTH Usage Guidelines</a> to better understand how to harness each session.
+  You may promptly estart enjoying <a href="?sequences">the diverse sequences available</a>, which have specific use and benefit highlights. You are encouraged to check <a href="?guidelines">The AVHEALTH Usage Guidelines</a> to better understand how to harness each session.
   </p>
 
   <p>
-  The <b>AVHEALTH</b> initiative was born when we noticed <a href="benefits">compelling wellness benefits from specific audiovisual stimulation techniques</a> which are poorly available to the general population.
-  We invite you to skim through the <a href="selected-articles">selected scientific articles</a> to grasp the reality of the benefits broadcasted and the technicalities.
+  The <b>AVHEALTH</b> initiative was born when we noticed <a href="?benefits">compelling wellness benefits from specific audiovisual stimulation techniques</a> which are poorly available to the general population.
+  We invite you to skim through the <a href="?selected-articles">selected scientific articles</a> to grasp the reality of the benefits broadcasted and the technicalities.
   </p>
 
   <p>
   <b style="color:red">IMPORTANT FOR YOUR SAFETY</b>:
   you are <b>UNADVISED TO PERFORM THIS WEBSITE'S AUDIOVISUAL SESSIONS IF YOU HAVE A HISTORY OF EPILEPSY/SEISURES</b> (it might ignate episodes).
-  The techniques are considered completely safe otherwise, nevertheless if you are unsure about using the AVHEALTH resources, please contact a doctor and/or <a href="contact">get in touch with the AVHEALTH team</a>. We remind you that the AVHEALTH initiative is not a company and not profit-oriented, and the responsability for the outcome of using it is of the user itself.
+  The techniques are considered completely safe otherwise, nevertheless if you are unsure about using the AVHEALTH resources, please contact a doctor and/or <a href="?contact">get in touch with the AVHEALTH team</a>. We remind you that the AVHEALTH initiative is not a company and not profit-oriented, and the responsability for the outcome of using it is of the user itself.
   Also, you are invited to send us reports on how AVHEALTH has impacted your general wellbeing.
   </p>
   `)
+  $('#uconstruction')
+    .css('color', 'red')
+    .css('font-size', '150%')
+    .css('text-align', 'center')
+    .fadeOut(1000).fadeIn(1000).fadeOut(1000).fadeIn(1000)
   $('#loading').hide()
 }
 
@@ -2041,12 +2113,12 @@ e.about = () => {
   <h2>About</h2>
 
   <p>
-  <b>Æterni Anima</b> started in December 2020 to boost longevity and advance the dawning of human immortality.
+  <b>Evidence-Based Audiovisual Medicine</b> started in December 2020 as an independent initiative to help people online.
   </p>
   <p>
   Previous efforts are being consolidated herein:
   <ul>
-  <li><a href="?artifacts">audiovisual artifacts</a> to mentalize, meditate and manifestate;</li>
+  <li>nonpharmacological methods are available through the <a href="?sequences">audiovisual sequences</a> to enhance mental and brain health, and enjoyment/experimentation;</li>
   <li>social coordination (sync) mechanisms;</li>
   <li>press (text publisher).</li>
   </ul>

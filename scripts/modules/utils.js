@@ -168,29 +168,20 @@ Luz e Paz ~
 `
   }
   return `
-<h2>Strengthen your Lightbody</h2>
+<h2>Thank you</h2>
 
 some ideas:
 
 <ul>
 <li>write about how the sessions have been for you: have they helped you? In what way?</li>
 <li>Encourage other members to write an account of their experiences.</li>
-<li>Bring people to vibrate in the body of Light.</li>
-<li>Help to maintain / manage one of the existing groups (e.g. ${groups}).</li>
-<li>Create a new group.</li>
-<li>Create Audiovisual Artifacts to be used in the sessions.</li>
+<li>Share your experience and this practice with other people.</li>
+<li>Do sessions with friends & family or even to know people and be together.</li>
+<li>Get in touch to share ideas, ask questions, or even create your audiovisual sequences.</li>
 <li>Contact a person or entity that may be interested in the initiative.</li>
-<li>Generate media about the body of Light (posts, journalistic articles ...).</li>
-<li>Publicize a group or work.</li>
-<li>Donate or help raise money financially (transfer to PIX <b>luz</b> or check <a href="luz" target="_blank">the alternatives</a>).</li>
-<li>Pray for the Lightbody and the world.</li>
-<li>Take very good care of yourself.</li>
-<li>Suggest changes on how to conduct the Lightbody.</li>
 </ul>
 
-Make contact!<br>
-Light & Peace ~
-
+Bye
 `
 }
 
