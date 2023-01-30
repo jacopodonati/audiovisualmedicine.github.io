@@ -2112,6 +2112,10 @@ e.about = () => {
   utils.stdDiv().html(`
   <h2>About</h2>
 
+  <p id="uconstruction">
+  *** Under construction ***
+  </p>
+
   <p>
   <b>Evidence-Based Audiovisual Medicine</b> started in December 2020 as an independent initiative to help people online.
   </p>
@@ -2125,6 +2129,11 @@ e.about = () => {
   </p>
 
   `)
+  $('#uconstruction')
+    .css('color', 'red')
+    .css('font-size', '150%')
+    .css('text-align', 'center')
+    .fadeOut(1000).fadeIn(1000).fadeOut(1000).fadeIn(1000)
   $('#loading').hide()
 }
 
@@ -2328,6 +2337,10 @@ e['000-preparation'] = () => {
   utils.stdDiv().html(`
   <h2>on the consequences of longevity</h2>
 
+  <p id="uconstruction">
+  *** Under construction ***
+  </p>
+
   <p>
   Among 2020's highlights are some advances in anti-aging.
   In fact, it is now somewhat more reasonable to expect that at least a fraction of the population
@@ -2353,6 +2366,11 @@ Thu Dec 31 11:17:02 -03 2020
   </p>
   <br>
   `)
+  $('#uconstruction')
+    .css('color', 'red')
+    .css('font-size', '150%')
+    .css('text-align', 'center')
+    .fadeOut(1000).fadeIn(1000).fadeOut(1000).fadeIn(1000)
   $('#loading').hide()
 }
 
