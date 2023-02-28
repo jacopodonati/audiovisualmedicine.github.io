@@ -35,6 +35,8 @@ window.mconv = converter
 
 module.exports.Sync = class {
   constructor (data, heir) {
+    window.ddd = data
+    this.heir = heir
     this.isMobile = utils.mobileAndTabletCheck()
     this.data = data
     this.source = data.source
@@ -53,6 +55,7 @@ module.exports.Sync = class {
       this.heir = parseInt(heir)
       this.oldFormat = true
       this.net_.forEachNode((n, a) => {
+        console.log({ heir, did: a.did, a })
         if (a.did === this.heir) this.heirId = n
       })
     } else {
@@ -64,7 +67,7 @@ module.exports.Sync = class {
       this.ids_ = mkIds(nodes, this.data.source)
       const key = this.source === 'fb' ? 'id' : 'name'
       this.net_.forEachNode((n, a) => {
-        console.log(this.ids_[a[key]], this.heir, 'AAALOOOP')
+        // console.log(this.ids_[a[key]], this.heir, 'AAALOOOP')
         if (this.ids_[a[key]] === this.heir) this.heirId = n
       })
     }
