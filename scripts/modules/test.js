@@ -3009,11 +3009,30 @@ e.liturgy101 = () => {
 
 e.aa = ufrj => {
   $('#favicon').attr('href', 'assets/aafav2.png')
+  const ws = u('ws')
+  const logsLink = (ufrj ? 'ufrj-logs2' : 'aalogs3') + (ws ? '&ws=' + ws : '')
   const adiv = utils.stdDiv().html(`
   ${ufrj ? '<img alt="" border="0" src="assets/UFRJ-logo.png" width="7%" style="float:right" />' : ''}
+  <span id="new-ws"></span>
   <h2>AA is Algorithmic Autoregulation</h2>
-  Check the <a href="?${ufrj ? 'ufrj-logs2' : 'aalogs3'}" target="_blank">logs</a>.
+  Check the <a href="?${logsLink}" target="_blank">logs</a>.
   `)
+  if (!ws) {
+    $('<div/>').appendTo('#new-ws').html('<span id="new-ws-btn"></span> or use the public workspace below.')
+    $('<button/>').html('Create a new workspace').appendTo('#new-ws-btn').on('click', () => {
+      const ws = window.prompt('Name the Workspace')
+      console.log({ ws })
+      const ws_ = ws.replaceAll(' ', '')
+      window.location.href = `?aa&ws=${ws_}`
+      // open aa url with ws=somwthing
+    })
+  } else {
+    $('#new-ws').html(`Workspace: <b>${ws}</b>.`)
+      // .css('background', '#ffdddd')
+      .css('padding', '3px')
+      .css('box-shadow', '0 30px 40px rgba(0,0,0,.4)')
+      .css('border-radius', '5%')
+  }
   let grid = utils.mkGrid(2, adiv, '60%', utils.chooseUnique(['#eeeeff', '#eeffee', '#ffeeee']))
   $('<span/>').html('user id:').appendTo(grid)
   const uid = $('<input/>', {
@@ -3042,6 +3061,7 @@ e.aa = ufrj => {
       // get current date and time, user, session ID and submit
       const data = { uid: uid.val(), sessionId: sessionData ? sessionData.sessionId : undefined }
       data[shoutStr] = shout.val()
+      data.ws = u('ws')
       console.log(data)
       if (!data.uid) {
         window.alert('please insert a user identification string.')
@@ -3064,8 +3084,6 @@ e.aa = ufrj => {
               shoutsExpected = undefined
             }
           }
-          console.log(resp)
-          window.rrr = resp
         })
       }
     })
@@ -3209,8 +3227,9 @@ e.aa = ufrj => {
 }
 
 e.aalogs3 = ufrj => {
+  const ws = u('ws')
   const url = ufrj ? 'ufrj-logs2' : 'aalogs3'
-  const url2 = ufrj ? 'ufrj' : 'aa'
+  const url2 = (ufrj ? 'ufrj' : 'aa') + (ws ? `&ws=${ws}` : '')
   const field = ufrj ? 'shoutFran' : 'shout'
 
   $('<link/>', { // todo: download to get from repo
@@ -3312,6 +3331,9 @@ e.aalogs3 = ufrj => {
   }
   if (session) {
     query.sessionId = session
+  }
+  if (ws) {
+    query.ws = ws
   }
   const tzoffset = (new Date()).getTimezoneOffset() * 60000 // offset in milliseconds
   function updateDuration () {
