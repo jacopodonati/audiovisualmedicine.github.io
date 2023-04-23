@@ -20,6 +20,7 @@ module.exports.Tithorea = class {
     document.body.appendChild(app.view)
     if (u('id') || u('cid')) {
       (u('id') ? transfer.fAll.mark({ 'userData.id': u('id') }) : transfer.fAll.aeterni({ comName: u('cid') })).then(r => {
+        console.log({ r })
         this.source = 'fb'
         const foo = u('id') ? 'net' : 'network'
         const anet = r[0][foo]
@@ -28,6 +29,7 @@ module.exports.Tithorea = class {
         pfm.dn = dn
         this.setup(r)
       })
+      console.log({ u }, 'yeah man')
     } else if (u('whats')) {
       this.source = 'whats'
       transfer.fAll.ttm({ marker: u('whats') }).then(r => {
