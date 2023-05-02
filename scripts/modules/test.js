@@ -2076,22 +2076,69 @@ e.welcome = () => {
   <h2 style="text-align:center">Evidence-Based Audiovisual Medicine</h2>
 
   <p id="uconstruction">
-  *** Under construction ***
+  *** Disclaimer ***
   </p>
 
   <p>
   This website makes available evidence-based, science-backed, audiovisual techniques
-  for health enhancement.
+  for mental health enhancement.
   </p>
 
   <p>
   You may promptly estart enjoying <a href="?sequences">the diverse sequences available</a>, which have specific use and benefit highlights. You are encouraged to check <a href="?guidelines">The AVHEALTH Usage Guidelines</a> to better understand how to harness each session.
   </p>
 
-  <p>
-  The <b>AVHEALTH</b> initiative was born when we noticed <a href="?benefits">compelling wellness benefits from specific audiovisual stimulation techniques</a> which are poorly available to the general population.
-  We invite you to skim through the <a href="?selected-articles">selected scientific articles</a> to grasp the reality of the benefits broadcasted and the technicalities.
-  </p>
+
+    <h4>Our hypothesis</h4>
+    <p>
+      <ul>
+        <li>
+          AVE is healthy. In our oppinion, the scientific and practical that
+          AVE is be healthy in large spectrums (of cases, populations, settings) is evident.
+        </li>
+        <li>
+          Because you understand and use these techniques, you are in a healthy state of mind and
+          we of course believe in your good sense. 
+        </li>
+        <li>
+          Example good sense procedures: read the <b style="color:red">IMPORTANT FOR YOUR SAFETY</b> notes below.
+          Don't overuse it.
+          If you are using it for pain control, ADTH, migraines, etc, let your doctor know about it, specially if you
+          use it often and/or for long periods.
+        </li>
+        <li> If you stay hooked to it for work, meditation, 16h per day for a month, you will get help.
+        </li>
+        <li>
+          If you are using it for pain control, TDHA, migraines, depression, anxiety, insomnina, cognitive decline or impairment, bipolar or borderline disorders, esquisofreny, psychoses or neuroses, you will let your doctor know about it, specially if you
+          use it often and/or for long periods or you perceive any dependence.
+        </li>
+        <li>
+          You will read the <b style="color:red">IMPORTANT FOR YOUR SAFETY</b> notes below.
+        </li>
+        <li>
+          You will ask someone to help you learn to use it if you need to.
+          For example, it is good to know that you may breathe with the audiovisual cues until
+          you only need the audio cue to breath. Then you can do other things, such as read, write,
+          work, employ problem-solving skills, meditate, or what be it, untill you turn it off. 
+        </li>
+        <li>You will use it in a comfortable volume.
+        </li>
+        <li>
+          You understand that the preparation and attention you employ result in better harnessing of the resources. For example: try to have good headphones, take some moments to concentrate on the breathing and think. Learn how to set long and short versions, and how to set the sounds for your linking and appreciate/experiment the neuromodulation effects.
+        </li>
+        <li>
+          You understand the preparation and attention you employ result in better harnessing of these resources. For example: try to have good headphones, take some moments to concentrate on the breathing.
+        </li>
+
+
+
+    </p>
+
+    <h4> historical note</h4>
+    <p>
+      The <b>AVHEALTH</b> initiative was born when we noticed <a href="?benefits">compelling wellness benefits from specific audiovisual stimulation techniques</a> which are poorly available to the general population.
+      We invite you to skim through the <a href="?selected-articles">selected scientific articles</a> to grasp the reality of the benefits broadcasted and the technicalities.
+    </p>
 
   <p>
   <b style="color:red">IMPORTANT FOR YOUR SAFETY</b>:
