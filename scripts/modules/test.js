@@ -2071,7 +2071,29 @@ e.sequences = () => {
   $('#loading').hide()
 }
 
+e.welcome2 = () => {
+  utils.stdDiv().html(`
+  <h2>Greetings</h2>
+
+  <p>
+  We are glad you are taking time to visit this site.
+  </p>
+  <p>
+  Please visit the links below to enjoy and reinforce the
+  <b>Æterni</b> initiatives.
+  </p>
+  <p>
+  They are fostered to the advantage of each individual, group and the Cosmos.
+  </p>
+
+  `)
+  $('#loading').hide()
+}
+
 e.welcome = () => {
+  if (window.hostname === 'aeterni.github.io') {
+    return e.welcome2()
+  }
   utils.stdDiv().html(`
   <h2 style="text-align:center">Evidence-Based Audiovisual Medicine</h2>
 
@@ -2155,7 +2177,30 @@ e.welcome = () => {
   $('#loading').hide()
 }
 
+e.about2 = () => {
+  utils.stdDiv().html(`
+  <h2>About</h2>
+
+  <p>
+  <b>Æterni Anima</b> started in December 2020 to boost longevity and advance the dawning of human immortality.
+  </p>
+  <p>
+  Previous efforts are being consolidated herein:
+  <ul>
+  <li><a href="?artifacts">audiovisual artifacts</a> to mentalize, meditate and manifestate;</li>
+  <li>social coordination (sync) mechanisms;</li>
+  <li>press (text publisher).</li>
+  </ul>
+  </p>
+
+  `)
+  $('#loading').hide()
+}
+
 e.about = () => {
+  if (window.hostname === 'aeterni.github.io') {
+    return e.about2()
+  }
   utils.stdDiv().html(`
   <h2>About</h2>
 
@@ -2384,10 +2429,6 @@ e['000-preparation'] = () => {
   utils.stdDiv().html(`
   <h2>on the consequences of longevity</h2>
 
-  <p id="uconstruction">
-  *** Under construction ***
-  </p>
-
   <p>
   Among 2020's highlights are some advances in anti-aging.
   In fact, it is now somewhat more reasonable to expect that at least a fraction of the population
@@ -2413,11 +2454,6 @@ Thu Dec 31 11:17:02 -03 2020
   </p>
   <br>
   `)
-  $('#uconstruction')
-    .css('color', 'red')
-    .css('font-size', '150%')
-    .css('text-align', 'center')
-    .fadeOut(1000).fadeIn(1000).fadeOut(1000).fadeIn(1000)
   $('#loading').hide()
 }
 

@@ -111,7 +111,9 @@ e.mkFooter = () => {
   //     width: '50%'
   //   }
   // }).appendTo('body')
-  // if (!urlArgument('nolang')) lang(ft)
+  if (window.hostname === 'aeterni.github.io') {
+    if (!urlArgument('nolang')) lang(ft)
+  }
   // uncomment to enable disqus
   // todo: debug to load correct discussions in each page
   // const uargs = e.urlAllArguments()

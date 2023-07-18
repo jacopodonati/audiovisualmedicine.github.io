@@ -139,7 +139,65 @@ const groups = `
 <a href="https://www.facebook.com/groups/mentaliz" target="_blank">MMM</a>,
 <a href="https://chat.whatsapp.com/BztLyvWDEgW3C1mjXZTTrP" target="_blank">WM</a>`
 
+e.stdMsg2 = () => {
+  if (window.wand.country === 'BR') {
+    return `
+
+<h2>Fortaleça o seu Corpo de Luz</h2>
+
+algumas ideias:
+
+<ul>
+<li>escreva relatando como tem sido as sessões para você: elas tem te ajudado? De que forma?</li>
+<li>Incentive outros membros a escreverem relatos das experiências deles.</li>
+<li>Traga pessoas para vibrarem no Corpo de Luz.</li>
+<li>Ajude a manter/gerir um dos grupos existentes (e.g. ${groups}).</li>
+<li>Crie um novo grupo.</li>
+<li>Crie Artefatos Audiovisuais para serem usados nas sessões.</li>
+<li>Aproxime uma pessoa ou entidade que possa ter interesse especial na iniciativa.</li>
+<li>Gere mídia sobre o Corpo de Luz (postagens, artigos jornalísticos...).</li>
+<li>Divulgue sobre o grupo ou trabalho.</li>
+<li>Doe ou ajude a arrecadar financeiramente (transfira para a chave PIX <b>luz</b> ou verifique <a href="?angel" target="_blank">as alternativas</a>).</li>
+<li>Ore para o Corpo de Luz e para o mundo.</li>
+<li>Cuide-se muito bem.</li>
+<li>Sugira mudanças sobre como conduzir o Corpo de Luz.</li>
+</ul>
+
+Faça contato!<br>
+Luz e Paz ~
+`
+  }
+  return `
+<h2>Strengthen your Lightbody</h2>
+
+some ideas:
+
+<ul>
+<li>write about how the sessions have been for you: have they helped you? In what way?</li>
+<li>Encourage other members to write an account of their experiences.</li>
+<li>Bring people to vibrate in the body of Light.</li>
+<li>Help to maintain / manage one of the existing groups (e.g. ${groups}).</li>
+<li>Create a new group.</li>
+<li>Create Audiovisual Artifacts to be used in the sessions.</li>
+<li>Contact a person or entity that may be interested in the initiative.</li>
+<li>Generate media about the body of Light (posts, journalistic articles ...).</li>
+<li>Publicize a group or work.</li>
+<li>Donate or help raise money financially (transfer to PIX <b>luz</b> or check <a href="luz" target="_blank">the alternatives</a>).</li>
+<li>Pray for the Lightbody and the world.</li>
+<li>Take very good care of yourself.</li>
+<li>Suggest changes on how to conduct the Lightbody.</li>
+</ul>
+
+Make contact!<br>
+Light & Peace ~
+
+`
+}
+
 e.stdMsg = () => {
+  if (window.hostname === 'aeterni.github.io') {
+    e.stdMsg2()
+  }
   if (window.wand.country === 'BR') {
     return `
 
