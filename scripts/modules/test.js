@@ -1975,6 +1975,10 @@ const link = (text, path) => {
   return `<a href="?${path + lflag}">${text}</a>`
 }
 
+const elink = (text, path) => {
+  return `<a href="${path}">${text}</a>`
+}
+
 e.angel = () => {
   const items = [
     '"chave Pix": <b>luz</b>; or',
@@ -2091,7 +2095,7 @@ e.welcome2 = () => {
 }
 
 e.welcome = () => {
-  if (window.hostname === 'aeterni.github.io') {
+  if (window.location.hostname === 'aeterni.github.io') {
     return e.welcome2()
   }
   utils.stdDiv().html(`
@@ -2198,7 +2202,7 @@ e.about2 = () => {
 }
 
 e.about = () => {
-  if (window.hostname === 'aeterni.github.io') {
+  if (window.location.hostname === 'aeterni.github.io') {
     return e.about2()
   }
   utils.stdDiv().html(`
@@ -5302,4 +5306,39 @@ e.jira = () => {
     .catch(err => {
       console.error(err)
     })
+}
+
+e.lv1 = () => {
+  const items = [
+    `Slow and regular ${elink('diaphragmatic breathing', 'https://www.health.harvard.edu/healthbeat/learning-diaphragmatic-breathing')} (using the belly, without moving the chest).`,
+    `Free posture, relaxed, give ${elink('preference to a straigh/upright spine', 'https://davidvago.bwh.harvard.edu/wp-content/uploads/2015/04/POSTURE-for-MEDITATION-2014%C2%A9.pdf')}, whether you are sitting, standing, or lying down.`,
+    'How to activate the artifact, why to use it and what to expect from the sessions.'
+  ].reduce((a, i) => a + `<li>${i}</li>`, '')
+  utils.stdDiv().html(`
+  <h1>Level 1</h1>
+  This is a private resource, please keep it to you and come again to see if it has been updated. You should know:
+
+  <ul>${items}</ul>
+
+  ::
+  `)
+  $('#loading').hide()
+}
+
+e.lv2 = () => {
+  const items = [
+    `Quiet/${elink('silence the mind', 'https://hbr.org/2021/07/dont-underestimate-the-power-of-silence')}.`,
+    `If not silencing the ming, try and ${elink('focus solely on breathing and on the meditation topic', 'https://www.health.harvard.edu/mind-and-mood/breath-meditation-a-great-way-to-relieve-stress')}.`,
+    'During the days (and the meditation sessions), the less thinking is running loose, the more energy (and resources, vitamins) is left fot the body to act, heal, and rejuvenate.',
+    'The less our thoughts are out of whack, the more social and personal (spiritual?) permissions and responsibilities are granted to us.'
+  ].reduce((a, i) => a + `<li>${i}</li>`, '')
+  utils.stdDiv().html(`
+  <h1>Level 2</h1>
+  This is a private resource, please keep it to you and come again to see if it has been updated. You should know:
+
+  <ul>${items}</ul>
+
+  ::
+  `)
+  $('#loading').hide()
 }

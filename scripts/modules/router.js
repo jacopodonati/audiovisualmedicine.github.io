@@ -111,7 +111,7 @@ e.mkFooter = () => {
   //     width: '50%'
   //   }
   // }).appendTo('body')
-  if (window.hostname === 'aeterni.github.io') {
+  if (window.location.hostname === 'aeterni.github.io') {
     if (!urlArgument('nolang')) lang(ft)
   }
   // uncomment to enable disqus

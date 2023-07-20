@@ -195,8 +195,8 @@ Light & Peace ~
 }
 
 e.stdMsg = () => {
-  if (window.hostname === 'aeterni.github.io') {
-    e.stdMsg2()
+  if (window.location.hostname === 'aeterni.github.io') {
+    return e.stdMsg2()
   }
   if (window.wand.country === 'BR') {
     return `
