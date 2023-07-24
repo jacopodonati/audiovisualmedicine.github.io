@@ -5364,9 +5364,9 @@ e.step3 = () => {
 
 e['m001-elisa'] = () => {
   const items = [
-    `${elink('Step 1', '?step1')} on 17th July 2023. Artifact: ${elink('peace', '?.paz')} (alpha + theta).`,
-    `${elink('Step 2', '?step2')} on 18th July 2023. Artifact: ${elink('relaxing', '?.relaxamento')} (alpha + theta).`,
-    `${elink('Step 3', '?step3')} on 20th July 2023. Artifact: ${elink('cure', '?.cura_')} (theta + gamma).`
+    `${elink('Step 1', '?step1')} on 17th July 2023. Artifact: ${elink('peace', '?.paz')} (delta + medium alpha).`,
+    `${elink('Step 2', '?step2')} on 18th July 2023. Artifact: ${elink('relaxing', '?.relaxamento')} (delta + low alpha).`,
+    `${elink('Step 3', '?step3')} on 20th July 2023. Artifact: ${elink('cure', '?.cura_')} (delta + gamma).`
   ].reduce((a, i) => a + `<li>${i}</li>`, '')
   utils.stdDiv().html(`
   <h1>Elisa</h1>
