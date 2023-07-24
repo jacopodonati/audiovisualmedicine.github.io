@@ -5308,37 +5308,77 @@ e.jira = () => {
     })
 }
 
-e.lv1 = () => {
+e.step1 = () => {
   const items = [
     `Slow and regular ${elink('diaphragmatic breathing', 'https://www.health.harvard.edu/healthbeat/learning-diaphragmatic-breathing')} (using the belly, without moving the chest).`,
     `Free posture, relaxed, give ${elink('preference to a straigh/upright spine', 'https://davidvago.bwh.harvard.edu/wp-content/uploads/2015/04/POSTURE-for-MEDITATION-2014%C2%A9.pdf')}, whether you are sitting, standing, or lying down.`,
     'How to activate the artifact, why to use it and what to expect from the sessions.'
   ].reduce((a, i) => a + `<li>${i}</li>`, '')
   utils.stdDiv().html(`
-  <h1>Level 1</h1>
+  <h1>Step 1</h1>
   This is a private resource, please keep it to you and come again to see if it has been updated. You should know:
 
   <ul>${items}</ul>
 
-  ::
+  :::
   `)
   $('#loading').hide()
 }
 
-e.lv2 = () => {
+e.step2 = () => {
   const items = [
     `Quiet/${elink('silence the mind', 'https://hbr.org/2021/07/dont-underestimate-the-power-of-silence')}.`,
-    `If not silencing the ming, try and ${elink('focus solely on breathing and on the meditation topic', 'https://www.health.harvard.edu/mind-and-mood/breath-meditation-a-great-way-to-relieve-stress')}.`,
+    `If not silencing the mind, try and ${elink('focus solely on breathing and on the meditation topic', 'https://www.health.harvard.edu/mind-and-mood/breath-meditation-a-great-way-to-relieve-stress')}.`,
     'During the days (and the meditation sessions), the less thinking is running loose, the more energy (and resources, vitamins) is left fot the body to act, heal, and rejuvenate.',
     'The less our thoughts are out of whack, the more social and personal (spiritual?) permissions and responsibilities are granted to us.'
   ].reduce((a, i) => a + `<li>${i}</li>`, '')
   utils.stdDiv().html(`
-  <h1>Level 2</h1>
+  <h1>Step 2</h1>
   This is a private resource, please keep it to you and come again to see if it has been updated. You should know:
 
   <ul>${items}</ul>
 
-  ::
+  :::
+  `)
+  $('#loading').hide()
+}
+
+e.step3 = () => {
+  const items = [
+    'Cure and manifest enhancements to our selves, our families, and eveyone.',
+    'Harmonize breathing and nervous system.',
+    'Take part in the community.',
+    'Charity.',
+    'The sessions are preferably done in bundles of at least 3 sessions. From now on the member should think on the goals of her/his next 3 sessions.'
+  ].reduce((a, i) => a + `<li>${i}</li>`, '')
+  utils.stdDiv().html(`
+  <h1>Step 3</h1>
+  This is a private resource, please keep it to you and come again to see if it has been updated. You should know:
+
+  <ul>${items}</ul>
+
+  :::
+  `)
+  $('#loading').hide()
+}
+
+e['m001-elisa'] = () => {
+  const items = [
+    `${elink('Step 1', 'step1')} on 17th July 2023.`,
+    `${elink('Step 2', 'step2')} on 18th July 2023.`,
+    `${elink('Step 3', 'step3')} on 20th July 2023.`
+  ]
+  utils.stdDiv().html(`
+  <h1>Elisa</h1>
+  Completed the three instruction sessions:
+
+  <ul>${items}</ul>
+
+  <b>Tone</b>: Healer, Pathfinder. Medium/sensitive, mediator.
+
+  <b>Notes</b>: she reopened the works in 2023.
+
+  :::
   `)
   $('#loading').hide()
 }
