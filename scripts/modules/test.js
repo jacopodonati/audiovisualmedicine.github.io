@@ -5367,16 +5367,20 @@ e['m001-elisa'] = () => {
     `${elink('Step 1', 'step1')} on 17th July 2023.`,
     `${elink('Step 2', 'step2')} on 18th July 2023.`,
     `${elink('Step 3', 'step3')} on 20th July 2023.`
-  ]
+  ].reduce((a, i) => a + `<li>${i}</li>`, '')
   utils.stdDiv().html(`
   <h1>Elisa</h1>
   Completed the three instruction sessions:
 
   <ul>${items}</ul>
 
-  <b>Tone</b>: Healer, Pathfinder. Medium/sensitive, mediator.
+  <p>
+    <b>Tone</b>: Healer, Pathfinder. Medium/sensitive, mediator.
+  </p>
 
-  <b>Notes</b>: she reopened the works in 2023.
+  <p>
+    <b>Notes</b>: she reopened the works in 2023.
+  </p>
 
   :::
   `)
