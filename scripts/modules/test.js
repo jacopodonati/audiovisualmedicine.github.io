@@ -5375,7 +5375,7 @@ e['m001-elisa'] = () => {
   <ul>${items}</ul>
 
   <p>
-    <b>Tone</b>: Healer, Pathfinder. Medium/sensitive, mediator.
+    <b>Tone</b>: Healer, Pathfinder. Medium/Sensitive, Mediator.
   </p>
 
   <p>
