@@ -529,8 +529,9 @@ e.Doc = class {
         if (!toSave) return
         transfer.writeAny(toSave).then(resp => {
           const aS = this.allSettings
-          aS.push(toSave)
-          aS.sort((a, b) => a.header.datetime - b.header.datetime)
+          aS.reverse().push(toSave)
+          aS.reverse()
+          // aS.sort((a, b) => a.header.datetime - b.header.datetime)
           this.removeOptions()
           this.resetArtifactOptions(toSave)
           this.prefix = toSave.header.ancestral ? '-' : '.'
