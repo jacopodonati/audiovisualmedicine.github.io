@@ -2101,6 +2101,12 @@ e.welcome = () => {
   utils.stdDiv().html(`
   <h2 style="text-align:center">Evidence-Based Audiovisual Medicine</h2>
 
+  <p id="createme">
+    <button id="createbutton">
+      Create Your Audiovisual Artifacts
+    </button>
+  </p>
+
   <p id="uconstruction">
   *** Disclaimer ***
   </p>
@@ -2115,12 +2121,12 @@ e.welcome = () => {
   </p>
 
 
-    <h4>Our hypothesis</h4>
+    <h4>Our hypothesis:</h4>
     <p>
       <ul>
         <li>
-          AVE is healthy. In our oppinion, the scientific and practical that
-          AVE is be healthy in large spectrums (of cases, populations, settings) is evident.
+          Using AVE neuromodulation techiques is healty. In our oppinion, the scientific and practical evidence that
+          AVE is healthy in large spectrums (of cases, populations, settings) is evident.
         </li>
         <li>
           Because you understand and use these techniques, you are in a healthy state of mind and
@@ -2155,12 +2161,10 @@ e.welcome = () => {
         <li>
           You understand the preparation and attention you employ result in better harnessing of these resources. For example: try to have good headphones, take some moments to concentrate on the breathing.
         </li>
-
-
-
+      </ul>
     </p>
 
-    <h4> historical note</h4>
+    <h4> historical note:</h4>
     <p>
       The <b>AVHEALTH</b> initiative was born when we noticed <a href="?benefits">compelling wellness benefits from specific audiovisual stimulation techniques</a> which are poorly available to the general population.
       We invite you to skim through the <a href="?selected-articles">selected scientific articles</a> to grasp the reality of the benefits broadcasted and the technicalities.
@@ -2172,12 +2176,32 @@ e.welcome = () => {
   The techniques are considered completely safe otherwise, nevertheless if you are unsure about using the AVHEALTH resources, please contact a doctor and/or <a href="?contact">get in touch with the AVHEALTH team</a>. We remind you that the AVHEALTH initiative is not a company and not profit-oriented, and the responsability for the outcome of using it is of the user itself.
   Also, you are invited to send us reports on how AVHEALTH has impacted your general wellbeing.
   </p>
+
+  :::
   `)
   $('#uconstruction')
     .css('color', 'red')
     .css('font-size', '150%')
     .css('text-align', 'center')
-    .fadeOut(1000).fadeIn(1000).fadeOut(1000).fadeIn(1000)
+    // .fadeOut(1000).fadeIn(1000).fadeOut(1000).fadeIn(1000)
+  $('#createme')
+    // .css('color', 'black')
+    // .css('backgroundColor', 'yellow')
+    // .css('backgroundColor', 'rgba(255,255,0,0.5)')
+    .css('text-align', 'center')
+    // .css('margin', '5%')
+    .css('text-align', 'center')
+    // .css('border-radius', '5%')
+    // .fadeOut(1000).fadeIn(1000).fadeOut(1000).fadeIn(1000)
+  $('#createbutton')
+    .css('font-size', 'larger')
+    .css('padding', '5%')
+    .css('box-shadow', '0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)')
+    .css('cursor', 'pointer')
+    .on('click', () => {
+      window.location.href = '?doc'
+    })
+
   $('#loading').hide()
 }
 
@@ -2451,27 +2475,6 @@ e['000-preparation'] = () => {
   bring the disabled into better conditions, preserve and restore Nature,
   we might see the brightest of the possibilities.
   On the other hand...
-  </p>
-
-  <p>
-Thu Dec 31 11:17:02 -03 2020
-  </p>
-  <br>
-  `)
-  $('#loading').hide()
-}
-
-e['001-first-week'] = () => {
-  utils.stdDiv().html(`
-  <h2>Primeira semana de MMM</h2>
-
-  <p>
-  </p>
-
-  <p>
-  </p>
-
-  <p>
   </p>
 
   <p>
@@ -2895,7 +2898,8 @@ Sat Jan  9 19:25:16 -03 2021
 function pattern (str, type) {
   const types = {
     pub: /^\d\d\d/, // publication
-    tes: /^t\d\d\d/
+    tes: /^t\d\d\d/,
+    members: /^m\d\d\d/
   }
   if (type in types) {
     return types[type].test(str)
@@ -2930,23 +2934,6 @@ e.publications = () => {
 }
 
 e.testimonials = () => {
-  const pub = []
-  for (const i in e) {
-    if (pattern(i, 'tes')) {
-      console.log(i)
-      pub.push(i)
-    }
-  }
-  utils.stdDiv().html(`
-  <h2>Testimonials</h2>
-  <ul>
-  ${pub.map(i => `<li><a href="?${i}">${i}</a></li>`).join('')}
-  </ul>
-  `)
-  $('#loading').hide()
-}
-
-e.testimonials_ = () => {
   const pub = []
   for (const i in e) {
     if (pattern(i, 'tes')) {
@@ -5306,6 +5293,27 @@ e.jira = () => {
     .catch(err => {
       console.error(err)
     })
+}
+
+e.indexes = () => {
+  const items = [
+    `${elink('Infra', '?infra')}`,
+    `${elink('Testimonials', '?testimonials')}`,
+    `${elink('Publications', '?publications')}`
+  ].reduce((a, i) => a + `<li>${i}</li>`, '')
+  utils.stdDiv().html(`
+  <h1>Internal static pages</h1>
+  the following listing includes all static pages (not artifacts, networks, and diffusions, for example):
+
+  <ul>${items}</ul>
+
+  <p>
+    <b>Beware</b>: there are pages in these listings which are not curated, and other that were created only to develop a certain feature, thus some of them may be (or seem) useless.
+  </p>
+
+  :::
+  `)
+  $('#loading').hide()
 }
 
 e.step1 = () => {
