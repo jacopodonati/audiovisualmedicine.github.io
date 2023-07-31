@@ -28,6 +28,8 @@ const e = module.exports
 
 function forms (grid) {
   const sel0 = $('<select/>').appendTo(grid)
+
+  // network-related: //////////////////////////
   const selt = $('<span/>', { css: { background: '#ccddcc' } }).html('network:').appendTo(grid).hide()
   sel0.asel = $('<select/>').appendTo(grid).hide()
   const selnt = $('<span/>', { css: { background: '#ccddcc' } }).html('component size:').appendTo(grid).hide()
@@ -42,7 +44,7 @@ function forms (grid) {
     $('#loading').hide()
   }
   let gfun
-  if (u('legacy')) {
+  if (u('legacy')) { // ?doc=bana&admin=1&legacy=1
     gfun = () => { // fixme: write the sid of the network to retrieve only such network:
       transfer.fAll.ttm({ sid: { $exists: true } }, { name: 1 }, 'test').then(r => {
         r.sort((a, b) => a.name > b.name ? 1 : -1)
@@ -50,7 +52,7 @@ function forms (grid) {
         after()
       })
     }
-  } else if (u('id')) { // &adv=1&id=marielelizabethy
+  } else if (u('id')) { // &adv=1&id=marielelizabethy, FIXME: cannot make it work, don't know why
     gfun = () => {
       transfer.fAll.omark({ 'userData.id': u('id') }).then(r => {
         sel0.asel.append($('<option/>').val(0).html(`${r.userData.name} || ${r.net.nodes.length} / ${r.net.edges.length} || ${r.date.toISOString()}`))
@@ -59,7 +61,7 @@ function forms (grid) {
         after()
       })
     }
-  } else if (u('comName')) { // &u=bana&comName=bvc&ssize=8&adv=1
+  } else if (u('comName')) { // ?doc=bana&u=bana&comName=mistica&ssize=8&adv=1
     gfun = () => { // todo: allow also for ordering by degree of the community
       transfer.fAll.oaeterni({ comName: u('comName') }).then(r => {
         r.network.nodes.sort((a, b) => {
@@ -75,10 +77,12 @@ function forms (grid) {
           const [maxd, mind] = [Math.max(...degrees), Math.min(...degrees)]
           sel0.asel.append($('<option/>').val(i).html(`${i} (${mind}...${maxd}) - ${r.source} / ${r.comName} || nodes: ${r.network.nodes.length}, edges: ${r.network.edges.length} || ${r.date.toISOString()}`))
         })
+        window.sss = { memberSets, rrr: r }
         after()
       })
     }
   }
+  // network-related: //////////////////////////
   // todo: get cases correctly for them:
   if (gfun) $('#loading').show() && gfun()
   sel0
@@ -112,7 +116,7 @@ function forms (grid) {
       //   sel0.aseln.hide()
       // }
     })
-  if (u('adv')) {
+  if (u('adv')) { // network-related
     sel0
       .append($('<option/>').val(32).html('net'))
   }
@@ -230,7 +234,7 @@ function addPanner (s, c) {
     })
   if (s.type === 'Binaural') {
     s.panOsc.append($('<option/>').val(2).html('sine'))
-  } else if (s.type === 'Martigli-Binaural') {
+  } else if (s.type === 'Martigli-Binaural') { // TODO: enable with Binaural
     s.panOsc.append($('<option/>').val(2).html('sine independent of Martigli'))
     s.panOsc.append($('<option/>').val(3).html('sine in sync with Martigli'))
   }
@@ -251,113 +255,84 @@ function addPanner (s, c) {
   s.grid.panFields = fields
 }
 
-function adminUsers (allUsers, u_) { // &create=1&u=luz&name=Ferraz
-  function chUser (u_, create, remove) {
-    const query = { luser: u_ }
-    if (remove) {
-      transfer.remove(query).then(r => {
-        window.alert(`User "${u_}" REMOVED!`)
-      })
-      return
-    }
-    query.name = u_
-    return transfer.writeAny(query).then(resp => {
-      window.alert(`User "${u_}" created!`)
-    })
+function adminUsers (allUsers, user) { // ?doc=samename&remove=1
+  if (!user) { // no user give, get user!
+    do {
+      user = window.prompt('give user/lab name you have or want:', 'anonymous')
+    } while (!user)
+    window.location.href = `?doc=${user}`
   }
 
-  const create = u('create')
-  const remove = u('remove')
-  if (!u_) {
-    const u__ = `anon-${(Date.now() - 1690705574158).toString()}`
-    u_ = window.prompt(`give user/lab name you have or want (or use ${u__}):`)
-    if (!u_) {
-      u_ = u__
-    }
-    if (!allUsers.map(i => i.luser).includes(u_)) {
-      chUser(u_).then(() => {
-        window.location.href = `?doc=${u_}`
-      })
-    } else {
-      window.location.href = `?doc=${u_}`
-    }
-  } else if (create || remove) {
-    chUser(u_, create, remove)
-  } else if (u_ === 'all') { // TODO: create admin page/table to change user data and delete/create
-    console.log('all users:', allUsers)
-    window.alert('all users: ' + JSON.stringify(allUsers.map(i => [i.luser, i.name])))
-  } else {
-    if (!allUsers.map(i => i.luser).includes(u_)) {
-      chUser(u_).then(() => {
-        console.log('user created')
-        window.location.href = `?doc=${u_}`
-      })
-    } else {
-      console.log('user found', u_)
-      return false
-    }
+  const del = u('remove')
+  if (allUsers.map(i => i.luser).includes(user) && !del) { // user is given and to load!
+    return false
+  } else { // user is given to create or remove!:
+    const what = del ? 'remove' : 'writeAny'
+    transfer[what]({ luser: user }).then(r => {
+      window.alert(`User "${user}" ${del ? 'REMOVED' : 'CREATED'}!`)
+      window.location.href = '?doc' + (del ? '' : `=${user}`)
+    })
+    return true
   }
-  return true
 }
 
 e.Doc = class {
   constructor () {
+    // page layout:
+    window.DocClass = this
     $('<div/>', { id: 'canvasDiv' }).appendTo('body').hide()
     $('body').css('margin-top', '1%')
     this.div1 = $('<div/>', { css: { display: 'inline-block', width: '50%' } }).appendTo('body')
     this.div2 = $('<div/>', { id: 'div2', css: { display: 'inline-block', float: 'right', width: '50%' } }).appendTo('body')
     this.gd = grid => utils.gridDivider(0, 160, 0, grid)
 
-    transfer.findAll({ luser: { $exists: true } }).then(r => {
+    this.login()
+  }
+
+  login () {
+    return transfer.findAll({ luser: { $exists: true } }).then(r => {
       this.allUsers = r
       window.allUsers = r
-      const u_ = u('u') || u('doc')
-      if (adminUsers(this.allUsers, u_)) return
-      const r_ = r.filter(i => i.luser === u_)[0]
-      if (!r_) {
-        // cria usuário
-        window.alert(`user ::: ${u_} ::: not allowed (usuário não permitido)`)
-        return
-      }
-      this.user = u_
-      this.user_ = r_.name || utils.users[u_]
-      this.start()
+      const user = u('doc')
+      if (adminUsers(this.allUsers, user)) return
+      const r_ = r.filter(i => i.luser === user)[0]
+      this.user = user
+      this.user_ = r_.name || utils.users[user] || user
+      this.getSettings().then(
+        () => this.buildPage()
+      )
     })
   }
 
-  start () {
-    const query = { 'header.med2': { $exists: true }, _id: { $gt: window.wand.utils.objectIdWithTimestamp('2021/06/05') }, 'header.onlyOnce': { $exists: true } }
-    if (u('old') || u('all')) {
-      delete query._id
-      delete query['header.onlyOnce']
-      if (u('old')) query['header.datetime'] = { $gte: new Date('2021/04/29') }
-      else delete query['header.datetime']
-      this.isOld = true
+  getSettings () {
+    const query = {
+      _id: { $gt: window.wand.utils.objectIdWithTimestamp('2021/06/05') },
+      'header.med2': { $exists: true },
+      'header.onlyOnce': { $exists: true }
     }
-
-    const plural = this.user_[this.user_.length - 1] === 's' ? "'" : "'s"
-    $('<h2/>', { css: { 'text-align': 'center', background: '#d4d988' } })
-      .html(`${this.user_}${plural} Make Medicine`).appendTo(this.div1)
-    transfer.findAll(query).then(r => {
-      r.sort((a, b) => b.header.datetime - a.header.datetime)
+    return transfer.findAll(query).then(r => {
+      // r.sort((a, b) => a.header.datetime - b.header.datetime)
+      r.reverse().sort((a, b) => a.header.creator === this.user ? -1 : 1)
       this.allSettings = r
-      this.addHeader()
-      this.setVisual()
-      this.addMenu()
-      this.addFinalButtons()
-      $('#loading').hide()
+      this.userSettings = r.filter(i => i.header.creator === this.user)
+      this.othersSettings = r.filter(i => i.header.creator !== this.user)
     })
   }
 
-  removeOptions () {
-    const selectElement = document.getElementById('mselect')
-    for (let i = selectElement.options.length - 1; i >= 0; i--) {
-      selectElement.remove(i)
-    }
+  buildPage () {
+    this.addHeader()
+    this.setVisual()
+    this.addMenu()
+    this.addFinalButtons()
+    $('#loading').hide()
   }
 
   addHeader () {
+    const plural = this.user_[this.user_.length - 1] === 's' ? "'" : "'s"
+    $('<h2/>', { css: { 'text-align': 'center', background: '#d4d988' } })
+      .html(`${this.user_}${plural} Make Medicine`).appendTo(this.div1)
     const grid = utils.mkGrid(2, this.div1, '90%', '#eeeeff', '50%')
+
     $('<link/>', {
       rel: 'stylesheet',
       href: 'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css'
@@ -373,34 +348,36 @@ e.Doc = class {
         s.css('background', 'darkseagreen')
       })
     this.s = s
+
     $('<button/>').html('Delete').appendTo(grid)
       .attr('disabled', !u('admin'))
       .click(() => {
         const option = $(`option[value="${$('#mselect').val()}"].pres`)
         const ind = option[0].value
+        $('#loading').show()
         transfer.remove({ 'header.med2': this.allSettings[ind].header.med2 }).then(r => {
-          console.log('REMOVED! reply', r)
           option.remove()
           this.allSettings.splice(ind, 1)
+
+          // HERE 222:
           this.obutton.attr('disabled', true).html('Open')
           this.p3button.attr('disabled', true)
           this.p5button.attr('disabled', true).html('Preview (5s)')
           this.sbutton.attr('disabled', true)
+
           $('.pres').remove()
           this.allSettings.forEach((i, ii) => {
             let text = i.header.med2
             if (i.header.communionSchedule && !i.header.ancestral) {
               text = `(template) ${text}`
             }
-            if (i.header.creator) {
-              let text_ = `${this.getName(i.header.creator)}`
-              if (i.header.ancestral) {
-                text_ += `-${i.header.ancestral}`
-              }
-              text += ` (${text_})`
+            text += ` (${i.header.creator})`
+            if (i.header.ancestral) {
+              text += `-${i.header.ancestral}`
             }
             s.append($('<option/>', { class: 'pres' }).val(ii).html(text))
           })
+          $('#loading').hide()
         })
       })
     this.resetArtifactOptions()
@@ -553,10 +530,12 @@ e.Doc = class {
         transfer.writeAny(toSave).then(resp => {
           const aS = this.allSettings
           aS.push(toSave)
-          aS.sort((a, b) => b.header.datetime - a.header.datetime)
+          aS.sort((a, b) => a.header.datetime - b.header.datetime)
           this.removeOptions()
           this.resetArtifactOptions(toSave)
-          this.prefix = this.isOld ? '@' : (toSave.header.ancestral ? '-' : '.')
+          this.prefix = toSave.header.ancestral ? '-' : '.'
+
+          // HERE 2223
           this.obutton.attr('disabled', false).html(`Open: ${toSave.header.med2}`)
           this.p3button.attr('disabled', false)
           this.p5button.attr('disabled', false).html(`Preview (5s): ${toSave.header.med2}`)
@@ -788,7 +767,7 @@ ${lw()}.
         }
       }
     })
-    this.prefix = this.isOld ? '@' : (h_.ancestral ? '-' : '.')
+    this.prefix = h_.ancestral ? '-' : '.'
     this.obutton.attr('disabled', false).html(`Open: ${h_.med2}`)
     this.p3button.attr('disabled', false)
     this.p5button.attr('disabled', false).html(`Preview (5s): ${h_.med2}`)
@@ -870,7 +849,7 @@ ${lw()}.
     aS.forEach((i, ii) => {
       let text = i.header.med2
       if (i.header.creator) {
-        let name = this.getName(i.header.creator)
+        let name = i.header.creator
         if (i.header.ancestral) {
           name += ` -> ${i.header.ancestral}`
         }
@@ -973,6 +952,13 @@ ${lw()}.
       }
     } else { // just an artifact made in mkMed2 and not a template
       return 'mkMed2 non-template artifact'
+    }
+  }
+
+  removeOptions () {
+    const selectElement = document.getElementById('mselect')
+    for (let i = selectElement.options.length - 1; i >= 0; i--) {
+      selectElement.remove(i)
     }
   }
 }
