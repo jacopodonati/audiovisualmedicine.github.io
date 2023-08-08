@@ -299,7 +299,7 @@ e.Med = class {
   }
 
   setTimeToStart (s) {
-    if (s.onlyOnce === undefined || s.onlyOnce) return
+    if ((s.onlyOnce === undefined || s.onlyOnce) && (this.getDurationToStart() > 50)) return
     s.datetime = nextSync()
   }
 

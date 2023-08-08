@@ -1978,6 +1978,9 @@ const link = (text, path) => {
 const elink = (text, path) => {
   return `<a href="${path}">${text}</a>`
 }
+const elink_ = (text, path) => {
+  return `<a href="?.${path}">${text}</a>`
+}
 
 e.angel = () => {
   const items = [
@@ -5371,16 +5374,26 @@ e.step3 = () => {
 }
 
 e['m001-elisa'] = () => {
+  const mkListing = list => list.reduce((a, i) => a + `<li>${i}</li>`, '')
   const items = [
     `${elink('Step 1', '?step1')} on 17th July 2023. Artifact: ${elink('peace', '?.paz')} (delta + medium alpha; slow symmetry in 7).`,
     `${elink('Step 2', '?step2')} on 18th July 2023. Artifact: ${elink('relaxing', '?.relaxamento')} (delta + low alpha; slow symmetry in 5).`,
     `${elink('Step 3', '?step3')} on 20th July 2023. Artifact: ${elink('cure', '?.cura_')} (delta + gamma; symmetry in 3 and 5).`
-  ].reduce((a, i) => a + `<li>${i}</li>`, '')
+  ]
+
+  const theme = 'love'
+  const items2 = [
+    `24th July 2023. Artifact: ${elink('love', '?.amor')}.`,
+    `26th July 2023. Artifact: ${elink('union', '?.union')}.`,
+    `28th July 2023. Artifact: ${elink('providence', '?.providence')}.`
+  ]
   utils.stdDiv().html(`
   <h1>Elisa</h1>
   Completed the three instruction sessions:
+  <ul>${mkListing(items)}</ul>
 
-  <ul>${items}</ul>
+  The three sessions dedicated to the chosen theme (${theme}):
+  <ul>${mkListing(items2)}</ul>
 
   <p>
     <b>Tone</b>: Healer, Pathfinder. Medium/Sensitive, Mediator.
@@ -5393,4 +5406,89 @@ e['m001-elisa'] = () => {
   :::
   `)
   $('#loading').hide()
+}
+
+function mkMembers () {
+  const people = [
+    {
+      name: 'elisa',
+      tone: 'Healer, Pathfinder. Medium/Sensitive, Mediator.',
+      notes: 'she reopened the works in 2023.',
+      step1: {
+        when: '17th July 2023',
+        name: 'peace',
+        session: 'paz',
+        exp: 'delta + medium alpha; slow symmetry in 7'
+      },
+      step2: {
+        when: '18th July 2023',
+        name: 'relaxing',
+        session: 'relaxamento',
+        exp: 'delta + low alpha; slow symmetry in 5'
+      },
+      step3: {
+        when: '20th July 2023',
+        name: 'cure',
+        session: 'cura_',
+        exp: 'delta + gamma; symmetry in 3 and 5'
+      },
+      next3: {
+        sessions: [{
+          when: '24th July 2023',
+          name: 'love',
+          session: 'amor'
+        }, {
+          when: '26th July 2023',
+          name: 'union'
+        }, {
+          when: '28th July 2023',
+          name: 'providence'
+        }],
+        theme: 'love'
+      }
+    }
+  ]
+  people.forEach(p => mkMember(p))
+}
+mkMembers()
+
+function mkMember (p) {
+  const items = []
+  for (let i = 1; i <= 3; i++) {
+    const s_ = 'step' + i
+    const s = p[s_]
+    console.log({ p, s, s_, w: s.when })
+    items.push(
+      `${elink('Step ' + i, '?' + s_)} on ${s.when}. Artifact: ${elink_(s.name, s.session || s.name)} (${s.exp}).`
+    )
+  }
+  const items2 = []
+  for (let i = 0; i <= 2; i++) {
+    const s = p.next3.sessions[i]
+    items2.push(
+      `${s.when}. Artifact: ${elink_(s.name, s.session || s.name)}.`
+    )
+  }
+  const mkListing = list => list.reduce((a, i) => a + `<li>${i}</li>`, '')
+  e[`m003-${p.name}`] = () => {
+    utils.stdDiv().html(`
+      <h1>${utils.formatTheme(p.name)}</h1>
+      Completed the three instruction sessions:
+      <ul>${mkListing(items)}</ul>
+
+      The three sessions dedicated to the chosen theme (${p.next3.theme}):
+      <ul>${mkListing(items2)}</ul>
+
+      <p>
+        <b>Tone</b>: Healer, Pathfinder. Medium/Sensitive, Mediator.
+      </p>
+
+      <p>
+        <b>Notes</b>: she reopened the works in 2023.
+      </p>
+
+      :::
+    `)
+    $('#loading').hide()
+  }
 }
