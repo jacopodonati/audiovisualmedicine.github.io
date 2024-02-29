@@ -2102,6 +2102,49 @@ e.welcome = () => {
     return e.welcome2()
   }
   utils.stdDiv().html(`
+  <h2 style="text-align:center">Audiovisual Medicine</h2>
+  <p>
+    This website offers evidence-based, science-backed, audiovisual techniques for mental health enhancement.
+  </p>
+
+  <p>
+    You can use start right away <a href="?sequences">with our sequences</a>, each made for a specific use, or build your own. Read the <a href="?guidelines">AVHealth Usage Guidelines</a> to better understand how to maximize the beneficial effects of your session. Please <a href="?contact">get in touch with the AVHEALTH team</a> to share how Audiovisual Medicine impacted your general wellbeing.
+  </p>
+
+  <b style="color:red">DISCLAIMER</b>
+  <p>
+    While Audiovisual Medicine is usually safe and provides great benefits, it may be dangerous if you have a history of epilepsy or seizures.
+  </p>
+
+  <p>
+    In any case, we advise you to talk about it with your doctor. <a href="?contact">Contact the AVHealth team</a> if you need more information. Please remember that the AVHealth initiative is a nonprofit and it’s not a company. The responsability lies with the user.
+  </p>
+
+  <p id="createme">
+    <button id="createbutton">
+      Create Your Audiovisual Artifacts
+    </button>
+  </p>
+  `)
+  $('#createme')
+    .css('text-align', 'center')
+    .css('text-align', 'center')
+  $('#createbutton')
+    .css('font-size', 'larger')
+    .css('padding', '5%')
+    .css('box-shadow', '0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)')
+    .css('cursor', 'pointer')
+    .on('click', () => {
+      window.location.href = '?doc'
+    })
+  $('#loading').hide()
+}
+
+e.welcomeOLD = () => {
+  if (window.location.hostname === 'aeterni.github.io') {
+    return e.welcome2()
+  }
+  utils.stdDiv().html(`
   <h2 style="text-align:center">Evidence-Based Audiovisual Medicine</h2>
 
   <p id="createme">
@@ -3409,9 +3452,7 @@ e.aalogs3 = ufrj => {
   if (session) {
     query.sessionId = session
   }
-  if (ws) {
-    query.ws = ws
-  }
+  query.ws = ws || null
   const tzoffset = (new Date()).getTimezoneOffset() * 60000 // offset in milliseconds
   function updateDuration () {
     const r = window.rrr
@@ -3437,6 +3478,7 @@ e.aalogs3 = ufrj => {
     })
     if (session) updateDuration()
   }
+  console.log({ query })
   transfer.findAll(query, true).then(r => {
     console.log(r)
     window.rrr = r
@@ -5436,13 +5478,16 @@ function mkMembers () {
         sessions: [{
           when: '24th July 2023',
           name: 'love',
-          session: 'amor'
+          session: 'amor_',
+          exp: 'medium alpha + low delta; symmetry in 4 and 5'
         }, {
           when: '26th July 2023',
-          name: 'union'
+          name: 'union',
+          exp: 'med-high alpha + theta++; slow symettry in 12'
         }, {
           when: '28th July 2023',
-          name: 'providence'
+          name: 'providence',
+          exp: 'medium alpha + high delta; fast symmetry in 30'
         }],
         theme: 'love'
       }
@@ -5466,7 +5511,7 @@ function mkMember (p) {
   for (let i = 0; i <= 2; i++) {
     const s = p.next3.sessions[i]
     items2.push(
-      `${s.when}. Artifact: ${elink_(s.name, s.session || s.name)}.`
+      `${s.when}. Artifact: ${elink_(s.name, s.session || s.name)} (${s.exp}).`
     )
   }
   const mkListing = list => list.reduce((a, i) => a + `<li>${i}</li>`, '')

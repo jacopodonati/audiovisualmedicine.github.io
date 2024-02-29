@@ -23,7 +23,6 @@ http.createServer(function (req, res) {
     '.otf': 'application/font-otf',
     '.wasm': 'application/wasm'
   }
-  console.log(filePath)
   const contentType = mimeTypes[extname] || 'application/octet-stream'
   fs.readFile(filePath, function (error, content) {
     if (error) {
