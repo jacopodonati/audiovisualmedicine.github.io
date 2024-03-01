@@ -2078,7 +2078,7 @@ e.sequences = () => {
   $('#loading').hide()
 }
 
-e.guida = () => {
+e.guide = () => {
   utils.stdDiv().html(`
         <div id="page">
             <div id="main" class="aui-page-panel">
@@ -2127,7 +2127,7 @@ e.welcome = () => {
   </p>
 
   <p>
-    You can use start right away <a href="?sequences">with our sequences</a>, each made for a specific use, or build your own. Read the <a href="?guidelines">AVHealth Usage Guidelines</a> to better understand how to maximize the beneficial effects of your session. Please <a href="?contact">get in touch with the AVHEALTH team</a> to share how Audiovisual Medicine impacted your general wellbeing.
+    You can use start right away <a href="?sequences">with our sequences</a>, each made for a specific use, or build your own. Read the <a href="?guide">AVHealth Usage Guidelines</a> to better understand how to maximize the beneficial effects of your session. Please <a href="?contact">get in touch with the AVHEALTH team</a> to share how Audiovisual Medicine impacted your general wellbeing.
   </p>
 
   <b style="color:red">DISCLAIMER</b>
