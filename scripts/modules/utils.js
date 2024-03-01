@@ -226,20 +226,9 @@ Luz e Paz ~
 `
   }
   return `
-<h2>Thank you</h2>
-
-some ideas:
-
-<ul>
-<li>write about how the sessions have been for you: have they helped you? In what way?</li>
-<li>Encourage other members to write an account of their experiences.</li>
-<li>Share your experience and this practice with other people.</li>
-<li>Do sessions with friends & family or even to know people and be together.</li>
-<li>Get in touch to share ideas, ask questions, or even create your audiovisual sequences.</li>
-<li>Contact a person or entity that may be interested in the initiative.</li>
-</ul>
-
-Bye
+<div id="main-content" class="wiki-content group">
+  <h1 id="Contact-nuova-Getintouch">Get in touch</h1><p>The AVHealth initiative is growing fast, and we always welcome any feedback from our users. </p><p>There are quite some ways to help us getting better:</p><ul><li><p><strong>Get in touch to share ideas and ask questions:</strong> we’d love to know from you what works better and what can be improved.</p></li><li><p><strong>Share your sequences: </strong>we offer a few sequences to show how it works, but the potential of Audiovisual medicine is huge. If you’ve found a sequence you want to share, please do and we may credit you and put your sequence online for everyone to benefit.</p></li><li><p><strong>Do it together:</strong> Audiovisual Medicine works great when you’re alone, but works even better when done in group. Try it during your yoga or meditation group session, or in your study group.</p></li><li><p><strong>Share it:</strong> do you know someone who could benefit from a session? Please share it online and among your friends and coworkers!</p></li><li><p><strong>Fund it:</strong> if you know of some organization who could fund us, please get in touch. We’re always looking for new means to spread the benefits of Audiovisual Medicine to more people.</p></li></ul>
+</div>
 `
 }
 

@@ -2078,6 +2078,25 @@ e.sequences = () => {
   $('#loading').hide()
 }
 
+e.guida = () => {
+  utils.stdDiv().html(`
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+
+                <div id="content" class="view">
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="Guida-nuova-HowtouseAudiovisualMedicine">How to use Audiovisual Medicine</h1><p>Audiovisual Medicine is a powerful tool to improve your health, and it’s proved to work for many people. </p><h2 id="Guida-nuova-Thebasics">The basics</h2><p>Starting your journey is very simple. Just follow these steps:</p><ol start="1"><li><p><span class="inline-comment-marker" data-ref="1401c0fb-3da3-40c3-8069-3f62d03bad0d">Pick one of our preconfigured sequences:</span></p><ul><li><p><a class="external-link" href="https://audiovisualmedicine.github.io/?.alpha9.15" rel="nofollow">Entrain brain to simple and clean 9.15Hz alpha</a>.</p></li><li><p><a class="external-link" href="https://audiovisualmedicine.github.io/?.betas" rel="nofollow">Low-med-high beta waves, found by some to be great got being concentrated and engaged</a>.</p></li><li><p><a class="external-link" href="https://audiovisualmedicine.github.io/?.gamma40_" rel="nofollow">Two simple classic 40Hz, periodic pan transitions, symmetries in 5 and 3.</a>.</p></li><li><p><a class="external-link" href="https://audiovisualmedicine.github.io/?.midLowAlpha2" rel="nofollow">10Hz alpha.</a>.</p></li><li><p><a class="external-link" href="https://audiovisualmedicine.github.io/?.40-1_sim1-..4__" rel="nofollow">Entrain to 40Hz and 1Hz with symmetries</a>.</p></li></ul></li><li><p>Click “Open Controls” and then “Start now!”.</p></li><li><p>You may use some headphones or let the sound play from a speaker. Meanwhile, you can work, meditate, or do anything you like.</p></li><li><p>Pay attention to the oscillatory pattern of the sound and try to mimic it with your breath. If you’re looking at the screen, you’ll see a spinning circle moving up and down, growing and shrinking with the breathing rhythm. There are quite a few visual cues to sync your breathing to the sound, but it’s ok to just close your eyes or do something else.</p></li></ol><h2 id="Guida-nuova-Improveyoursessions">Improve your sessions</h2><p>To maximize the benefits of using Audiovisual Medicine, there are some tips you can follow:</p><ol start="1"><li><p><strong>Read the safety information:</strong> before you begin your journey with Audiovisual Medicine it’s important you read our safety notes. Doing this will help you understand if it’s safe for you to use and it will create a trusting space for you to explore all the benefits of your session.</p></li><li><p><strong>Let your doctor know:</strong> Audiovisual Medicine can benefit many health issues, such as pain control, TDHA, migraines, depression, anxiety, insomnia, cognitive decline or impairment, bipolar or borderline disorders, schizophrenia, psychoses and neuroses. If you suffer from any of these and you use Audiovisual Medicine often or for long periods of time, please contact your doctor and let them know.</p></li><li><p><strong>The environment is important:</strong> a good session starts with good preparation. For example, you should use Audiovisual Medicine with a good pair of headphones and the volume should be set on a comfortable level. Before you start your session, spend a few minutes just breathing.</p></li><li><p><strong>Don’t overuse it:</strong> as with everything, it’s better to start slow and gradually increase your use of Audiovisual Medicine. This will allow your body and your brain to gently adapt. </p></li><li><p><strong>Experiment!</strong> Audiovisual Medicine is safe for you to experiment and find new benefits. You can experiment with the length of your session and with the pattern used. Different combinations will generate different effects.</p></li></ol><h2 id="Guida-nuova-Advancedconfigurations">Advanced configurations</h2><p><span class="inline-comment-marker" data-ref="aa3a93b2-33de-4c59-a2c0-95c13041667d">** Under Construction **</span></p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+  :::
+        </div>
+  `)
+  $('#loading').hide()
+}
+
 e.welcome2 = () => {
   utils.stdDiv().html(`
   <h2>Greetings</h2>
@@ -2124,6 +2143,12 @@ e.welcome = () => {
     <button id="createbutton">
       Create Your Audiovisual Artifacts
     </button>
+  </p>
+
+  <p style="font-size:small">
+    By using Audiovisual medicine you agree to the following terms:
+    this is an Open Source and Non-Proffit initiative.
+    Therefore, the responsibility lies with you, the user.
   </p>
   `)
   $('#createme')
