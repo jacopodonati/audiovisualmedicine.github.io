@@ -3203,6 +3203,7 @@ e.aa = ufrj => {
     .appendTo(grid)
     .attr('title', 'Register the shout message given.')
     .click(() => {
+      submitShout.prop('disabled', true)
       // get current date and time, user, session ID and submit
       const data = { uid: uid.val(), sessionId: sessionData ? sessionData.sessionId : undefined }
       data[shoutStr] = shout.val()
@@ -3214,22 +3215,28 @@ e.aa = ufrj => {
         window.alert('please insert shout message.')
       } else {
         data.date = new Date()
-        transfer.writeAny(data, true).then(resp => {
-          if (shoutsExpected !== undefined && shoutsExpected > 0) {
-            shoutsExp.html(--shoutsExpected)
-          }
-          shout.val('')
-          if (sessionData && (slotsFinished === sessionData.nslots)) {
-            if (shoutsExpected <= 0) { // finish session routine:
-              ssBtn.attr('disabled', false)
-              sdur.attr('disabled', false)
-              nslots.attr('disabled', false)
-              grid.hide()
-              sessionData = undefined
-              shoutsExpected = undefined
+        transfer.writeAny(data, true)
+          .then(resp => {
+            if (shoutsExpected !== undefined && shoutsExpected > 0) {
+              shoutsExp.html(--shoutsExpected)
             }
-          }
-        })
+            if (sessionData && (slotsFinished === sessionData.nslots)) {
+              if (shoutsExpected <= 0) { // finish session routine:
+                ssBtn.attr('disabled', false)
+                sdur.attr('disabled', false)
+                nslots.attr('disabled', false)
+                grid.hide()
+                sessionData = undefined
+                shoutsExpected = undefined
+              }
+            }
+            shout.val('')
+          })
+          .catch(error => {
+            window.alert('error in registering the shout', error, 'more details in the console')
+            console.log('error in registering the shout', error)
+          })
+          .finally(() => submitShout.prop('disabled', false))
       }
     })
 
