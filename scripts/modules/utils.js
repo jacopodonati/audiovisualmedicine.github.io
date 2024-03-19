@@ -142,56 +142,30 @@ const groups = `
 e.stdMsg2 = () => {
   if (window.wand.country === 'BR') {
     return `
-
-<h2>Fortaleça o seu Corpo de Luz</h2>
-
-algumas ideias:
-
-<ul>
-<li>escreva relatando como tem sido as sessões para você: elas tem te ajudado? De que forma?</li>
-<li>Incentive outros membros a escreverem relatos das experiências deles.</li>
-<li>Traga pessoas para vibrarem no Corpo de Luz.</li>
-<li>Ajude a manter/gerir um dos grupos existentes (e.g. ${groups}).</li>
-<li>Crie um novo grupo.</li>
-<li>Crie Artefatos Audiovisuais para serem usados nas sessões.</li>
-<li>Aproxime uma pessoa ou entidade que possa ter interesse especial na iniciativa.</li>
-<li>Gere mídia sobre o Corpo de Luz (postagens, artigos jornalísticos...).</li>
-<li>Divulgue sobre o grupo ou trabalho.</li>
-<li>Doe ou ajude a arrecadar financeiramente (transfira para a chave PIX <b>luz</b> ou verifique <a href="?angel" target="_blank">as alternativas</a>).</li>
-<li>Ore para o Corpo de Luz e para o mundo.</li>
-<li>Cuide-se muito bem.</li>
-<li>Sugira mudanças sobre como conduzir o Corpo de Luz.</li>
-</ul>
-
-Faça contato!<br>
-Luz e Paz ~
-`
+    <h2>Envolva-se com AA</h2>
+    <ul>
+        <li><strong>Compartilhe suas experiências:</strong> Reflita sobre como sua participação tem beneficiado você e incentive outros a fazer o mesmo.</li>
+        <li><strong>Crie e compartilhe conteúdo multimídia:</strong> Produza artefatos audiovisuais e distribua-os para enriquecer as ofertas do projeto e aumentar a conscientização.</li>
+        <li><strong>Expanda sua rede:</strong> Entre em contato com potenciais parceiros, colaboradores e indivíduos com interesses semelhantes para fortalecer conexões e ampliar a comunidade.</li>
+        <li><strong>Promova o engajamento:</strong> Incentive a participação ativa e o envolvimento em grupos existentes (${groups}) ou considere formar novos.</li>
+        <li><strong>Apóie iniciativas:</strong> Ofereça assistência, seja por meio de contribuições financeiras ou outros tipos de apoio, para promover os objetivos e iniciativas do projeto.</li>
+        <li><strong>Mantenha-se conectado e forneça feedback:</strong> Mantenha linhas de comunicação abertas, forneça feedback construtivo e ofereça sugestões para aprimorar a eficácia do projeto.</li>
+    </ul>
+    <p>Lembre-se, até o menor esforço pode fazer uma grande diferença.</p>
+    `
   }
   return `
-<h2>Strengthen your Lightbody</h2>
-
-some ideas:
-
-<ul>
-<li>write about how the sessions have been for you: have they helped you? In what way?</li>
-<li>Encourage other members to write an account of their experiences.</li>
-<li>Bring people to vibrate in the body of Light.</li>
-<li>Help to maintain / manage one of the existing groups (e.g. ${groups}).</li>
-<li>Create a new group.</li>
-<li>Create Audiovisual Artifacts to be used in the sessions.</li>
-<li>Contact a person or entity that may be interested in the initiative.</li>
-<li>Generate media about the body of Light (posts, journalistic articles ...).</li>
-<li>Publicize a group or work.</li>
-<li>Donate or help raise money financially (transfer to PIX <b>luz</b> or check <a href="luz" target="_blank">the alternatives</a>).</li>
-<li>Pray for the Lightbody and the world.</li>
-<li>Take very good care of yourself.</li>
-<li>Suggest changes on how to conduct the Lightbody.</li>
-</ul>
-
-Make contact!<br>
-Light & Peace ~
-
-`
+  <h2>Get Involved with AA</h2>
+  <ul>
+      <li><strong>Share your experiences:</strong> Reflect on how your participation has benefited you and encourage others to do the same.</li>
+      <li><strong>Create and share multimedia content:</strong> Make audiovisual artifacts and distribute them to enrich the project's offerings and raise awareness.</li>
+      <li><strong>Expand your network:</strong> Reach out to potential partners, collaborators, and like-minded individuals to strengthen connections and grow the community.</li>
+      <li><strong>Promote engagement:</strong> Encourage active participation and involvement in existing groups (${groups}) or consider forming new ones.</li>
+      <li><strong>Support initiatives:</strong> Offer assistance, whether through financial contributions or other forms of support, to further the project's goals and initiatives.</li>
+      <li><strong>Stay connected and provide feedback:</strong> Maintain open lines of communication, provide constructive feedback, and offer suggestions for enhancing the project's effectiveness.</li>
+  </ul>
+  <p>Remember, even the smallest effort can make a big difference.</p>
+  `
 }
 
 e.stdMsg = () => {
