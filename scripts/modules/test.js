@@ -2337,22 +2337,61 @@ e.about = () => {
   utils.stdDiv().html(`
   <h2>About</h2>
 
-  <p id="uconstruction">
-  *** Under construction ***
-  </p>
+  <p>Audiovisual Medicine is a tool to improve your wellbeing through finely tuned audio and visual sequences.</p>
 
-  <p>
-  <b>Evidence-Based Audiovisual Medicine</b> started in December 2020 as an independent initiative to help people online.
-  </p>
-  <p>
-  Previous efforts are being consolidated herein:
+  <p>The <strong>AVHealth</strong> initiative was born because we noticed that the compelling wellness benefits from
+      specific audiovisual stimulation techniques are poorly available to the general population.</p>
+
+  <p>Our technology is backed by evidence-based scientific studies. If you want to learn more about it, you can read
+      the following papers:</p>
+
   <ul>
-  <li>nonpharmacological methods are available through the <a href="?sequences">audiovisual sequences</a> to enhance mental and brain health, and enjoyment/experimentation;</li>
-  <li>social coordination (sync) mechanisms;</li>
-  <li>press (text publisher).</li>
+      <li>Dave Siever, Tom Collura, &quot;Chapter 3 - Audio–Visual Entrainment: Physiological Mechanisms and Clinical Outcomes&quot;
+          in <em>Rhythmic Stimulation Procedures in Neuromodulation</em>, Academic Press, 2017, <a
+              href="https://doi.org/10.1016/B978-0-12-803726-3.00003-1">doi:10.1016/B978-0-12-803726-3.00003-1</a></li>
+      <li>D.Corydon Hammond, &quot;Chapter One - Definitions, Standard of Careand Ethical Considerations&quot; in Clinical
+          Neurotherapy, Academic Press, 2014, <a
+              href="https://doi.org/10.1016/B978-0-12-396988-0.00001-5">doi:10.1016/B978-0-12-396988-0.00001-5</a></li>
+      <li>Pino, Olimpia, Roberta Crespi, and Giuliano Giucastro.&quot;L’influenza della mindfulness e del benessere
+          generale nel trattamento clinico dei fumatori di tabacco in un programma di disassuefazione: una valutazione a
+          breve e lungo termine.&quot; (2020): 849-870, <a
+              href="https://doi.org/10.3280/RIP2020-003004">doi:10.3280/RIP2020-003004</a>.</li>
+      <li>Pino, Olimpia, and Francesco La Ragione. &quot;A Brain Computer Interface for audio-visual entrainment in
+          emotional regulation: preliminary evidence of its effects.&quot; Online International Interdisciplinary
+          Journal(2016): 1-12.</li>
+      <li>Pino, Olimpia. &quot;Neuro-Upper, a Novel Technology for Audio-Visual Entrainment. A Randomized Controlled Trial
+          on Individuals with Anxiety and Depressive Disorders.&quot; BAOJ Med Nursing 3 (2017): 041, <a
+              href="http://dx.doi.org/10.24947/baojmn/3/2/141">doi:10.24947/baojmn/3/2/141</a>.</li>
+      <li>Tang, Hsin-Yi Jean, et al. &quot;Open-loop audio-visual stimulation (AVS): A useful tool for management of
+          insomnia?&quot; Applied psychophysiology and biofeedback 41.1 (2016): 39-46, <a
+              href="http://dx.doi.org/10.1007/s10484-015-9308-7">doi:10.1007/s10484-015-9308-7</a>.</li>
+      <li>Tang, Hsin-Yi Jean, et al. &quot;Open-loop Audio-Visual Stimulation for sleep promotion in older adults with
+          comorbid insomnia and osteoarthritis pain: results of a pilot randomized controlled trial.&quot; Sleep Medicine 82
+          (2021): 37-42, <a href="https://doi.org/10.1016/j.sleep.2021.03.025">doi:10.1016/j.sleep.2021.03.025</a>.</li>
+      <li>Schmid, Werner, et al. &quot;Brainwave entrainment to minimisesedative drug doses in paediatric surgery: a
+          randomised controlled trial.&quot; British Journal of Anaesthesia 125.3 (2020): 330-335, <a
+              href="https://doi.org/10.1016/j.bja.2020.05.050">doi:10.1016/j.bja.2020.05.050</a>.</li>
+      <li>Lagarrigue, Yannick, Céline Cappe, and Jessica Tallet.&quot;Regular rhythmic and audio-visual stimulations
+          enhance procedural learning of a perceptual-motor sequence in healthy adults: A pilot study.&quot; PloS one 16.11
+          (2021): e0259081, <a href="https://doi.org/10.1371/journal.pone.0259081">doi:10.1371/journal.pone.0259081</a>.
+      </li>
+      <li>Basu, Sandhya, and Bidisha Banerjee. &quot;Prospect of Brainwave Entrainment to Promote Well-Being in
+          Individuals: A Brief Review.&quot; Psychological Studies (2020): 1-11, <a
+              href="http://dx.doi.org/10.1007/s12646-020-00555-x">doi:10.1007/s12646-020-00555-x</a>.</li>
+      <li>Clements-Cortes, Amy. &quot;Sound stimulation in patients withA lzheimer’s disease.&quot; (2015).</li>
+      <li>Roberts, Brooke M et al. &quot;Entrainment enhances theta oscillations and improves episodic memory.&quot; Cognitive neuroscience vol. 9,3-4 (2018):181-193. <a
+              href="https://doi.org/10.1080/17588928.2018.1521386">doi:10.1080/17588928.2018.1521386</a></li>
+      <li>David S. Cantor and Emily Stevens, &quot;QEEG Correlates of Auditory-Visual Entrainment Treatment Efficacy of
+          Refractory Depression.&quot; Journal of Neurotherapy, (2009), <a
+              href="https://doi.org/10.1080/10874200902887130">doi:10.1080/10874200902887130</a>.</li>
+      <li>da Silva, Vernon Furtado et al. &quot;Stimulation by Light and Sound: Therapeutics Effects in Humans. Systematic
+          Review.&quot; Clinical practice and epidemiology in mental health : CP &amp; EMH vol. 11 150-4.(2015), <a
+              href="https://doi.org/10.2174/1745017901511010150">doi:10.2174/1745017901511010150</a></li>
+      <li>Zaccaro, Andrea et al. &quot;How Breath-Control Can Change Your Life:A Systematic Review on Psycho-Physiological
+          Correlates of Slow Breathing.&quot; Frontiers in human neuroscience vol. 12 353. 7 Sep. 2018, <a
+              href="https://doi.org/10.3389/fnhum.2018.00353">doi:10.3389/fnhum.2018.00353</a></li>
   </ul>
-  </p>
-
+<p>:::</p>
   `)
   $('#uconstruction')
     .css('color', 'red')
