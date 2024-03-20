@@ -72,7 +72,6 @@ e.mkFooter = () => {
   wand.$('<a/>', {
     href: `?about${lflag}`,
     id: 'abouta',
-    target: '_blank',
     css: {
       // 'margin-left': '1%',
       margin: 'auto',
