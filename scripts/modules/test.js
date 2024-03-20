@@ -2080,18 +2080,151 @@ e.sequences = () => {
 
 e.guide = () => {
   utils.stdDiv().html(`
-        <div id="page">
-            <div id="main" class="aui-page-panel">
+  <h1>How to use Audiovisual Medicine</h1>
 
-                <div id="content" class="view">
-                    <div id="main-content" class="wiki-content group">
-                    <h1 id="Guida-nuova-HowtouseAudiovisualMedicine">How to use Audiovisual Medicine</h1><p>Audiovisual Medicine is a powerful tool to improve your health, and it’s proved to work for many people. </p><h2 id="Guida-nuova-Thebasics">The basics</h2><p>Starting your journey is very simple. Just follow these steps:</p><ol start="1"><li><p><span class="inline-comment-marker" data-ref="1401c0fb-3da3-40c3-8069-3f62d03bad0d">Pick one of our preconfigured sequences:</span></p><ul><li><p><a class="external-link" href="https://audiovisualmedicine.github.io/?.alpha9.15" rel="nofollow">Entrain brain to simple and clean 9.15Hz alpha</a>.</p></li><li><p><a class="external-link" href="https://audiovisualmedicine.github.io/?.betas" rel="nofollow">Low-med-high beta waves, found by some to be great got being concentrated and engaged</a>.</p></li><li><p><a class="external-link" href="https://audiovisualmedicine.github.io/?.gamma40_" rel="nofollow">Two simple classic 40Hz, periodic pan transitions, symmetries in 5 and 3.</a>.</p></li><li><p><a class="external-link" href="https://audiovisualmedicine.github.io/?.midLowAlpha2" rel="nofollow">10Hz alpha.</a>.</p></li><li><p><a class="external-link" href="https://audiovisualmedicine.github.io/?.40-1_sim1-..4__" rel="nofollow">Entrain to 40Hz and 1Hz with symmetries</a>.</p></li></ul></li><li><p>Click “Open Controls” and then “Start now!”.</p></li><li><p>You may use some headphones or let the sound play from a speaker. Meanwhile, you can work, meditate, or do anything you like.</p></li><li><p>Pay attention to the oscillatory pattern of the sound and try to mimic it with your breath. If you’re looking at the screen, you’ll see a spinning circle moving up and down, growing and shrinking with the breathing rhythm. There are quite a few visual cues to sync your breathing to the sound, but it’s ok to just close your eyes or do something else.</p></li></ol><h2 id="Guida-nuova-Improveyoursessions">Improve your sessions</h2><p>To maximize the benefits of using Audiovisual Medicine, there are some tips you can follow:</p><ol start="1"><li><p><strong>Read the safety information:</strong> before you begin your journey with Audiovisual Medicine it’s important you read our safety notes. Doing this will help you understand if it’s safe for you to use and it will create a trusting space for you to explore all the benefits of your session.</p></li><li><p><strong>Let your doctor know:</strong> Audiovisual Medicine can benefit many health issues, such as pain control, TDHA, migraines, depression, anxiety, insomnia, cognitive decline or impairment, bipolar or borderline disorders, schizophrenia, psychoses and neuroses. If you suffer from any of these and you use Audiovisual Medicine often or for long periods of time, please contact your doctor and let them know.</p></li><li><p><strong>The environment is important:</strong> a good session starts with good preparation. For example, you should use Audiovisual Medicine with a good pair of headphones and the volume should be set on a comfortable level. Before you start your session, spend a few minutes just breathing.</p></li><li><p><strong>Don’t overuse it:</strong> as with everything, it’s better to start slow and gradually increase your use of Audiovisual Medicine. This will allow your body and your brain to gently adapt. </p></li><li><p><strong>Experiment!</strong> Audiovisual Medicine is safe for you to experiment and find new benefits. You can experiment with the length of your session and with the pattern used. Different combinations will generate different effects.</p></li></ol><h2 id="Guida-nuova-Advancedconfigurations">Advanced configurations</h2><p><span class="inline-comment-marker" data-ref="aa3a93b2-33de-4c59-a2c0-95c13041667d">** Under Construction **</span></p>
-                    </div>
-
-                    
-                                                      
-                </div>             </div> 
-  :::
+  <p>Audiovisual Medicine is a powerful tool to improve your health, and it’s
+      proved to work for many people.</p>
+  
+  <h2>The basics</h2>
+  
+  <p>Starting your journey is very simple. Just follow these steps:</p>
+  
+  <ol>
+  
+      <li>Pick one of our preconfigured sequences:</li>
+  
+      <ul>
+  
+          <li><a href="https://audiovisualmedicine.github.io/?.alpha9.15">Peaceful
+                  Pulse</a>: a simple and clean 9.15 Hz alpha wave to cultivate a sense of
+              peacefulness.</li>
+  
+          <li><a href="https://audiovisualmedicine.github.io/?.betas">Cognitive
+                  Crescendo</a>: a sequence of low, med, and high beta waves, often the best
+              choice for learning.</li>
+  
+          <li><a href="https://audiovisualmedicine.github.io/?.gamma40_">Genius
+                  Glow</a>: two simple 40 Hz gamma waves with periodic pan transitions and
+              symmetries in 5 and 3, used to enhance the creativity flow.</li>
+  
+          <li><a href="https://audiovisualmedicine.github.io/?.midLowAlpha2">Harmony
+                  Haven</a>: a 10 Hz alpha wave to promote a feeling of harmony.</li>
+  
+          <li><a href="https://audiovisualmedicine.github.io/?.40-1_sim1-..4__">Expanded
+                  Enlightenment</a>: a combo of gamma waves at 40 Hz and delta waves at 1Hz, with
+              symmetries, to foster deep meditation and altered states of consciousness.</li>
+      </ul>
+  
+      <li>Click “Open Controls” and then “Start now!”.</li>
+  
+      <li>You may use some headphones or let the sound play from a speaker.
+          Meanwhile, you can work, meditate, or do anything you like.</li>
+  
+      <li>Pay attention to the oscillatory pattern of the sound and try to mimic
+          it with your breath. If you’re looking at the screen, you’ll see a spinning
+          circle moving up and down, growing and shrinking with the breathing rhythm.
+          There are quite a few visual cues to sync your breathing to the sound, but it’s
+          ok to just close your eyes or do something else.</li>
+  
+  </ol>
+  
+  <h2>Improve your sessions</h2>
+  
+  <p>To maximize the benefits of using Audiovisual Medicine, there are some tips
+      you can follow:</p>
+  
+  <ol>
+      <li><strong>Read the safety information:</strong> before you begin your
+          journey with Audiovisual Medicine it’s important you read our safety notes.
+          Doing this will help you understand if it’s safe for you to use and it will
+          create a trusting space for you to explore all the benefits of your session.</li>
+  
+      <li><strong>Let your doctor know:</strong> Audiovisual Medicine can benefit
+          many health issues, such as pain control, TDHA, migraines, depression, anxiety,
+          insomnia, cognitive decline or impairment, bipolar or borderline disorders,
+          schizophrenia, psychoses and neuroses. If you suffer from any of these and you
+          use Audiovisual Medicine often or for long periods of time, please contact your
+          doctor and let them know.</li>
+  
+      <li><strong>The environment is important:</strong> a good session starts
+          with good preparation. For example, you should use Audiovisual Medicine with a
+          good pair of headphones and the volume should be set on a comfortable level.
+          Before you start your session, spend a few minutes just breathing.</li>
+  
+      <li><strong>Don’t overuse it:</strong> as with everything, it’s better to
+          start slow and gradually increase your use of Audiovisual Medicine. This will
+          allow your body and your brain to gently adapt.</li>
+  
+      <li><strong>Experiment!</strong> Audiovisual Medicine is safe for you to
+          experiment and find new benefits. You can experiment with the length of your
+          session and with the pattern used. Different combinations will generate
+          different effects.</li>
+  </ol>
+  
+  <h2>Advanced configurations</h2>
+  
+  <p>There are may ways in which you can customize your sessions. When you’re
+      creating a new artifact there are many options you can choose from. You can
+      usually learn the meaning and function of most parameters by hovering your
+      mouse on top of the input field. A tooltip will appear to explain what that
+      specific control does.</p>
+  
+  <p>Here we list a few things you can do.</p>
+  
+  <h3>Breathing</h3>
+  
+  <p>The most basic feature you can tweak is breathing, which is linked to
+      changes in mood and general well-being. To change the parameters, you can click
+      on “Open Controls” in the right top corner of your screen.</li>
+  
+  <p>You will usually transition from a faster breathing rhythm to a slower one.</p>
+  <ul>
+  
+      <li><strong>Final period</strong>: this is the most important
+          parameter, and it shows how many seconds it will take to do a single breath
+          once the transition has ended. The default value is 20 seconds, but if you’re
+          not used to breathing slowly, smokes or have a history of pulmonary diseases,
+          you can lower it to a level you’re comfortable with.</li>
+  
+      <li><strong>Initial period</strong>: here we set how fast you’ll
+          breath in the beginning of the transition. The default value is 10 seconds, but
+          as for the first one, you can change it to a value you’re more comfortable
+          with.</li>
+  
+      <li><strong>Transition</strong>: this value shows how long it will
+          take to shift from the breathing rhythm set in “Initial period” to the rhythm
+          set in “Final period”. The default is 600 seconds, or 10 minutes.</li>
+  
+      <li><strong>Duration</strong>: here we set how long the whole
+          artifact will be. The default is 900 seconds, or 15 minutes.</li>
+  </ul>
+  
+  <h3>Auditory Entrainment</h3>
+  
+  <p>You can add several elements to your artifact, such as Binaural, Symmetry,
+      Martigli, and Sample.</p>
+  <ul>
+      <li><strong>Binaural</strong>: binaural beats are auditory illusions
+          generated when two slightly different waves are heard separately by each ear.
+          For example, if we have a wave of 450 Hz and another one of 455 Hz, the result
+          will be a 5 Hz beat. For it to be binaural, you have to use headphones,
+          otherwise the sound will mix before it reaches your ears.</li>
+  
+      <li><strong>Symmetry</strong>: a symmetry uses musical notes to
+          convey a more aesthetic experience. Also, they’re argued to be essential to
+          cognition and will make your session more approachable if you have just begun
+          using Audiovisual Medicine.</li>
+  
+      <li><strong>Martigli</strong>: this oscillation is named after the
+          composer Otávio Martigli and it produces an audio cue to help you sync the
+          breath.</li>
+  
+      <li><strong>Sample</strong>: a sample is a pre-recorded sound that is
+          played in the background and helps you to be in the flow. Also, sounds such as
+          those produced by the ocean waves help you to feel relaxed and focus on the
+          session.</li>
+  </ul>
+  <p>:::</p>
         </div>
   `)
   $('#loading').hide()
@@ -2337,22 +2470,61 @@ e.about = () => {
   utils.stdDiv().html(`
   <h2>About</h2>
 
-  <p id="uconstruction">
-  *** Under construction ***
-  </p>
+  <p>Audiovisual Medicine is a tool to improve your wellbeing through finely tuned audio and visual sequences.</p>
 
-  <p>
-  <b>Evidence-Based Audiovisual Medicine</b> started in December 2020 as an independent initiative to help people online.
-  </p>
-  <p>
-  Previous efforts are being consolidated herein:
+  <p>The <strong>AVHealth</strong> initiative was born because we noticed that the compelling wellness benefits from
+      specific audiovisual stimulation techniques are poorly available to the general population.</p>
+
+  <p>Our technology is backed by evidence-based scientific studies. If you want to learn more about it, you can read
+      the following papers:</p>
+
   <ul>
-  <li>nonpharmacological methods are available through the <a href="?sequences">audiovisual sequences</a> to enhance mental and brain health, and enjoyment/experimentation;</li>
-  <li>social coordination (sync) mechanisms;</li>
-  <li>press (text publisher).</li>
+      <li>Dave Siever, Tom Collura, &quot;Chapter 3 - Audio–Visual Entrainment: Physiological Mechanisms and Clinical Outcomes&quot;
+          in <em>Rhythmic Stimulation Procedures in Neuromodulation</em>, Academic Press, 2017, <a
+              href="https://doi.org/10.1016/B978-0-12-803726-3.00003-1">doi:10.1016/B978-0-12-803726-3.00003-1</a></li>
+      <li>D.Corydon Hammond, &quot;Chapter One - Definitions, Standard of Careand Ethical Considerations&quot; in Clinical
+          Neurotherapy, Academic Press, 2014, <a
+              href="https://doi.org/10.1016/B978-0-12-396988-0.00001-5">doi:10.1016/B978-0-12-396988-0.00001-5</a></li>
+      <li>Pino, Olimpia, Roberta Crespi, and Giuliano Giucastro.&quot;L’influenza della mindfulness e del benessere
+          generale nel trattamento clinico dei fumatori di tabacco in un programma di disassuefazione: una valutazione a
+          breve e lungo termine.&quot; (2020): 849-870, <a
+              href="https://doi.org/10.3280/RIP2020-003004">doi:10.3280/RIP2020-003004</a>.</li>
+      <li>Pino, Olimpia, and Francesco La Ragione. &quot;A Brain Computer Interface for audio-visual entrainment in
+          emotional regulation: preliminary evidence of its effects.&quot; Online International Interdisciplinary
+          Journal(2016): 1-12.</li>
+      <li>Pino, Olimpia. &quot;Neuro-Upper, a Novel Technology for Audio-Visual Entrainment. A Randomized Controlled Trial
+          on Individuals with Anxiety and Depressive Disorders.&quot; BAOJ Med Nursing 3 (2017): 041, <a
+              href="http://dx.doi.org/10.24947/baojmn/3/2/141">doi:10.24947/baojmn/3/2/141</a>.</li>
+      <li>Tang, Hsin-Yi Jean, et al. &quot;Open-loop audio-visual stimulation (AVS): A useful tool for management of
+          insomnia?&quot; Applied psychophysiology and biofeedback 41.1 (2016): 39-46, <a
+              href="http://dx.doi.org/10.1007/s10484-015-9308-7">doi:10.1007/s10484-015-9308-7</a>.</li>
+      <li>Tang, Hsin-Yi Jean, et al. &quot;Open-loop Audio-Visual Stimulation for sleep promotion in older adults with
+          comorbid insomnia and osteoarthritis pain: results of a pilot randomized controlled trial.&quot; Sleep Medicine 82
+          (2021): 37-42, <a href="https://doi.org/10.1016/j.sleep.2021.03.025">doi:10.1016/j.sleep.2021.03.025</a>.</li>
+      <li>Schmid, Werner, et al. &quot;Brainwave entrainment to minimisesedative drug doses in paediatric surgery: a
+          randomised controlled trial.&quot; British Journal of Anaesthesia 125.3 (2020): 330-335, <a
+              href="https://doi.org/10.1016/j.bja.2020.05.050">doi:10.1016/j.bja.2020.05.050</a>.</li>
+      <li>Lagarrigue, Yannick, Céline Cappe, and Jessica Tallet.&quot;Regular rhythmic and audio-visual stimulations
+          enhance procedural learning of a perceptual-motor sequence in healthy adults: A pilot study.&quot; PloS one 16.11
+          (2021): e0259081, <a href="https://doi.org/10.1371/journal.pone.0259081">doi:10.1371/journal.pone.0259081</a>.
+      </li>
+      <li>Basu, Sandhya, and Bidisha Banerjee. &quot;Prospect of Brainwave Entrainment to Promote Well-Being in
+          Individuals: A Brief Review.&quot; Psychological Studies (2020): 1-11, <a
+              href="http://dx.doi.org/10.1007/s12646-020-00555-x">doi:10.1007/s12646-020-00555-x</a>.</li>
+      <li>Clements-Cortes, Amy. &quot;Sound stimulation in patients withA lzheimer’s disease.&quot; (2015).</li>
+      <li>Roberts, Brooke M et al. &quot;Entrainment enhances theta oscillations and improves episodic memory.&quot; Cognitive neuroscience vol. 9,3-4 (2018):181-193. <a
+              href="https://doi.org/10.1080/17588928.2018.1521386">doi:10.1080/17588928.2018.1521386</a></li>
+      <li>David S. Cantor and Emily Stevens, &quot;QEEG Correlates of Auditory-Visual Entrainment Treatment Efficacy of
+          Refractory Depression.&quot; Journal of Neurotherapy, (2009), <a
+              href="https://doi.org/10.1080/10874200902887130">doi:10.1080/10874200902887130</a>.</li>
+      <li>da Silva, Vernon Furtado et al. &quot;Stimulation by Light and Sound: Therapeutics Effects in Humans. Systematic
+          Review.&quot; Clinical practice and epidemiology in mental health : CP &amp; EMH vol. 11 150-4.(2015), <a
+              href="https://doi.org/10.2174/1745017901511010150">doi:10.2174/1745017901511010150</a></li>
+      <li>Zaccaro, Andrea et al. &quot;How Breath-Control Can Change Your Life:A Systematic Review on Psycho-Physiological
+          Correlates of Slow Breathing.&quot; Frontiers in human neuroscience vol. 12 353. 7 Sep. 2018, <a
+              href="https://doi.org/10.3389/fnhum.2018.00353">doi:10.3389/fnhum.2018.00353</a></li>
   </ul>
-  </p>
-
+<p>:::</p>
   `)
   $('#uconstruction')
     .css('color', 'red')
