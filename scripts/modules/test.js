@@ -2234,26 +2234,26 @@ e.welcome2 = () => {
   utils.stdDiv().html(`
   <h2>Greetings</h2>
 
-    <p>Welcome to Æterni Anima (AA), where innovation meets well-being through science and art. You can read more <a href="?about">about this initiative</a>, <span id="fund-us"></span>, or discover our projects:</p>
+  <p>Welcome to Æterni Anima (AA), where science and art converge to explore well-being. You can learn more <a href="?about">about this initiative</a>, <span id="fund-us"></span>, or explore our projects:</p>
 
-    <ul>
-        <li><strong><a href="https://audiovisualmedicine.github.io">Audiovisual Medicine</a>:</strong> A software promoting neuromodulation through breathing modifications and sound waves.</li>
-        <li><strong>Ouraquarium:</strong> A concept highlighting individuals' social networks. Share a message and receive personalized music to share with your contacts.</li>
-        <li><strong><a href="https://da1me.github.io/">Da1me</a>:</strong> A thorough textual analysis of hinarios used in the practice of Santo Daime.</li>
-        <li><strong><a href="https://github.com/ttm/music">Music</a>:</strong> A Python library for the synthesis of mathematically precise sounds.</li>
-        <li><strong>Hubs:</strong> A project for establishing cultural exchange hubs worldwide.</li>
-        <li><strong>QR:</strong> A system for tracking and documenting the transportation of daime outside Brazil.</li>
-    </ul>
+  <ul>
+    <li><strong><a href="?daimesm">Daime Science Manifesto</a>:</strong> Integrating scientific knowledge and spiritual wisdom within the Daime community.
+      <ul>
+        <li><strong><a href="https://audiovisualmedicine.github.io">Audiovisual Medicine</a>:</strong> Neuromodulation through breathing modifications and sound waves.</li>
+        <li><strong><a href="https://da1me.github.io/">Da1me</a>:</strong> Textual analysis of hinarios used in the practice of Santo Daime.</li>
+      <li><strong>QR:</strong> System for tracking and documenting the transportation of daime outside Brazil.</li>
+        <li><strong>Daimists' Wellness Monitoring:</strong> Tracking and analysis of daimists' wellness before and after the works.</li>
+      </ul>
+    </li>
+    <li><strong>Ouraquarium:</strong> Concept highlighting individuals' social networks. Share a message and receive personalized music to share with your contacts.</li>
+    <li><strong><a href="https://github.com/ttm/music">Music</a>:</strong> Python library for the synthesis of mathematically precise sounds.</li>
+    <li><strong>Hubs:</strong> Project for establishing cultural exchange hubs worldwide.</li>
+  </ul>
 
-    <p>Æterni Anima is also the home of the <strong>Daimist Science Manifesto</strong>. The Daimist community finds depth and elevation in the confluence of scientific literacy and spiritual wisdom. The rigor of scientific inquiry and the profundity of spiritual pursuits are mutually uplifting.</p>
+  <p>Explore these initiatives aimed at extending and enriching life, fostered for the benefit of every individual, group, and the Cosmos.</p>
 
-    <p>Rooted in the spiritual lineage of Padrinho Alfredo, whose teachings trace back to King Solomon, the Santo Daime community celebrates the symbiotic relationship between ancestral wisdom and contemporary inquiry. This foundation informs and inspires scientific pursuits.</p>
-    
-    <p>You can read the whole manifesto <a href="?daimesm">here</a>.</p>
-
-    <p>Explore these initiatives aimed at extending and enriching life and fostered for the benefit of every individual, group and the Cosmos.</p>
-
-    <p>Thank you for visiting.</p>
+  <p>Thank you for visiting.</p>
+  <p>:::</p>
   `)
   $('#loading').hide()
   const wand = window.wand
