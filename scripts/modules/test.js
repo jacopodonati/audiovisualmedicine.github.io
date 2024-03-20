@@ -2239,7 +2239,7 @@ e.welcome2 = () => {
   <ul>
     <li><strong><a href="?daimesm">Daime Science Manifesto</a>:</strong> Integrating scientific knowledge and spiritual wisdom within the Daime community.
       <ul>
-        <li><strong><a href="https://audiovisualmedicine.github.io">Audiovisual Medicine</a>:</strong> Neuromodulation through breathing modifications and sound waves.</li>
+        <li><strong><a href="https://audiovisualmedicine.github.io">Audiovisual Medicine</a>:</strong> Neuromodulation through breathing modifications and sound waves produced by <a href="?artifacts">audiovisual artifacts</a>.</li>
         <li><strong><a href="https://da1me.github.io/">Da1me</a>:</strong> Textual analysis of hinarios used in the practice of Santo Daime.</li>
       <li><strong>QR:</strong> System for tracking and documenting the transportation of daime outside Brazil.</li>
         <li><strong>Daimists' Wellness Monitoring:</strong> Tracking and analysis of daimists' wellness before and after the works.</li>
