@@ -2048,13 +2048,14 @@ e.sequences = () => {
   utils.stdDiv().html(`
   <h1>Audiovisual Sequences for health enhancement</h1>
 
-  You are <b>UNADVISED TO PERFORM THIS WEBSITE'S AUDIOVISUAL SESSIONS IF YOU HAVE A HISTORY OF EPILEPSY/SEISURES</b>.
-  Please refer to <a href="https://www.sciencedirect.com/science/article/pii/B9780123969880000015" targer="_blank"> this writing on nonpharmacological methods of influencing the brain</a>, and <a href="https://www.sciencedirect.com/science/article/pii/B9780128037263000031" target="_blank">this about audio-visual entrainment</a> (what we are doing here).
+  <p>Enjoy:
+  <ol>${arts}</ol>
+  </p>
 
   In case you want instructions:
   <ol>
     <li>
-      You may just click in one of the next links below and enjoy if you manage to start the sequence by yourself.
+      Click in one of the links above and enjoy if you manage to start the sequence by yourself.
     </li>
     <li>
       To start the sequence, you click on the "Open Controls" button on the top right, and then in the "... Start now! ..." that appears on the drop-down menu.
@@ -2070,9 +2071,10 @@ e.sequences = () => {
     </li>
   </ol>
   <br>
-  <p>Enjoy:
-  <ol>${arts}</ol>
-  </p>
+
+  <p>You are <b>UNADVISED TO PERFORM THIS WEBSITE'S AUDIOVISUAL SESSIONS IF YOU HAVE A HISTORY OF EPILEPSY/SEISURES</b>.
+  Please refer to <a href="https://www.sciencedirect.com/science/article/pii/B9780123969880000015" targer="_blank"> this writing on nonpharmacological methods of influencing the brain</a>, and <a href="https://www.sciencedirect.com/science/article/pii/B9780128037263000031" target="_blank">this about audio-visual entrainment</a> (what we are doing here).</p>
+
   :::
   `)
   $('#loading').hide()
@@ -2224,6 +2226,9 @@ e.guide = () => {
           those produced by the ocean waves help you to feel relaxed and focus on the
           session.</li>
   </ul>
+
+  <p>You are <b>UNADVISED TO PERFORM THIS WEBSITE'S AUDIOVISUAL SESSIONS IF YOU HAVE A HISTORY OF EPILEPSY/SEISURES</b>.
+  Please refer to <a href="https://www.sciencedirect.com/science/article/pii/B9780123969880000015" targer="_blank"> this writing on nonpharmacological methods of influencing the brain</a>, and <a href="https://www.sciencedirect.com/science/article/pii/B9780128037263000031" target="_blank">this about audio-visual entrainment</a> (what we are doing here).</p>
   <p>:::</p>
         </div>
   `)
@@ -2284,7 +2289,7 @@ e.welcome = () => {
   </p>
 
   <p>
-    You can use start right away <a href="?sequences">with our sequences</a>, each made for a specific use, or build your own. Read the <a href="?guide">Usage Guidelines</a> to understand how to maximize the beneficial effects of your session. Please <a href="" class="contactThing">contact us</a> to share how Audiovisual Medicine impacted your general wellbeing or for any other feedback.
+    You can use start right away <a href="?guide">with our sequences</a>, each made for a specific use, or build your own. Read the <a href="?guide">Usage Guidelines</a> to understand how to maximize the beneficial effects of your session. Please <a href="" class="contactThing">contact us</a> to share how Audiovisual Medicine impacted your general wellbeing or for any other feedback.
   </p>
 
   <p id="createme">
