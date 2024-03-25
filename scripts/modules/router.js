@@ -79,7 +79,7 @@ e.mkFooter = () => {
       'font-size': isMobile ? '3vw' : '1vw',
       float: 'left'
     }
-  }).html('<b>Regarding <span class="notranslate">Æterni</span></b>').appendTo(ft)
+  }).html(`<b>Regarding <span class="notranslate">${window.location.hostname === 'aeterni.github.io' ? 'Æterni' : 'AV Medicine'}</span></b>`).appendTo(ft)
   // wand.$('<div/>', { css: { display: 'inline-block', 'margin-left': '1%', float: 'left' } }).appendTo(ft).html(' | ')
   wand.$('<a/>', {
     // href: `?angel${lflag}`,

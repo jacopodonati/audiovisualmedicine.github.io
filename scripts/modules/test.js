@@ -2255,7 +2255,6 @@ e.welcome2 = () => {
   <p>Thank you for visiting.</p>
   <p>:::</p>
   `)
-  $('#loading').hide()
   const wand = window.wand
   const fundUs = document.getElementById('fund-us')
   wand.$('<a/>', {
@@ -2265,6 +2264,7 @@ e.welcome2 = () => {
     wand.modal.show()
     return false
   })
+  $('#loading').hide()
 }
 
 e.welcome = () => {
@@ -2272,22 +2272,19 @@ e.welcome = () => {
     return e.welcome2()
   }
   utils.stdDiv().html(`
+  <style>
+  .highlighted {
+    font-size: 108%;
+    color: darkred;
+  }
+</style>
   <h2 style="text-align:center">Audiovisual Medicine</h2>
   <p>
     This website offers evidence-based, science-backed, audiovisual techniques for mental health enhancement.
   </p>
 
   <p>
-    You can use start right away <a href="?sequences">with our sequences</a>, each made for a specific use, or build your own. Read the <a href="?guide">AVHealth Usage Guidelines</a> to better understand how to maximize the beneficial effects of your session. Please <a href="?contact">get in touch with the AVHEALTH team</a> to share how Audiovisual Medicine impacted your general wellbeing.
-  </p>
-
-  <b style="color:red">DISCLAIMER</b>
-  <p>
-    While Audiovisual Medicine is usually safe and provides great benefits, it may be dangerous if you have a history of epilepsy or seizures.
-  </p>
-
-  <p>
-    In any case, we advise you to talk about it with your doctor. <a href="?contact">Contact the AVHealth team</a> if you need more information. Please remember that the AVHealth initiative is a nonprofit and it’s not a company. The responsability lies with the user.
+    You can use start right away <a href="?sequences">with our sequences</a>, each made for a specific use, or build your own. Read the <a href="?guide">Usage Guidelines</a> to understand how to maximize the beneficial effects of your session. Please <a href="" class="contactThing">contact us</a> to share how Audiovisual Medicine impacted your general wellbeing or for any other feedback.
   </p>
 
   <p id="createme">
@@ -2296,11 +2293,12 @@ e.welcome = () => {
     </button>
   </p>
 
-  <p style="font-size:small">
-    By using Audiovisual medicine you agree to the following terms:
-    this is an Open Source and Non-Proffit initiative.
-    Therefore, the responsibility lies with you, the user.
+  <b style="color:red">DISCLAIMER</b>
+  <p>
+    Audiovisual Medicine is safe and provides great benefits. Even so, <span class="highlighted">it can be dangerous if you have a history of epilepsy or seizures</span>, a case in which we advise you to contact your doctor before harnessing its sessions. <a href="" class="contactThing">Contact us</a> if you need more information. Please remember that this is a Nonprofit and Open Source initiative, thus the responsability of its usage lies with the user. Be responsible.
   </p>
+
+  :::
   `)
   $('#createme')
     .css('text-align', 'center')
@@ -2313,6 +2311,11 @@ e.welcome = () => {
     .on('click', () => {
       window.location.href = '?doc'
     })
+  $('.contactThing').click(() => {
+    window.wand.modal.show()
+    return false
+  })
+
   $('#loading').hide()
 }
 
@@ -2479,7 +2482,7 @@ e.about = () => {
 
   <p>Audiovisual Medicine is a tool to improve your wellbeing through finely tuned audio and visual sequences.</p>
 
-  <p>The <strong>AVHealth</strong> initiative was born because we noticed that the compelling wellness benefits from
+  <p>This initiative was born because we noticed that the compelling wellness benefits from
       specific audiovisual stimulation techniques are poorly available to the general population.</p>
 
   <p>Our technology is backed by evidence-based scientific studies. If you want to learn more about it, you can read
