@@ -2240,13 +2240,13 @@ e.welcome2 = () => {
     <li><strong><a href="?daimesm">Daime Science Manifesto</a>:</strong> Integrating scientific knowledge and spiritual wisdom within the Santo Daime community.
       <ul>
         <li><strong><a href="https://audiovisualmedicine.github.io">Audiovisual Medicine</a>:</strong> Neuromodulation through breathing and sound waves produced by <a href="?artifacts">audiovisual artifacts</a>.</li>
-        <li><strong><a href="https://da1me.github.io/">Da1me</a>:</strong> Textual analyses of hymnals used in the practice of Santo Daime.</li>
+        <li><strong><a href="https://da1me.github.io/">Da1me</a>:</strong> Textual analyses of Santo Daime hymnals.</li>
       <li><strong>QR:</strong> System for tracking and documenting Daime batches.</li>
         <li><strong>Daimists' Wellness Monitoring:</strong> Tracking and analysis of daimists' health before and after the works.</li>
       </ul>
     </li>
-    <li><strong>OurAquarium:</strong> navigating and harnessing your own social networks. Make audiovisual art with it, for example: make personalized music to share with your contacts and spread custom messages.</li>
-    <li><strong><a href="https://github.com/ttm/music">Music</a>:</strong> Python library for the synthesis of mathematically precise sounds and musical structures.</li>
+    <li><strong>OurAquarium:</strong> navigating and harnessing your own social networks through audiovisual art, for example: make personalized music to share with your contacts and spread custom messages.</li>
+    <li><strong><a href="https://github.com/ttm/music">Music</a>:</strong> A Python library for the synthesis of mathematically precise sounds and musical structures.</li>
     <li><strong>Hubs:</strong> establishing cultural exchange hubs worldwide.</li>
   </ul>
 
@@ -2268,7 +2268,7 @@ e.welcome2 = () => {
 }
 
 e.welcome = () => {
-  if (window.location.hostname === 'aeterni.github.io') {
+  if (window.location.hostname !== 'aeterni.github.io') {
     return e.welcome2()
   }
   utils.stdDiv().html(`
