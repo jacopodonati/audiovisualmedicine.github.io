@@ -2234,20 +2234,20 @@ e.welcome2 = () => {
   utils.stdDiv().html(`
   <h2>Greetings</h2>
 
-  <p>Welcome to Æterni Anima (AA), where science and art converge to explore well-being. You can learn more <a href="?about">about this initiative</a>, <span id="fund-us"></span>, or explore our projects:</p>
+  <p>Welcome to Æterni Anima, where science and art converge to well-being. You can learn more <a href="?about">about this initiative</a>, <span id="fund-us"></span>, or explore our projects:</p>
 
   <ul>
-    <li><strong><a href="?daimesm">Daime Science Manifesto</a>:</strong> Integrating scientific knowledge and spiritual wisdom within the Daime community.
+    <li><strong><a href="?daimesm">Daime Science Manifesto</a>:</strong> Integrating scientific knowledge and spiritual wisdom within the Santo Daime community.
       <ul>
-        <li><strong><a href="https://audiovisualmedicine.github.io">Audiovisual Medicine</a>:</strong> Neuromodulation through breathing modifications and sound waves produced by <a href="?artifacts">audiovisual artifacts</a>.</li>
-        <li><strong><a href="https://da1me.github.io/">Da1me</a>:</strong> Textual analysis of hinarios used in the practice of Santo Daime.</li>
-      <li><strong>QR:</strong> System for tracking and documenting the transportation of daime outside Brazil.</li>
-        <li><strong>Daimists' Wellness Monitoring:</strong> Tracking and analysis of daimists' wellness before and after the works.</li>
+        <li><strong><a href="https://audiovisualmedicine.github.io">Audiovisual Medicine</a>:</strong> Neuromodulation through breathing and sound waves produced by <a href="?artifacts">audiovisual artifacts</a>.</li>
+        <li><strong><a href="https://da1me.github.io/">Da1me</a>:</strong> Textual analyses of hymnals used in the practice of Santo Daime.</li>
+      <li><strong>QR:</strong> System for tracking and documenting Daime batches.</li>
+        <li><strong>Daimists' Wellness Monitoring:</strong> Tracking and analysis of daimists' health before and after the works.</li>
       </ul>
     </li>
-    <li><strong>Ouraquarium:</strong> Concept highlighting individuals' social networks. Share a message and receive personalized music to share with your contacts.</li>
-    <li><strong><a href="https://github.com/ttm/music">Music</a>:</strong> Python library for the synthesis of mathematically precise sounds.</li>
-    <li><strong>Hubs:</strong> Project for establishing cultural exchange hubs worldwide.</li>
+    <li><strong>OurAquarium:</strong> navigating and harnessing your own social networks. Make audiovisual art with it, for example: make personalized music to share with your contacts and spread custom messages.</li>
+    <li><strong><a href="https://github.com/ttm/music">Music</a>:</strong> Python library for the synthesis of mathematically precise sounds and musical structures.</li>
+    <li><strong>Hubs:</strong> establishing cultural exchange hubs worldwide.</li>
   </ul>
 
   <p>Explore these initiatives aimed at extending and enriching life, fostered for the benefit of every individual, group, and the Cosmos.</p>
