@@ -134,8 +134,7 @@ e.permutations = {
   none: a => a
 }
 
-const groups = `
-<a href="https://www.facebook.com/groups/arcturianart" target="_blank">AAA</a>,
+const groups = `<a href="https://www.facebook.com/groups/arcturianart" target="_blank">AAA</a>,
 <a href="https://www.facebook.com/groups/mentaliz" target="_blank">MMM</a>,
 <a href="https://chat.whatsapp.com/BztLyvWDEgW3C1mjXZTTrP" target="_blank">WM</a>`
 
@@ -161,7 +160,7 @@ e.stdMsg2 = () => {
       <li><strong>Create and share multimedia content:</strong> Make audiovisual artifacts and distribute them to enrich the project's offerings and raise awareness.</li>
       <li><strong>Expand your network:</strong> Reach out to potential partners, collaborators, and like-minded individuals to strengthen connections and grow the community.</li>
       <li><strong>Promote engagement:</strong> Encourage active participation and involvement in existing groups (${groups}) or consider forming new ones.</li>
-      <li><strong>Support initiatives:</strong> Offer assistance, whether through financial contributions or other forms of support, to further the project's goals and initiatives.</li>
+      <li><strong>Support initiatives:</strong> Offer assistance, whether through financial contributions or other forms of support.</li>
       <li><strong>Stay connected and provide feedback:</strong> Maintain open lines of communication, provide constructive feedback, and offer suggestions for enhancing the project's effectiveness.</li>
   </ul>
   <p>Remember, even the smallest effort can make a big difference.</p>

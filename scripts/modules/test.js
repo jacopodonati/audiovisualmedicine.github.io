@@ -2268,7 +2268,7 @@ e.welcome2 = () => {
 }
 
 e.welcome = () => {
-  if (window.location.hostname !== 'aeterni.github.io') {
+  if (window.location.hostname === 'aeterni.github.io') {
     return e.welcome2()
   }
   utils.stdDiv().html(`
@@ -2462,13 +2462,8 @@ e.about2 = () => {
   }
 </style>
 <h2>About Æterni Anima</h2>
-<p><strong>Æterni Anima (AA)</strong> is an initiative</span> established in December 2020 with the goal of <span class="highlighted">enhancing longevity</span> and <span class="highlighted">advancing humanity</span> towards immortality. Our mission integrates science and art to foster <span class="highlighted"> holistic well-being</span>.</p>
-<p>Within AA, we engage in various endeavors:</p>
-<ul>
-  <li>Exploring the potential of <strong>Audiovisual Medicine</strong> to promote <span class="highlighted">mental clarity</span> and <span class="highlighted">holistic wellness</span> through breath modulation and sound waves.</li>
-  <li>Fostering <span class="highlighted">social connection</span> and <span class="highlighted">personal growth</span> through <strong>Ouraquarium</strong>, where individuals share messages and receive personalized music.</li>
-  <li>Through our <strong>publishing activity</strong>, we curate and disseminate <span class="highlighted">transformative narratives</span> that <span class="highlighted">amplify voices</span> in tune with our ethos.
-</ul>
+<p><strong>Æterni Anima</strong> is an initiative</span> established in December 2020 to promote <span class="highlighted">longevity</span> and <span class="highlighted">advance humanity towards immortality</span>. We integrate science, art and tecnology and foster <span class="highlighted">wellbeing</span> within various endeavors, from developing and providing <a href="https://audiovisualmedicine.github.io">Audiovisual Stimulation gadgets</a> to enabling one's social networks harnessing. Through our <strong>publishing activity</strong>, we curate and disseminate <span class="highlighted">transformative narratives</span>.</p>
+
 <p>We invite you to join us on this journey. Your participation is invaluable, and we look forward to sharing each step with you.</p>
 <p>:::</p>
   `)
