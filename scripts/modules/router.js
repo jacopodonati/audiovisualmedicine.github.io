@@ -53,7 +53,7 @@ e.mkFooter = () => {
   wand.modal = utils.mkModal()
   const isMobile = utils.mobileAndTabletCheck()
   function sWord () {
-    const wlist = ['support', 'back', 'encourage', 'strengthen', 'assist', 'boost']
+    const wlist = ['contattaci']
     return utils.chooseUnique(wlist, 1)
   }
   const ft = wand.$('<div/>', {

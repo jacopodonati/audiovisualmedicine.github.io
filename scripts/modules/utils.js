@@ -199,9 +199,26 @@ Luz e Paz ~
 `
   }
   return `
-<div id="main-content" class="wiki-content group">
-  <h1 id="Contact-nuova-Getintouch">Get in touch</h1><p>Some ways to help:</p><ul><li><p><strong>Get in touch to share ideas and ask questions:</strong> we’d love to know from you what works better and what can be improved.</p></li><li><p><strong>Share your sequences: </strong>we offer a few sequences to show how it works, but the potential of Audiovisual medicine is huge. If you’ve found a sequence you want to share, please do and we may credit you and put your sequence online for everyone to benefit.</p></li><li><p><strong>Do it together:</strong> Audiovisual Medicine works great when you’re alone, but works even better when done in group. Try it during your yoga or meditation group session, or in your study group.</p></li><li><p><strong>Share it:</strong> with someone or a group that could benefit from AM sessions. Share it online and among your friends and coworkers!</p></li><li><p><strong>Fund it:</strong> yourself or put us in contact with an organization that can fund AM.
-  <li><strong>Something else:</strong> We’re always looking for new means to spread the benefits of Audiovisual Medicine</p></li></ul>
+  <div id="main-content" class="wiki-content group">
+  <h1 id="Contact-nuova-Getintouch">Contattaci</h1>
+  <p>Sono molti i modi nei quali ci puoi aiutare::</p>
+  <ul>
+    <li>
+      <p><strong>Condividi le tue idee e fai domande:</strong> ci piacerebbe sapere quali parti di HarmoniCare secondo te funzionano meglio e cosa dovremmo migliorare.</p>
+    </li>
+    <li>
+      <p><strong>Condividi le tue sequenze:</strong> offriamo alcune sequenze per mostrare il funzionamento di HarmoniCare, ma il potenziale è immenso. Se hai realizzato una sequenza che vuoi condividere con noi, scrivici e la renderemo disponibile a tutti.</p>
+    </li>
+    <li>
+      <p><strong>Usalo in gruppo:</strong> HarmoniCare funziona molto bene in solitaria, ma ancora di più quando lo si utilizza in gruppo. Provalo durante una sessione di yoga o di meditazione di gruppo, oppure durante lo studio.</p>
+    </li>
+    <li>
+      <p><strong>Diffondilo:</strong> invialo a qualcuno o a un gruppo di persone che pensi potrebbero trarre beneficio da una sessione di HarmoniCare. Condividilo online tra amici e colleghi!</p>
+    </li>
+    <li>
+      <p><strong>Finanzialo:</strong> siamo sempre alla ricerca di sponsor, quindi scrivici se sei interessato a dare un contributo economico o se puoi metterci in contatto con una organizzazione in grado di farlo.</p>
+    </li>
+  </ul>
 </div>
 `
 }
@@ -226,7 +243,7 @@ e.mkModal = content => {
     .append($('<div/>', {
       class: 'modal-content',
       css: {
-        background: e.chooseUnique(['#eeeeff', '#eeffee', '#ffeeee'], 1)[0],
+        background: e.chooseUnique(['#F9E2B5'], 1)[0],
         height: window.innerHeight * 0.75,
         'overflow-y': 'auto'
       }
@@ -257,7 +274,7 @@ e.mkModal = content => {
       height: '10%'
     }
   }).appendTo('#mfeedback')
-  $('<button/>', { css: { margin: '1%' } }).html('Send / Enviar Feedback').on('click', () => {
+  $('<button/>', { css: { margin: '1%' } }).html('Invia feedback').on('click', () => {
     window.wand.transfer.fAll.ucosta(
       { _id: window.sessionL.insertedId },
       { feedback: descArea.val() }
