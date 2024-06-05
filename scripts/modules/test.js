@@ -2082,154 +2082,56 @@ e.sequences = () => {
 
 e.guide = () => {
   utils.stdDiv().html(`
-  <h1>How to use Audiovisual Medicine</h1>
+  <h1>Come usare HarmoniCare</h1>
 
-  <p>Audiovisual Medicine is a powerful tool to improve your health, and it’s
-      proved to work for many people.</p>
+  <p>HarmoniCare è uno strumento potente che ha già aiutato molte persone.</p>
   
-  <h2>The basics</h2>
-  
-  <p>Starting your journey is very simple. Just follow these steps:</p>
-  
-  <ol>
-  
-      <li>Pick one of our preconfigured sequences:</li>
-  
-      <ul>
-  
-          <li><a href="https://audiovisualmedicine.github.io/?.alpha9.15">Peaceful
-                  Pulse</a>: a simple and clean 9.15 Hz alpha wave to cultivate a sense of
-              peacefulness.</li>
-  
-          <li><a href="https://audiovisualmedicine.github.io/?.betas">Cognitive
-                  Crescendo</a>: a sequence of low, med, and high beta waves, often the best
-              choice for learning.</li>
-  
-          <li><a href="https://audiovisualmedicine.github.io/?.gamma40_">Genius
-                  Glow</a>: two simple 40 Hz gamma waves with periodic pan transitions and
-              symmetries in 5 and 3, used to enhance the creativity flow.</li>
-  
-          <li><a href="https://audiovisualmedicine.github.io/?.midLowAlpha2">Harmony
-                  Haven</a>: a 10 Hz alpha wave to promote a feeling of harmony.</li>
-  
-          <li><a href="https://audiovisualmedicine.github.io/?.40-1_sim1-..4__">Expanded
-                  Enlightenment</a>: a combo of gamma waves at 40 Hz and delta waves at 1Hz, with
-              symmetries, to foster deep meditation and altered states of consciousness.</li>
-      </ul>
-  
-      <li>Click “Open Controls” and then “Start now!”.</li>
-  
-      <li>You may use some headphones or let the sound play from a speaker.
-          Meanwhile, you can work, meditate, or do anything you like.</li>
-  
-      <li>Pay attention to the oscillatory pattern of the sound and try to mimic
-          it with your breath. If you’re looking at the screen, you’ll see a spinning
-          circle moving up and down, growing and shrinking with the breathing rhythm.
-          There are quite a few visual cues to sync your breathing to the sound, but it’s
-          ok to just close your eyes or do something else.</li>
-  
-  </ol>
-  
-  <h2>Improve your sessions</h2>
-  
-  <p>To maximize the benefits of using Audiovisual Medicine, there are some tips
-      you can follow:</p>
-  
-  <ol>
-      <li><strong>Read the safety information:</strong> before you begin your
-          journey with Audiovisual Medicine it’s important you read our safety notes.
-          Doing this will help you understand if it’s safe for you to use and it will
-          create a trusting space for you to explore all the benefits of your session.</li>
-  
-      <li><strong>Let your doctor know:</strong> Audiovisual Medicine can benefit
-          many health issues, such as pain control, TDHA, migraines, depression, anxiety,
-          insomnia, cognitive decline or impairment, bipolar or borderline disorders,
-          schizophrenia, psychoses and neuroses. If you suffer from any of these and you
-          use Audiovisual Medicine often or for long periods of time, please contact your
-          doctor and let them know.</li>
-  
-      <li><strong>The environment is important:</strong> a good session starts
-          with good preparation. For example, you should use Audiovisual Medicine with a
-          good pair of headphones and the volume should be set on a comfortable level.
-          Before you start your session, spend a few minutes just breathing.</li>
-  
-      <li><strong>Don’t overuse it:</strong> as with everything, it’s better to
-          start slow and gradually increase your use of Audiovisual Medicine. This will
-          allow your body and your brain to gently adapt.</li>
-  
-      <li><strong>Experiment!</strong> Audiovisual Medicine is safe for you to
-          experiment and find new benefits. You can experiment with the length of your
-          session and with the pattern used. Different combinations will generate
-          different effects.</li>
-  </ol>
-  
-  <h2>Advanced configurations</h2>
-  
-  <p>There are may ways in which you can customize your sessions. When you’re
-      creating a new artifact there are many options you can choose from. You can
-      usually learn the meaning and function of most parameters by hovering your
-      mouse on top of the input field. A tooltip will appear to explain what that
-      specific control does.</p>
-  
-  <p>Here we list a few things you can do.</p>
-  
-  <h3>Breathing</h3>
-  
-  <p>The most basic feature you can tweak is breathing, which is linked to
-      changes in mood and general well-being. To change the parameters, you can click
-      on “Open Controls” in the right top corner of your screen.</li>
-  
-  <p>You will usually transition from a faster breathing rhythm to a slower one.</p>
-  <ul>
-  
-      <li><strong>Final period</strong>: this is the most important
-          parameter, and it shows how many seconds it will take to do a single breath
-          once the transition has ended. The default value is 20 seconds, but if you’re
-          not used to breathing slowly, smokes or have a history of pulmonary diseases,
-          you can lower it to a level you’re comfortable with.</li>
-  
-      <li><strong>Initial period</strong>: here we set how fast you’ll
-          breath in the beginning of the transition. The default value is 10 seconds, but
-          as for the first one, you can change it to a value you’re more comfortable
-          with.</li>
-  
-      <li><strong>Transition</strong>: this value shows how long it will
-          take to shift from the breathing rhythm set in “Initial period” to the rhythm
-          set in “Final period”. The default is 600 seconds, or 10 minutes.</li>
-  
-      <li><strong>Duration</strong>: here we set how long the whole
-          artifact will be. The default is 900 seconds, or 15 minutes.</li>
-  </ul>
-  
-  <h3>Auditory Entrainment</h3>
-  
-  <p>You can add several elements to your artifact, such as Binaural, Symmetry,
-      Martigli, and Sample.</p>
-  <ul>
-      <li><strong>Binaural</strong>: binaural beats are auditory illusions
-          generated when two slightly different waves are heard separately by each ear.
-          For example, if we have a wave of 450 Hz and another one of 455 Hz, the result
-          will be a 5 Hz beat. For it to be binaural, you have to use headphones,
-          otherwise the sound will mix before it reaches your ears.</li>
-  
-      <li><strong>Symmetry</strong>: a symmetry uses musical notes to
-          convey a more aesthetic experience. Also, they’re argued to be essential to
-          cognition and will make your session more approachable if you have just begun
-          using Audiovisual Medicine.</li>
-  
-      <li><strong>Martigli</strong>: this oscillation is named after the
-          composer Otávio Martigli and it produces an audio cue to help you sync the
-          breath.</li>
-  
-      <li><strong>Sample</strong>: a sample is a pre-recorded sound that is
-          played in the background and helps you to be in the flow. Also, sounds such as
-          those produced by the ocean waves help you to feel relaxed and focus on the
-          session.</li>
-  </ul>
-
-  <p>You are <b>UNADVISED TO PERFORM THIS WEBSITE'S AUDIOVISUAL SESSIONS IF YOU HAVE A HISTORY OF EPILEPSY/SEISURES</b>.
-  Please refer to <a href="https://www.sciencedirect.com/science/article/pii/B9780123969880000015" targer="_blank"> this writing on nonpharmacological methods of influencing the brain</a>, and <a href="https://www.sciencedirect.com/science/article/pii/B9780128037263000031" target="_blank">this about audio-visual entrainment</a> (what we are doing here).</p>
-  <p>:::</p>
+  <h2>Le basi</h2>
+<p>Iniziare il tuo viaggio è molto semplice. Segui questi passaggi:</p>
+<ol>
+    <li>Scegli una delle nostre sequenze preconfigurate:</li>
+    <ul>
+      <li><a href="https://audiovisualmedicine.github.io/?.midLowAlpha2">Accordo Armonioso</a>: un'onda alpha a 10 Hz per promuovere un senso di armonia.</li>
+      <li><a href="https://audiovisualmedicine.github.io/?.alpha9.15">Pulsazione Pacifica</a>: un'onda alpha semplice e pulita di 9,15 Hz per coltivare un senso di tranquillità.</li>
+      <li><a href="https://audiovisualmedicine.github.io/?.gamma40_">Estro Eclettico</a>: due semplici onde gamma a 40 Hz con transizioni pan periodiche e simmetrie in 5 e 3, usate per migliorare il flusso creativo.</li>
+      <li><a href="https://audiovisualmedicine.github.io/?.40-1_sim1-..4__">Illuminazione Intensa</a>: una combinazione di onde gamma a 40 Hz e onde delta a 1 Hz, con simmetrie, per favorire la meditazione profonda e stati alterati di coscienza.</li>
+      <li><a href="https://audiovisualmedicine.github.io/?.betas">Crescita Cognitiva</a>: una sequenza di onde beta, che possono aiutare l'apprendimento.</li>
+    </ul>
+    <li>Clicca su "Apri Controlli" e poi su "Inizia ora!".</li>
+    <li>Puoi usare delle cuffie o lasciare che il suono venga riprodotto da un altoparlante. Nel frattempo, puoi lavorare, meditare o fare qualsiasi cosa ti piaccia.</li>
+    <li>Presta attenzione al modello oscillatorio del suono e cerca di imitarlo con il respiro. Se guardi lo schermo, vedrai un cerchio che ruota su e giù, crescendo e riducendosi con il ritmo della respirazione. Ci sono parecchi indizi visivi per sincronizzare la respirazione al suono, ma va bene anche chiudere gli occhi o fare qualcos'altro.</li>
+</ol>
+<h2>Migliora le tue sessioni</h2>
+<p>Per massimizzare i benefici dell'uso di HarmoniCare, ci sono alcuni consigli che puoi seguire:</p>
+<ol>
+    <li><strong>Leggi le informazioni di sicurezza:</strong> prima di iniziare il tuo viaggio con HarmoniCare è importante leggere le nostre note di sicurezza. Questo ti aiuterà a capire se è sicuro per te usare questa tecnica e creerà uno spazio di fiducia per esplorare tutti i benefici della tua sessione.</li>
+    <li><strong>Informa il tuo medico:</strong> HarmoniCare può giovare a molti problemi di salute, come il controllo del dolore, il TDHA, le emicranie, la depressione, l'ansia, l'insonnia, il declino o l'impairment cognitivo, i disturbi bipolari o borderline, la schizofrenia, le psicosi e le nevrosi. Se soffri di una di queste condizioni e usi HarmoniCare spesso o per lunghi periodi di tempo, contatta il tuo medico e informalo.</li>
+    <li><strong>L'ambiente è importante:</strong> una buona sessione inizia con una buona preparazione. Ad esempio, dovresti usare HarmoniCare con un buon paio di cuffie e il volume dovrebbe essere impostato a un livello confortevole. Prima di iniziare la tua sessione, trascorri qualche minuto solo respirando.</li>
+    <li><strong>Non esagerare:</strong> come per tutto, è meglio iniziare lentamente e aumentare gradualmente l'uso di HarmoniCare. Questo permetterà al tuo corpo e al tuo cervello di adattarsi dolcemente.</li>
+    <li><strong>Sperimenta!</strong> HarmoniCare è sicura per sperimentare e trovare nuovi benefici. Puoi sperimentare con la durata della tua sessione e con il modello utilizzato. Diverse combinazioni genereranno effetti diversi.</li>
+</ol>
+<h2>Configurazioni avanzate</h2>
+<p>Ci sono molti modi in cui puoi personalizzare le tue sessioni. Quando stai creando un nuovo artefatto, ci sono molte opzioni tra cui scegliere. Solitamente puoi imparare il significato e la funzione della maggior parte dei parametri passando il mouse sopra il campo di input. Apparirà un suggerimento che spiega cosa fa quel controllo specifico.</p>
+<p>Qui elenchiamo alcune cose che puoi fare.</p>
+<h3>Respirazione</h3>
+<p>La funzione più basilare che puoi modificare è la respirazione, che è legata ai cambiamenti dell'umore e del benessere generale. Per cambiare i parametri, puoi cliccare su "Apri Controlli" nell'angolo in alto a destra dello schermo.</p>
+<p>Solitamente passerai da un ritmo respiratorio più veloce a uno più lento.</p>
+<ul>
+    <li><strong>Periodo finale</strong>: questo è il parametro più importante e mostra quanti secondi ci vorranno per fare un singolo respiro una volta terminata la transizione. Il valore predefinito è 20 secondi, ma se non sei abituato a respirare lentamente, fumi o hai una storia di malattie polmonari, puoi abbassarlo a un livello con cui ti senti a tuo agio.</li>
+    <li><strong>Periodo iniziale</strong>: qui impostiamo la velocità con cui respirerai all'inizio della transizione. Il valore predefinito è 10 secondi, ma come per il primo, puoi cambiarlo a un valore con cui ti senti più a tuo agio.</li>
+    <li><strong>Transizione</strong>: questo valore indica quanto tempo ci vorrà per passare dal ritmo respiratorio impostato nel "Periodo iniziale" al ritmo impostato nel "Periodo finale". Il valore predefinito è 600 secondi, ovvero 10 minuti.</li>
+    <li><strong>Durata</strong>: qui impostiamo quanto durerà l'intero artefatto. Il valore predefinito è 900 secondi, ovvero 15 minuti.</li>
+    <li><strong>Proporzione</strong>: questo controllo ci permette di impostare la proporzione tra inspirazione ed espirazione. Il valore predefinito è 0,5.</li>
+</ul>
+<h3>Sincronizzazione Auditiva</h3>
+<p>Per personalizzare ulteriormente la tua esperienza, <a href="/?doc" target="_blank">puoi utilizzare il pannello di creazione</a>. Puoi aggiungere diversi elementi al tuo artefatto, come Binaurali, Simmetria, Martigli e Campioni.</p>
+<ul>
+    <li><strong>Binaurali</strong>: i battiti binaurali sono illusioni uditive generate quando due onde leggermente diverse sono ascoltate separatamente da ciascun orecchio. Ad esempio, se abbiamo un'onda di 450 Hz e un'altra di 455 Hz, il risultato sarà un battito di 5 Hz. Per essere binaurale, devi usare le cuffie, altrimenti il suono si mescolerà prima di raggiungere le tue orecchie.</li>
+    <li><strong>Simmetria</strong>: una simmetria usa note musicali per trasmettere un'esperienza più estetica. Inoltre, si dice che siano essenziali per la cognizione e renderanno la tua sessione più accessibile se hai appena iniziato a usare HarmoniCare.</li>
+    <li><strong>Martigli</strong>: questa oscillazione prende il nome dal compositore Otávio Martigli e produce un segnale audio per aiutarti a sincronizzare il respiro.</li>
+    <li><strong>Campione</strong>: un campione è un suono pre-registrato che viene riprodotto in sottofondo e ti aiuta a essere nel flusso. Inoltre, suoni come quelli prodotti dalle onde dell'oceano ti aiutano a sentirti rilassato e a concentrarti sulla sessione.</li>
+</ul>
+<p><b>È SCONSIGLIATO EFFETTUARE LE SESSIONI AUDIOVISIVE DI QUESTO SITO SE SI HA UNA STORIA DI EPILESSIA/CONVULSIONI</b>. Si prega di fare riferimento a <a href="https://www.sciencedirect.com/science/article/pii/B9780123969880000015" target="_blank">questo scritto sui metodi non farmacologici di influenzare il cervello</a> e <a href="https://www.sciencedirect.com/science/article/pii/B9780128037263000031" target="_blank">questo sulla sincronizzazione audio-visiva</a>.</p>
         </div>
   `)
   $('#loading').hide()
