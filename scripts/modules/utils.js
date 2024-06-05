@@ -36,7 +36,7 @@ e.gridDivider = (r, g, b, grid, sec, after, count) => {
   // }
 }
 
-e.stdDiv = () => e.centerDiv(undefined, undefined, e.chooseUnique(['#eeeeff', '#eeffee', '#ffeeee'], 1)[0], 3, 2)
+e.stdDiv = () => e.centerDiv(undefined, undefined, e.chooseUnique(['#BDDFE3'], 1)[0], 3, 2)
 
 e.centerDiv = (width, container, color, margin, padding) => {
   return $('<div/>', {

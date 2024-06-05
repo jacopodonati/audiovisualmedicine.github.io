@@ -1,221 +1,242 @@
 <html>
-  <head>
-    <title class="notranslate">&#x00C6;terni Anima</title>
-    <link id="favicon" rel="shortcut icon" type="image/png" href="assets/fav5.png" />
 
-    <meta property="og:image:secure_url" content="https://aeterni.github.io/assets/imgs/coil2.jpeg" />
-    <meta property="og:image:secure_url" content="https://aeterni.github.io/assets/imgs/sine.jpeg" />
-    <meta property="og:image:secure_url" content="https://aeterni.github.io/assets/imgs/coil.jpeg" />
-    <meta property="og:image:secure_url" content="https://aeterni.github.io/assets/imgs/blank.jpeg" />
+<head>
+  <title class="notranslate">HarmoniCare</title>
+  <link id="favicon" rel="shortcut icon" type="image/png" href="assets/fav5.png" />
 
-    <meta property="og:image" content="https://aeterni.github.io/assets/imgs/coil2.jpeg" />
-    <meta property="og:image" content="https://aeterni.github.io/assets/imgs/sine.jpeg" />
-    <meta property="og:image" content="https://aeterni.github.io/assets/imgs/coil.jpeg" />
-    <meta property="og:image" content="https://aeterni.github.io/assets/imgs/blank.jpeg" />
-  </head>
-<body style="margin:0;font-family:Helvetica, arial">
-    <div id="loading"><br/><br/><div style="padding-top:30%">LOADING...</div></div>
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  // new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,pt,de,zh-CN,ko,it,ja,ru,fr,es', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL }, 'google_translate_element');
-  new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-}
-</script>
+  <meta property="og:image:secure_url" content="https://aeterni.github.io/assets/imgs/coil2.jpeg" />
+  <meta property="og:image:secure_url" content="https://aeterni.github.io/assets/imgs/sine.jpeg" />
+  <meta property="og:image:secure_url" content="https://aeterni.github.io/assets/imgs/coil.jpeg" />
+  <meta property="og:image:secure_url" content="https://aeterni.github.io/assets/imgs/blank.jpeg" />
+
+  <meta property="og:image" content="https://aeterni.github.io/assets/imgs/coil2.jpeg" />
+  <meta property="og:image" content="https://aeterni.github.io/assets/imgs/sine.jpeg" />
+  <meta property="og:image" content="https://aeterni.github.io/assets/imgs/coil.jpeg" />
+  <meta property="og:image" content="https://aeterni.github.io/assets/imgs/blank.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
+</head>
+
+<body style="background-color:#7BBCC5;color:#16453F;margin:0;font-family: 'Readex Pro', Helvetica, arial">
+  <div id="loading"><br /><br />
+    <div style="padding-top:30%">In caricamento...</div>
+  </div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      // new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,pt,de,zh-CN,ko,it,ja,ru,fr,es', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL }, 'google_translate_element');
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
   <script type="module" src="scripts/bundle.js"></script>
   <input id="file-input" type="file" name="name" style="display: none;" />
 
 </body>
 <style type="text/css">
-#loading {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(192, 192, 192, 0.5);
-  background-image: url(assets/loading.gif);
-  background-repeat: no-repeat;
-  background-position: center;
-  text-align: center;
-  font-size: 24px;
-}
+  a {
+    color: #2e63f4;
+  }
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  /* height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+  #loading {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    /* background-color: rgba(192, 192, 192, 0.5); */
+    background-image: url(assets/loading.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    font-size: 24px;
+  }
 
-/* Modal Content */
-.modal-content {
-  background-color: #dedede;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  border-radius: 5%;
-}
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    /* height: 100%; /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+  }
 
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+  /* Modal Content */
+  .modal-content {
+    background-color: #dedede;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 5%;
+  }
 
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
 
-/* Translate */
-#google_translate_element{
-  display: none;
-}
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
-.skiptranslate{
-  display: none;
-}
+  /* Translate */
+  #google_translate_element {
+    display: none;
+  }
 
-body{
-  top: 0!important;
-}
+  .skiptranslate {
+    display: none;
+  }
 
-/* span {
+  body {
+    top: 0 !important;
+  }
+
+  /* span {
   width: 50%;
 } */
 
 
-/* On / Off switch */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 90px;
-  height: 34px;
-}
+  /* On / Off switch */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 34px;
+  }
 
-.switch input {display:none;}
+  .switch input {
+    display: none;
+  }
 
-.slideraa {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #aaaa09;
-  -webkit-transition: .4s;
-  transition: .4s;
-   border-radius: 34px;
-}
+  .slideraa {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #aaaa09;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+  }
 
-.slideraa:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-  border-radius: 50%;
-}
+  .slideraa:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+  }
 
-input:checked + .slideraa {
-  background-color: #2ab934;
-}
+  input:checked+.slideraa {
+    background-color: #2ab934;
+  }
 
-input:focus + .slideraa {
-  box-shadow: 0 0 1px #2196F3;
-}
+  input:focus+.slideraa {
+    box-shadow: 0 0 1px #2196F3;
+  }
 
-input:checked + .slideraa:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(55px);
-}
+  input:checked+.slideraa:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(55px);
+  }
 
-/*------ ADDED CSS ---------*/
-.slideraa:after
-{
- content:'OFF';
- color: white;
- display: block;
- position: absolute;
- transform: translate(-50%,-50%);
- top: 50%;
- left: 50%;
- font-size: 10px;
- font-family: Verdana, sans-serif;
-}
+  /*------ ADDED CSS ---------*/
+  .slideraa:after {
+    content: 'OFF';
+    color: white;
+    display: block;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-size: 10px;
+    font-family: Verdana, sans-serif;
+  }
 
-input:checked + .slideraa:after
-{
-  content:'ON';
-}
+  input:checked+.slideraa:after {
+    content: 'ON';
+  }
 
-/*--------- END --------*/
+  /*--------- END --------*/
 
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-}
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
 
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: rgb(0,0,0,0.5);
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  top: 150%;
-  left: 50%;
-  margin-left: -60px;
-  font-size: 150%;
-  transition: opacity 0.8s;
-}
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    left: 50%;
+    margin-left: -60px;
+    font-size: 150%;
+    transition: opacity 0.8s;
+  }
 
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent black transparent;
-}
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+  }
 
-.tooltip.focus, .tooltip:focus {
+  .tooltip.focus,
+  .tooltip:focus {
     outline: 0;
-    box-shadow: none!important;
-}
+    box-shadow: none !important;
+  }
 
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
 
-.tooltip .tooltiptext:hover {
-  visibility: hidden;
-}
+  .tooltip .tooltiptext:hover {
+    visibility: hidden;
+  }
 </style>
+
 </html>
