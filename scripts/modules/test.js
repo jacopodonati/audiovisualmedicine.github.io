@@ -2185,27 +2185,24 @@ e.welcome = () => {
     color: darkred;
   }
 </style>
-  <h2 style="text-align:center">Audiovisual Medicine</h2>
+  <h2 style="text-align:center;font-size: 4rem;font-weight: 400;letter-spacing: 0.1rem;color: ffeeee;text-shadow: 0px 4px 2px #174147a3;">HarmoniCare</h2>
+  <p>Questo sito offre una soluzione audio-visiva e scientificamente provata per migliorare la tua salute mentale.</p>
+
+  <p>Puoi iniziare subito la tua sessione scegliendo una delle sequenze elencate qui sotto. Per massimizzare i benefici che puoi ricavare sa questa esperienza, ti consigliamo di <a href="?guide">leggere le Linee Guida</a>.</p>
+  <p>Se vuoi lasciarci un feedback o condividere con noi la tua esperienza, <a href="" class="contactThing">non esitare a contattarci</a>.</p>
+
+  <h3>Scegli la tua sessione</h3>
+  <ul>
+      <li><a href="https://audiovisualmedicine.github.io/?.midLowAlpha2">Accordo Armonioso</a>: un'onda per promuovere un senso di armonia.</li>
+      <li><a href="https://audiovisualmedicine.github.io/?.alpha9.15">Pulsazione Pacifica</a>: una sequenza coltivare un senso di tranquillità.</li>
+      <li><a href="https://audiovisualmedicine.github.io/?.gamma40_">Estro Eclettico</a>: due semplici onde per migliorare il flusso creativo.</li>
+      <li><a href="https://audiovisualmedicine.github.io/?.40-1_sim1-..4__">Illuminazione Intensa</a>: una combinazione di onde e simmetrie per la meditazione profonda.</li>
+      <li><a href="https://audiovisualmedicine.github.io/?.betas">Crescita Cognitiva</a>: una sequenza per aiutare l'apprendimento.</li>
+    </ul>
+
+  <b style="color:red">AVVERTENZE</b>
   <p>
-    This website offers evidence-based, science-backed, audiovisual techniques for mental health enhancement.
-  </p>
-
-  <p>
-    You can use start right away <a href="?guide">with our sequences</a>, each made for a specific use, or build your own. Read the <a href="?guide">Usage Guidelines</a> to understand how to maximize the beneficial effects of your session. Please <a href="" class="contactThing">contact us</a> to share how Audiovisual Medicine impacted your general wellbeing or for any other feedback.
-  </p>
-
-  <p id="createme">
-    <button id="createbutton">
-      Create Your Audiovisual Artifacts
-    </button>
-  </p>
-
-  <b style="color:red">DISCLAIMER</b>
-  <p>
-    Audiovisual Medicine is safe and provides great benefits. Even so, <span class="highlighted">it can be dangerous if you have a history of epilepsy or seizures</span>, a case in which we advise you to contact your doctor before harnessing its sessions. <a href="" class="contactThing">Contact us</a> if you need more information. Please remember that this is a Nonprofit and Open Source initiative, thus the responsability of its usage lies with the user. Be responsible.
-  </p>
-
-  :::
+  HarmoniCare è sicuro e offre grandi benefici. Anche così, <span class="highlighted">può essere pericoloso se si ha una storia di epilessia o convulsioni</span>, in tal caso ti consigliamo di contattare il tuo medico prima di iniziare la sessione. <a href="" class="contactThing">Contattaci</a> se hai bisogno di ulteriori informazioni. Ricorda che questa è un'iniziativa noprofit e open source, quindi la responsabilità del suo utilizzo ricade sull'utente. Usa HarmoniCare in maniera responsabile.</p>
   `)
   $('#createme')
     .css('text-align', 'center')
