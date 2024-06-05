@@ -79,7 +79,7 @@ e.mkFooter = () => {
       'font-size': isMobile ? '3vw' : '1vw',
       float: 'left'
     }
-  }).html(`<b>Regarding <span class="notranslate">${window.location.hostname === 'aeterni.github.io' ? 'Æterni' : 'AV Medicine'}</span></b>`).appendTo(ft)
+  }).html(`Più informazioni su <span class="notranslate">${window.location.hostname === 'aeterni.github.io' ? 'Æterni' : 'HarmoniCare'}</span></b>`).appendTo(ft)
   // wand.$('<div/>', { css: { display: 'inline-block', 'margin-left': '1%', float: 'left' } }).appendTo(ft).html(' | ')
   wand.$('<a/>', {
     // href: `?angel${lflag}`,
@@ -93,7 +93,7 @@ e.mkFooter = () => {
       'font-size': isMobile ? '3vw' : '1vw',
       float: 'left'
     }
-  }).html(`<b>${sWord()} this initiative</b>`).appendTo(ft).click(() => {
+  }).html(`${sWord()}`).appendTo(ft).click(() => {
     wand.modal.show()
     return false
   })

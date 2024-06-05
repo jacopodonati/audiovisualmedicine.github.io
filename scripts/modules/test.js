@@ -2483,15 +2483,13 @@ e.about = () => {
     return e.about2()
   }
   utils.stdDiv().html(`
-  <h2>About</h2>
+  <h2>Più informazioni su HarmoniCare</h2>
 
-  <p>Audiovisual Medicine is a tool to improve your wellbeing through finely tuned audio and visual sequences.</p>
+  <p>HarmoniCare è uno strumento che vi aiuta a migliorare il vostro benessere attraverso alcune sequenze audio-visive realizzate con grande precisione.</p>
 
-  <p>This initiative was born because we noticed that the compelling wellness benefits from
-      specific audiovisual stimulation techniques are poorly available to the general population.</p>
+  <p>Questo progetto è nato quando abbiamo notato che la maggior parte della popolazione non aveva accesso ai benefici prodotti da queste tecniche di stimolazione audio-visiva.</p>
 
-  <p>Our technology is backed by evidence-based scientific studies. If you want to learn more about it, you can read
-      the following papers:</p>
+  <p>La nostra tecnologia è fondata su studi scientifici. Se vuoi saperne di più, puoi leggere questi articoli:</p>
 
   <ul>
       <li>Dave Siever, Tom Collura, &quot;Chapter 3 - Audio–Visual Entrainment: Physiological Mechanisms and Clinical Outcomes&quot;
@@ -2539,7 +2537,6 @@ e.about = () => {
           Correlates of Slow Breathing.&quot; Frontiers in human neuroscience vol. 12 353. 7 Sep. 2018, <a
               href="https://doi.org/10.3389/fnhum.2018.00353">doi:10.3389/fnhum.2018.00353</a></li>
   </ul>
-<p>:::</p>
   `)
   $('#uconstruction')
     .css('color', 'red')
