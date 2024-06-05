@@ -2091,11 +2091,11 @@ e.guide = () => {
 <ol>
     <li>Scegli una delle nostre sequenze preconfigurate:</li>
     <ul>
-      <li><a href="https://audiovisualmedicine.github.io/?.midLowAlpha2">Accordo Armonioso</a>: un'onda alpha a 10 Hz per promuovere un senso di armonia.</li>
-      <li><a href="https://audiovisualmedicine.github.io/?.alpha9.15">Pulsazione Pacifica</a>: un'onda alpha semplice e pulita di 9,15 Hz per coltivare un senso di tranquillità.</li>
-      <li><a href="https://audiovisualmedicine.github.io/?.gamma40_">Estro Eclettico</a>: due semplici onde gamma a 40 Hz con transizioni pan periodiche e simmetrie in 5 e 3, usate per migliorare il flusso creativo.</li>
-      <li><a href="https://audiovisualmedicine.github.io/?.40-1_sim1-..4__">Illuminazione Intensa</a>: una combinazione di onde gamma a 40 Hz e onde delta a 1 Hz, con simmetrie, per favorire la meditazione profonda e stati alterati di coscienza.</li>
-      <li><a href="https://audiovisualmedicine.github.io/?.betas">Crescita Cognitiva</a>: una sequenza di onde beta, che possono aiutare l'apprendimento.</li>
+      <li><a href="/?.midLowAlpha2">Accordo Armonioso</a>: un'onda alpha a 10 Hz per promuovere un senso di armonia.</li>
+      <li><a href="/?.alpha9.15">Pulsazione Pacifica</a>: un'onda alpha semplice e pulita di 9,15 Hz per coltivare un senso di tranquillità.</li>
+      <li><a href="/?.gamma40_">Estro Eclettico</a>: due semplici onde gamma a 40 Hz con transizioni pan periodiche e simmetrie in 5 e 3, usate per migliorare il flusso creativo.</li>
+      <li><a href="/?.40-1_sim1-..4__">Illuminazione Intensa</a>: una combinazione di onde gamma a 40 Hz e onde delta a 1 Hz, con simmetrie, per favorire la meditazione profonda e stati alterati di coscienza.</li>
+      <li><a href="/?.betas">Crescita Cognitiva</a>: una sequenza di onde beta, che possono aiutare l'apprendimento.</li>
     </ul>
     <li>Clicca su "Apri Controlli" e poi su "Inizia ora!".</li>
     <li>Puoi usare delle cuffie o lasciare che il suono venga riprodotto da un altoparlante. Nel frattempo, puoi lavorare, meditare o fare qualsiasi cosa ti piaccia.</li>
@@ -2193,11 +2193,11 @@ e.welcome = () => {
 
   <h3>Scegli la tua sessione</h3>
   <ul>
-      <li><a href="https://audiovisualmedicine.github.io/?.midLowAlpha2">Accordo Armonioso</a>: un'onda per promuovere un senso di armonia.</li>
-      <li><a href="https://audiovisualmedicine.github.io/?.alpha9.15">Pulsazione Pacifica</a>: una sequenza coltivare un senso di tranquillità.</li>
-      <li><a href="https://audiovisualmedicine.github.io/?.gamma40_">Estro Eclettico</a>: due semplici onde per migliorare il flusso creativo.</li>
-      <li><a href="https://audiovisualmedicine.github.io/?.40-1_sim1-..4__">Illuminazione Intensa</a>: una combinazione di onde e simmetrie per la meditazione profonda.</li>
-      <li><a href="https://audiovisualmedicine.github.io/?.betas">Crescita Cognitiva</a>: una sequenza per aiutare l'apprendimento.</li>
+      <li><a href="/?.midLowAlpha2">Accordo Armonioso</a>: un'onda per promuovere un senso di armonia.</li>
+      <li><a href="/?.alpha9.15">Pulsazione Pacifica</a>: una sequenza coltivare un senso di tranquillità.</li>
+      <li><a href="/?.gamma40_">Estro Eclettico</a>: due semplici onde per migliorare il flusso creativo.</li>
+      <li><a href="/?.40-1_sim1-..4__">Illuminazione Intensa</a>: una combinazione di onde e simmetrie per la meditazione profonda.</li>
+      <li><a href="/?.betas">Crescita Cognitiva</a>: una sequenza per aiutare l'apprendimento.</li>
     </ul>
 
   <b style="color:red">AVVERTENZE</b>
