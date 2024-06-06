@@ -123,8 +123,8 @@
   .switch {
     position: relative;
     display: inline-block;
-    width: 90px;
-    height: 34px;
+    width: 10rem;
+    height: 4rem;
   }
 
   .switch input {
@@ -138,13 +138,14 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #aaaa09;
+    background-color: #D98996;
     -webkit-transition: .4s;
+    font-size: 2.4rem;
     transition: .4s;
-    border-radius: 34px;
+    border-radius: .4rem;
   }
 
-  .slideraa:before {
+  /* .slideraa:before {
     position: absolute;
     content: "";
     height: 26px;
@@ -155,7 +156,7 @@
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 50%;
-  }
+  } */
 
   input:checked+.slideraa {
     background-color: #2ab934;
@@ -173,15 +174,14 @@
 
   /*------ ADDED CSS ---------*/
   .slideraa:after {
-    content: 'OFF';
+    content: 'Avvia';
     color: white;
     display: block;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    font-size: 10px;
-    font-family: Verdana, sans-serif;
+    padding: 1rem;
   }
 
   input:checked+.slideraa:after {
@@ -236,6 +236,19 @@
 
   .tooltip .tooltiptext:hover {
     visibility: hidden;
+  }
+
+  .dg.main {
+    background-color: lime !important;
+  }
+
+  .dg .cr.function {
+    display: none;
+  }
+  .dg.main .close-button.close-bottom {
+    font-size: 1rem;
+    padding: .4rem 1rem;
+    background-color: black !important;
   }
 </style>
 

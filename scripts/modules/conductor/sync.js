@@ -465,7 +465,7 @@ module.exports.Sync = class {
         open = !open
       })
     }
-    $('.dg').css('font-size', '24px')
+    $('.dg').css('font-size', '1rem')
     // $('.close-button').css('background-color', '#777777')
     $('.close-button')
       .css('background-color', 'rgba(0,0,0,0)')

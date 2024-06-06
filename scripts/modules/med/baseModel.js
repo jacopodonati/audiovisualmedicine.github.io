@@ -311,15 +311,17 @@ e.Med = class {
   setStage (s) {
     this.setTimeToStart(s)
     const isMobile = this.isMobile
-    const adiv = utils.centerDiv(undefined, $('#canvasDiv'), utils.chooseUnique(['#eeeeff', '#eeffee', '#ffeeee'], 1)[0])
+    const adiv = utils.centerDiv(undefined, $('#canvasDiv'), utils.chooseUnique(['#bddfe3'], 1)[0])
       .css('text-align', 'center')
       .css('padding', '0.4% 1%')
+      .css('border-top-left-radius', '0')
+      .css('border-top-right-radius', '0')
     const countdownMsg = $('<span/>', {
       css: {
         'font-size': isMobile ? '3vw' : '1vw'
       }
     // }).html(`countdown to start (at ${nextSync(true)}):`)
-    }).html('countdown to start:')
+    }).html('conto alla rovescia all\'inizio:')
     const countdownCount = $('<span/>', {
       class: 'notranslate',
       css: {
@@ -367,18 +369,18 @@ e.Med = class {
     // }, label).css('vertical-align', 'bottom')
     // $('<div/>', { css: { width: '2%', height: '2%', background: 'green' } }).appendTo(lpar).click(() => console.log('clicked jowww')) // todo: make a way to start the artifact at once, maybe in the dat.gui
 
-    const inhale = $('<span/>').html(' inhale ')
-    const exhale = $('<span/>').html(' exhale ')
+    const inhale = $('<span/>').html(' inspira ')
+    const exhale = $('<span/>').html(' espira ')
     $('<p/>', {
       css: {
         'font-size': isMobile ? '3vw' : '1vw'
       }
     }).appendTo(adiv)
-      .append($('<span/>').html('✡'))
+      .append($('<span/>').html('✧'))
       .append(inhale)
-      .append($('<span/>').html('✡'))
+      .append($('<span/>').html('✧'))
       .append(exhale)
-      .append($('<span/>').html('✡'))
+      .append($('<span/>').html('✧'))
     this.updateScheduling(s) // to update s.datetime
     const badTimer = setTimeout(() => {
       check.prop('disabled', true)
@@ -398,20 +400,20 @@ e.Med = class {
 
   setHelpMsg () {
     const canvas = $('#canvasDiv canvas')
-    const adiv = $('<div/>', { css: { width: canvas.width(), height: canvas.height(), 'background-color': '#bedfe2', 'text-align': 'center', 'justify-content': 'center', 'align-items': 'center', display: 'flex' }, id: 'hdiv' }).prependTo('#canvasDiv')
+    const adiv = $('<div/>', { css: { width: canvas.width(), height: canvas.height(), 'background-color': '#000000', 'text-align': 'center', 'justify-content': 'center', 'align-items': 'center', display: 'flex' }, id: 'hdiv' }).prependTo('#canvasDiv')
     const cdiv = $('<div/>', { class: 'p-5 m-5', css: { width: '60%', 'justify-content': 'center', 'align-items': 'center' } }).appendTo(adiv)
     $('#canvasDiv canvas').hide()
-    $('<h2/>', { id: 'hh', style: 'text-align:center;font-size: 4rem;font-weight: 400;letter-spacing: 0.1rem;color: ffeeee;text-shadow: 0px 4px 2px #174147a3;' })
+    $('<h2/>', { id: 'hh', style: 'text-align:center;font-size: 4rem;font-weight: 400;letter-spacing: 0.1rem;color: #ffffff;' })
       .appendTo(cdiv)
-      .text('Usage instructions')
-    const ul = $('<ul/>', { css: { 'text-align': 'left' } }).appendTo(
+      .text('Istruzioni')
+    const ul = $('<ul/>', { css: { 'text-align': 'left', color: '#ffffff' } }).appendTo(
       $('<p/>').appendTo(cdiv)
     )
     const instr = [
-      'Turn on using the switch below, and breath in sync with the cues.',
-      'You may try and meditate, or do something else completely, such as work or reading.',
-      'Often best results are obtained using headphones.',
-      'For advanced usage, please see <a href="?guide" target="_blank">this page</a>.'
+      'Avvia la sessione premendo il pulsante qui sotto, e sincronizza la respirazione con il movimento del disco o gli stimoli uditivi.',
+      'Puoi concentrarti sull\'animazione, ma puoi anche meditare, lavorare, leggere o studiare.',
+      'Pur non essendo obbligatorie, consigliamo l\'uso di cuffie per massimizzare i benefici.',
+      'Per un uso avanzato, <a href="?guide" target="_blank">leggi le Linee Guida</a>.'
     ]
     instr.forEach(i => {
       $('<li/>').html(i).appendTo(ul)
@@ -490,7 +492,7 @@ e.Med = class {
     t.Transport.schedule((time) => { // change message to ongoing
       started = true
       t.Draw.schedule(() => {
-        this.guiEls.countdownMsg.html('countdown to finish:')
+        this.guiEls.countdownMsg.html('conto alla rovescia al termine:')
         if (!window.sessionL) return
         window.wand.transfer.fAll.ucosta(
           { _id: window.sessionL.insertedId },
@@ -522,7 +524,7 @@ e.Med = class {
 
     window.onfocus = () => {
       if (started && !finished) {
-        this.guiEls.countdownMsg.html('countdown to finish:')
+        this.guiEls.countdownMsg.html('conto alla rovescia al termine:')
       } else if (finished) {
         this.guiEls.countdownMsg.html('session finished. Time elapsed:')
       }
@@ -535,7 +537,7 @@ e.Med = class {
   startGoodTimer2 (s) { // not being used!
     this.visuals.start()
     setTimeout(() => { // change message to ongoing
-      this.guiEls.countdownMsg.html('countdown to finish:')
+      this.guiEls.countdownMsg.html('conto alla rovescia al termine:')
     }, this.getDurationToStart(s))
 
     setTimeout(() => { // change message to finished
@@ -589,28 +591,28 @@ e.Med = class {
           if (v.mp0 === vv[mRef].mp0 && v.mp1 === vv[mRef].mp1) mVoices.push(i)
         }
       })
-      pset.add({ 'final period': vv[mRef].mp1 }, 'final period', 1, 60, 1).listen().onFinishChange(val => {
+      pset.add({ 'periodo finale': vv[mRef].mp1 }, 'periodo finale', 1, 60, 1).listen().onFinishChange(val => {
         mVoices.forEach(i => {
           vv[i].mp1 = val
           this.voices[i].nodes.mod.frequency.linearRampTo(1 / val, vv[i].md, '+' + this.d())
         })
       })
-      pset.add({ 'initial period': vv[mRef].mp0 }, 'initial period', 1, 60, 1).listen().onFinishChange(val => {
+      pset.add({ 'periodo iniziale': vv[mRef].mp0 }, 'periodo iniziale', 1, 60, 1).listen().onFinishChange(val => {
         mVoices.forEach(i => {
           this.voices[i].nodes.mod.frequency.value = 1 / val
         })
       })
-      pset.add({ transition: vv[mRef].md }, 'transition', 60, 60 * 30, 30).listen().onFinishChange(val => {
+      pset.add({ transizione: vv[mRef].md }, 'transizione', 60, 60 * 30, 30).listen().onFinishChange(val => {
         mVoices.forEach(i => {
           vv[i].md = val
           this.voices[i].nodes.mod.frequency.linearRampTo(1 / vv[i].mp1, val, '+' + this.d())
         })
       })
     }
-    this.dsli = pset.add({ duration: this.setting.header.d }, 'duration', 120, 60 * 60, 60).listen().onFinishChange(val => {
+    this.dsli = pset.add({ durata: this.setting.header.d }, 'durata', 120, 60 * 60, 60).listen().onFinishChange(val => {
       this.setting.header.d = val
     })
-    this.prop = pset.add({ proportion: 0.5 }, 'proportion', 0.1, 0.9, 0.05).listen().onFinishChange(val => {
+    this.prop = pset.add({ proporzione: 0.5 }, 'proporzione', 0.1, 0.9, 0.05).listen().onFinishChange(val => {
       this.prop_ = val
     })
     this.mplay = pset.add({
@@ -622,11 +624,11 @@ e.Med = class {
         this.setting.header.datetime = dt
         $('#startChecked').click()
       }
-    }, 'play').name('... Start now! ...')
+    }, 'play').name('Avvia la sessione')
     const color = '#496284'
     $('.function').css('background', color).css('border-left', color)
     this.tuneControls(true)
-    pset.__closeButton.innerText = 'Advanced'
+    pset.__closeButton.innerText = 'Configurazione avanzata'
   }
 
   volumeControl () {
@@ -676,7 +678,7 @@ e.Med = class {
       })
     })
     this.tuneControls()
-    gui.__closeButton.innerText = 'Advanced'
+    gui.__closeButton.innerText = 'Configurazione avanzata'
   }
 
   tuneControls (isSet) {
