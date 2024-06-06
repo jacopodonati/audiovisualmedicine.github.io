@@ -136,6 +136,7 @@ e.Med = class {
     this.visuals = this.setVisual(r.visSetting) // this changes between model2-3
     this.setControl()
     this.setStage(r.header)
+    this.setHelpMsg()
     $('#loading').hide()
   }
 
@@ -299,8 +300,12 @@ e.Med = class {
   }
 
   setTimeToStart (s) {
-    if ((s.onlyOnce === undefined || s.onlyOnce) && (this.getDurationToStart() > 50)) return
+    if ((s.onlyOnce === undefined || s.onlyOnce) && (this.getDurationToStart() > 50)) {
+      this.isOnlyOnce = true
+      return
+    }
     s.datetime = nextSync()
+    this.isOnlyOnce = false
   }
 
   setStage (s) {
@@ -314,16 +319,17 @@ e.Med = class {
         'font-size': isMobile ? '3vw' : '1vw'
       }
     // }).html(`countdown to start (at ${nextSync(true)}):`)
-    }).html(`starts at ${nextSync(true)}, countdown:`)
+    }).html('countdown to start:')
     const countdownCount = $('<span/>', {
       class: 'notranslate',
       css: {
         'font-size': isMobile ? '3vw' : '1vw'
       }
     }).html('--:--:--')
-    $('<p/>').appendTo(adiv)
+    $('<p/>', { id: 'cpar' }).appendTo(adiv)
       .append(countdownMsg)
       .append(countdownCount)
+      .css('opacity', this.isOnlyOnce ? 1 : 0)
     const lpar = $('<p/>').appendTo(adiv)
     const label = $('<label/>', {
       class: 'switch',
@@ -338,12 +344,21 @@ e.Med = class {
       id: 'startChecked'
     }).appendTo(label).change(() => {
       if (check.prop('checked')) {
+        $('#hdiv').hide()
+        $('#canvasDiv canvas').show()
+        if (!this.isOnlyOnce) {
+          window.wand.nouserfor = { noSleep, badCounter, badTimer }
+          const dt = new Date()
+          dt.setSeconds(dt.getSeconds() + 3)
+          this.setting.header.datetime = dt
+        }
         noSleep.enable()
         clearTimeout(badTimer)
         clearInterval(badCounter)
         check.prop('disabled', true)
         this.pset.destroy()
         this.startGoodTimer(s)
+        $('#cpar').css('opacity', 1)
       }
     })
     $('<div/>', { class: 'slideraa round' }).appendTo(label)
@@ -368,7 +383,7 @@ e.Med = class {
     const badTimer = setTimeout(() => {
       check.prop('disabled', true)
       $('.slideraa').css('background', '#cacaca')
-      countdownMsg.html('No late participants allowed. Time since session started:')
+      countdownMsg.html('Reload to use this artifact. Time since collective session started:')
       this.pset.destroy()
       countdownCount.html('')
       setTimeout(() => {
@@ -379,6 +394,28 @@ e.Med = class {
       countdownCount.html(' ' + utils.secsToTime(this.getDurationToStart(s) / 1000))
     }, 100)
     this.guiEls = { countdownMsg, countdownCount, label, inhale, exhale }
+  }
+
+  setHelpMsg () {
+    const canvas = $('#canvasDiv canvas')
+    const adiv = $('<div/>', { css: { width: canvas.width(), height: canvas.height(), 'background-color': '#bedfe2', 'text-align': 'center', 'justify-content': 'center', 'align-items': 'center', display: 'flex' }, id: 'hdiv' }).prependTo('#canvasDiv')
+    const cdiv = $('<div/>', { class: 'p-5 m-5', css: { width: '60%', 'justify-content': 'center', 'align-items': 'center' } }).appendTo(adiv)
+    $('#canvasDiv canvas').hide()
+    $('<h2/>', { id: 'hh', style: 'text-align:center;font-size: 4rem;font-weight: 400;letter-spacing: 0.1rem;color: ffeeee;text-shadow: 0px 4px 2px #174147a3;' })
+      .appendTo(cdiv)
+      .text('Usage instructions')
+    const ul = $('<ul/>', { css: { 'text-align': 'left' } }).appendTo(
+      $('<p/>').appendTo(cdiv)
+    )
+    const instr = [
+      'Turn on using the switch below, and breath in sync with the cues.',
+      'You may try and meditate, or do something else completely, such as work or reading.',
+      'Often best results are obtained using headphones.',
+      'For advanced usage, please see <a href="?guide" target="_blank">this page</a>.'
+    ]
+    instr.forEach(i => {
+      $('<li/>').html(i).appendTo(ul)
+    })
   }
 
   setPanner (s, synthL, synthR, mod) {
@@ -589,6 +626,7 @@ e.Med = class {
     const color = '#496284'
     $('.function').css('background', color).css('border-left', color)
     this.tuneControls(true)
+    pset.__closeButton.innerText = 'Advanced'
   }
 
   volumeControl () {
@@ -638,6 +676,7 @@ e.Med = class {
       })
     })
     this.tuneControls()
+    gui.__closeButton.innerText = 'Advanced'
   }
 
   tuneControls (isSet) {

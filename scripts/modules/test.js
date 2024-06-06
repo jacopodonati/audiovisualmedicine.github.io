@@ -2348,7 +2348,7 @@ e.daimesm = () => {
 
 <p>Rooted in the spiritual lineage of <strong>Padrinho Alfredo</strong>, whose teachings trace back to King Solomon, the Santo Daime community celebrates the symbiotic relationship between ancestral wisdom and contemporary inquiry. This foundation informs and inspires scientific pursuits.</p>
 
-<p>The primary objective of the<strong>DAIME Alliance for Interconnected Multidisciplinary Examination (DAIME)</strong> is to amplify the scope and caliber of daimist scientific contributions across all scientific disciplines. By facilitating an academic network, the Society enables rigorous, collaborative research that meets the highest standards of scientific output. One anticipated outcome is the emergence of seminal research at the intersection of science and spirituality, stemming from and nurtured by the society&#39;s communal focus.</p>
+<p>The primary objective of the <strong>DAIME Alliance for Interconnected Multidisciplinary Examination (DAIME)</strong> is to amplify the scope and caliber of daimist scientific contributions across all disciplines. By facilitating an academic network, the Society enables rigorous, collaborative research that meets the highest standards of scientific output. One anticipated outcome is the emergence of seminal research at the intersection of science and spirituality, stemming from and nurtured by the society&#39;s communal focus.</p>
 
 <p>To cultivate scholarly rendering, the DAIME should navigate paths for grants and cultivate collaborations with academic and industrial entities. This will secure the necessary financial and infrastructural <strong>resources</strong> for research activities.</p>
 
