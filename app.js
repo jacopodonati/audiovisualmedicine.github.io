@@ -1,6 +1,7 @@
 const http = require('http')
 const path = require('path')
 const fs = require('fs')
+const port = 8082
 http.createServer(function (req, res) {
   const url = 'http://localhost:8083' + req.url // this is ok because framework is to work without the server
   const filePath = new URL(url).pathname === '/' ? './index.html' : '.' + req.url
@@ -40,4 +41,5 @@ http.createServer(function (req, res) {
       res.end(content, 'utf-8')
     }
   })
-}).listen(8082)
+}).listen(port)
+console.log('listening in port: ', port)
