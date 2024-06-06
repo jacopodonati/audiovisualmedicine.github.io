@@ -77,7 +77,10 @@ e.mkFooter = () => {
       margin: 'auto',
       display: 'inline-block',
       'font-size': isMobile ? '3vw' : '1vw',
-      float: 'left'
+      float: 'left',
+      'background-color': '#bddfe3',
+      padding: '.4rem 1rem',
+      'border-radius': '.4rem'
     }
   }).html(`Più informazioni su <span class="notranslate">${window.location.hostname === 'aeterni.github.io' ? 'Æterni' : 'HarmoniCare'}</span></b>`).appendTo(ft)
   // wand.$('<div/>', { css: { display: 'inline-block', 'margin-left': '1%', float: 'left' } }).appendTo(ft).html(' | ')
@@ -91,7 +94,10 @@ e.mkFooter = () => {
       margin: 'auto',
       display: 'inline-block',
       'font-size': isMobile ? '3vw' : '1vw',
-      float: 'left'
+      float: 'left',
+      'background-color': '#bddfe3',
+      padding: '.4rem 1rem',
+      'border-radius': '.4rem'
     }
   }).html(`${sWord()}`).appendTo(ft).click(() => {
     wand.modal.show()
