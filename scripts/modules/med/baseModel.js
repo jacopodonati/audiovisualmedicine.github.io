@@ -626,7 +626,6 @@ e.Med = class {
     const color = '#496284'
     $('.function').css('background', color).css('border-left', color)
     this.tuneControls(true)
-    pset.__closeButton.innerText = 'Advanced'
   }
 
   volumeControl () {
@@ -676,7 +675,6 @@ e.Med = class {
       })
     })
     this.tuneControls()
-    gui.__closeButton.innerText = 'Advanced'
   }
 
   tuneControls (isSet) {

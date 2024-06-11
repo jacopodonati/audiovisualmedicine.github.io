@@ -2320,6 +2320,9 @@ e.welcome = () => {
     window.wand.modal.show()
     return false
   })
+  $('#llogin').click(() => {
+    console.log('click login')
+  })
 
   $('#loading').hide()
 }

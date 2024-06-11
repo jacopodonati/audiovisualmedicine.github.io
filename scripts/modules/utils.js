@@ -1,3 +1,4 @@
+/* global wand */
 const e = module.exports
 const $ = require('jquery')
 const monk = require('./monk')
@@ -42,7 +43,7 @@ e.centerDiv = (width, container, color, margin, padding) => {
   return $('<div/>', {
     css: {
       'background-color': color || '#c2F6c3',
-      margin: `${d(margin, 0)}% auto`,
+      margin: `0px auto ${d(margin, 0)}%`,
       padding: `${d(padding, 1)}%`,
       width: d(width, '50%'),
       'border-radius': '5%'
@@ -529,6 +530,194 @@ e.randScale2 = (bezier = false) => {
   s.bezier_ = bezier
   s.brewer_ = brewer
   return s
+}
+
+e.mkRegisterModal_ = () => {
+  loadScript('https://code.jquery.com/ui/1.13.3/jquery-ui.js').then(() => {
+    $.getJSON('assets/cityNamesIt.json', names => {
+      e.mkRegisterModal(names)
+    })
+  })
+}
+
+e.mkRegisterModal = names => {
+  window.mnames = names
+  const mcontent = $('<p/>', { id: 'mcontent2', width: '70%' })
+  const mfeedback = $('<div/>', { id: 'mfeedback2' })
+  $('<div/>', {
+    id: 'myRegisterModal',
+    class: 'modal',
+    role: 'dialog',
+    css: {
+      'overflow-y': 'initial !important'
+    },
+    show: {
+      effect: 'fade',
+      duration: 2000
+    },
+    hide: {
+      effect: 'fade',
+      duration: 2000
+    }
+  }).appendTo('body')
+    .append($('<div/>', {
+      class: 'modal-content',
+      css: {
+        background: e.chooseUnique(['#eeeeff', '#eeffee', '#ffeeee'], 1)[0],
+        height: window.innerHeight * 0.75,
+        'overflow-y': 'auto',
+        'text-align': '-webkit-center'
+      }
+    })
+      .append($('<span/>', { class: 'close', id: 'closeX' }).html('&times;')
+        .on('click', () => {
+          $('#myRegisterModal').hide().css('display', 'none')
+        })
+      )
+      .append(mcontent)
+      .append(mfeedback)
+    )
+  window.onclick = function (event) {
+    if (event.target === $('#myRegisterModal')[0]) {
+      $('#myRegisterModal').hide().css('display', 'none')
+    }
+  }
+  const youfs = $('<fieldset/>')
+    .appendTo(mcontent)
+    .append($('<legend/>').text('You'))
+
+  const emailfs = $('<fieldset/>')
+    .appendTo(mcontent)
+    .append($('<legend/>').text('Email'))
+
+  const pwfs = $('<fieldset/>')
+    .appendTo(mcontent)
+    .append($('<legend/>').text('Password'))
+
+  $('<input/>', { type: 'text', class: 'lwidget', id: 'rname', placeholder: 'name' })
+    .appendTo(youfs)
+  $('<br/>').appendTo(youfs)
+  $('<input/>', { type: 'text', class: 'lwidget', id: 'rlname', placeholder: 'surname', css: { margin: '1%' } })
+    .appendTo(youfs)
+  // $('<br/>').appendTo(youfs)
+  // $('<label/>', { for: 'rbd' }).text('Birthday: ')
+  //   .appendTo(youfs)
+  // $('<input/>', { type: 'date', class: 'lwidget', id: 'rbd', name: 'rbd', placeholder: 'birthday', css: { margin: '1%' } })
+  //   .appendTo(youfs)
+  $('<br/>').appendTo(youfs)
+
+  // $('<label/>', { for: 'rcity' }).text('Birthday: ')
+  $('<input/>', { type: 'text', class: 'lwidget', id: 'rcity', name: 'rcity', placeholder: 'city (optional)', css: { margin: '1%' } })
+    .appendTo(youfs)
+  // $('<br/>').appendTo(youfs)
+  $('#rcity').autocomplete({
+    // minLength: 3,
+    source: names
+  })
+
+  $('<input/>', { type: 'text', class: 'lwidget', id: 'ruemail', placeholder: 'address' })
+    .appendTo(emailfs)
+  $('<br/>')
+    .appendTo(emailfs)
+  $('<input/>', { type: 'text', class: 'lwidget', id: 'ruemail2', placeholder: 'repeat address', css: { margin: '1%' } })
+    .appendTo(emailfs)
+
+  $('<input/>', { type: 'password', class: 'lwidget', id: 'rupwd', placeholder: 'password' })
+    .appendTo(pwfs)
+  $('<br/>')
+    .appendTo(pwfs)
+  $('<input/>', { type: 'password', class: 'lwidget', id: 'rupwd2', placeholder: 'verify password', css: { margin: '1%' } })
+    .appendTo(pwfs)
+
+  const emsg = $('<p/>', { id: 'emsg' }).appendTo(mfeedback)
+  $('<button/>', { css: { margin: '1%' } }).html('Register').on('click', () => {
+    const name = $('#rname')
+    const name_ = name.val()
+    const lname = $('#rlname')
+    const lname_ = lname.val()
+    const city = $('#rcity')
+    const city_ = city.val()
+    const e1 = $('#ruemail')
+    const e2 = $('#ruemail2')
+    const p1 = $('#rupwd')
+    const p2 = $('#rupwd2')
+    const all = [e1, e2, p1, p2]
+    all.forEach(e => {
+      e.css('border', ' 1px solid #ccc')
+    })
+    const all_ = all.map(e => e.val())
+    if (!name_) {
+      emsg.text('your name is missing')
+      name.css('border', '2px solid red')
+    } else if (!lname_) {
+      emsg.text('your lastname is missing')
+      lname.css('border', '2px solid red')
+    } else if (!validateEmail(all_[0])) {
+      emsg.text('input a valid email address')
+      e1.css('border', '2px solid red')
+    } else if (all_[0] !== all_[1]) {
+      emsg.text('email addresses do not match')
+      e2.css('border', '2px solid red')
+    } else if (all_[2].length < 6) {
+      emsg.text('input a password of at least 6 characters')
+      p1.css('border', '2px solid red')
+    } else if (all_[2] !== all_[3]) {
+      emsg.text('passwords do not match')
+      p2.css('border', '2px solid red')
+    } else {
+      emsg.text('ok, writing registration')
+      const email = all_[0]
+      const pw = all_[2]
+      console.log('before search')
+      $('#loading').show()
+      wand.transfer.fAll.omark({ email }).then(r => {
+        console.log('after search')
+        if (r) {
+          emsg.text('email already in use')
+          $('#loading').hide()
+          return e1.css('border', '2px solid red')
+        }
+        console.log('before write')
+        wand.transfer.fAll.wmark({ email, pw, name: name_, lname: lname_, city: city_ }).then(r => {
+          window.alert('Registration succeded.')
+          window.localStorage.setItem('logged', true)
+          window.location.reload()
+        })
+      })
+    }
+  }).appendTo(mfeedback)
+  window.registerModal = {
+    show: (ms, msg) => {
+      $('#myRegisterModal').fadeIn(ms || 'slow') // show() // .css('display', 'block')
+    },
+    hide: () => {
+      $('#myRegisterModal').hide().css('display', 'none')
+    }
+  }
+}
+
+const validateEmail = email => {
+  return email.match(
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  )
+}
+
+function loadScript (src) {
+  return new Promise(function (resolve, reject) {
+    if ($("script[src='" + src + "']").length === 0) {
+      const script = document.createElement('script')
+      script.onload = function () {
+        resolve()
+      }
+      script.onerror = function () {
+        reject(new Error(`error loading this external script: ${src}`))
+      }
+      script.src = src
+      document.body.appendChild(script)
+    } else {
+      resolve()
+    }
+  })
 }
 
 e.copyToClipboard = require('copy-to-clipboard')
