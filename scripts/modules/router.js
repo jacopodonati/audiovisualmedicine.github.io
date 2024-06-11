@@ -161,6 +161,7 @@ e.mkFooter = () => {
         })
       })
     utils.mkRegisterModal_()
+    console.log('jas')
     $('<button/>', { css: { float: 'right' } })
       .text('register')
       .appendTo(ldiv)
