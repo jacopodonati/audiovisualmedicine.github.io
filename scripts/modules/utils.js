@@ -244,11 +244,11 @@ e.mkModal = content => {
       .append($('<p/>', { id: 'mcontent' }))
       .append($('<p/>', { id: 'mfeedback' }))
     )
-  window.onclick = function (event) {
+  window.addEventListener('click', function (event) {
     if (event.target === $('#myModal')[0]) {
       $('#myModal').hide().css('display', 'none')
     }
-  }
+  })
   $('#mcontent').html(`
   ${content || e.stdMsg}
   <br><br><br>:::
@@ -582,11 +582,11 @@ e.mkRegisterModal = names => {
       .append(mcontent)
       .append(mfeedback)
     )
-  window.onclick = function (event) {
+  window.addEventListener('click', function (event) {
     if (event.target === $('#myRegisterModal')[0]) {
       $('#myRegisterModal').hide().css('display', 'none')
     }
-  }
+  })
   const youfs = $('<fieldset/>')
     .appendTo(mcontent)
     .append($('<legend/>').text('You'))
@@ -604,19 +604,11 @@ e.mkRegisterModal = names => {
   $('<br/>').appendTo(youfs)
   $('<input/>', { type: 'text', class: 'lwidget', id: 'rlname', placeholder: 'surname', css: { margin: '1%' } })
     .appendTo(youfs)
-  // $('<br/>').appendTo(youfs)
-  // $('<label/>', { for: 'rbd' }).text('Birthday: ')
-  //   .appendTo(youfs)
-  // $('<input/>', { type: 'date', class: 'lwidget', id: 'rbd', name: 'rbd', placeholder: 'birthday', css: { margin: '1%' } })
-  //   .appendTo(youfs)
   $('<br/>').appendTo(youfs)
 
-  // $('<label/>', { for: 'rcity' }).text('Birthday: ')
   $('<input/>', { type: 'text', class: 'lwidget', id: 'rcity', name: 'rcity', placeholder: 'city (optional)', css: { margin: '1%' } })
     .appendTo(youfs)
-  // $('<br/>').appendTo(youfs)
   $('#rcity').autocomplete({
-    // minLength: 3,
     source: names
   })
 
@@ -729,6 +721,16 @@ function loadScript (src) {
       resolve()
     }
   })
+}
+
+e.checkLogged = () => {
+  // HC:
+  // const logged = window.localStorage.getItem('logged')
+  const logged = true
+  if (!logged) {
+    window.alert('Please login to access audiovisual stimulation gadgets')
+    window.location.replace('/')
+  }
 }
 
 e.copyToClipboard = require('copy-to-clipboard')

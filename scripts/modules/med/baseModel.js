@@ -1,3 +1,4 @@
+/* global wand */
 const PIXI = require('pixi.js')
 const t = require('tone')
 const $ = require('jquery')
@@ -20,7 +21,23 @@ const e = module.exports
 // linear vs rampto
 
 e.Med = class {
+  registerLeave () {
+    window.wand.unloadFuncs.push(e => {
+      if (this.sessionId) {
+        const filter = { _id: this.sessionId.insertedId }
+        wand.transfer.fAll.umark(filter, { left: new Date() })
+      }
+    })
+  }
+
   constructor (r) {
+    if (wand.user) {
+      this.sessionLog = { user: wand.user, artifact: r, opened: new Date() }
+      wand.transfer.fAll.wmark(this.sessionLog).then(rr => {
+        this.sessionId = rr
+        this.registerLeave()
+      })
+    }
     this.PIXI = PIXI
     this.tone = t
     this.finalFade = 5
@@ -362,10 +379,6 @@ e.Med = class {
       }
     })
     $('<div/>', { class: 'slideraa round' }).appendTo(label)
-    // utils.mkBtn('cog', 'Config artifact', () => {
-    //   this.openConfs()
-    // }, label).css('vertical-align', 'bottom')
-    // $('<div/>', { css: { width: '2%', height: '2%', background: 'green' } }).appendTo(lpar).click(() => console.log('clicked jowww')) // todo: make a way to start the artifact at once, maybe in the dat.gui
 
     const inhale = $('<span/>').html(' inhale ')
     const exhale = $('<span/>').html(' exhale ')
@@ -491,6 +504,11 @@ e.Med = class {
       started = true
       t.Draw.schedule(() => {
         this.guiEls.countdownMsg.html('countdown to finish:')
+        if (this.sessionLog) {
+          const filter = { _id: this.sessionId.insertedId }
+          this.sessionLog.started = new Date()
+          wand.transfer.fAll.umark(filter, { started: new Date() })
+        }
         if (!window.sessionL) return
         window.wand.transfer.fAll.ucosta(
           { _id: window.sessionL.insertedId },
@@ -505,6 +523,12 @@ e.Med = class {
       t.Draw.schedule(() => {
         this.guiEls.countdownMsg.html('session finished. Time elapsed:')
         window.wand.modal.show(5000)
+        if (this.sessionLog) {
+          this.sessionLog.finished = new Date()
+          const filter = { _id: this.sessionId.insertedId }
+          wand.transfer.fAll.umark(filter, { finished: new Date() }).then(r => {
+          })
+        }
         if (!window.sessionL) return
         window.wand.transfer.fAll.ucosta(
           { _id: window.sessionL.insertedId },
@@ -616,7 +640,6 @@ e.Med = class {
     this.mplay = pset.add({
       play: () => {
         if (!window.confirm('Are you sure that you prefer to start now?')) return
-        console.log('play')
         const dt = new Date()
         dt.setSeconds(dt.getSeconds() + 3)
         this.setting.header.datetime = dt
@@ -850,24 +873,4 @@ e.Med = class {
       }
     }
   }
-
-  // openConfs () {
-  //   $('<div/>', {
-  //     id: 'myModal2',
-  //     class: 'modal',
-  //     role: 'dialog'
-  //   }).appendTo('body')
-  //     .append($('<div/>', {
-  //       id: 'mcontent0',
-  //       class: 'modal-content',
-  //       css: { background: '#eeffee' }
-  //     }).html('<h2>Yo</h2>')
-  //       .append($('<p/>', { id: 'mcontent2' }))
-  //     )
-  //   $('#myModal2').css('z-index', 0)
-  //   this.diag2 = $('<div/>', {
-  //     id: 'diag2'
-  //   })
-  //   $('#myModal2').show()
-  // }
 }

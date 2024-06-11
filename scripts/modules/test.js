@@ -2097,22 +2097,22 @@ e.guide = () => {
   
       <ul>
   
-          <li><a href="https://audiovisualmedicine.github.io/?.alpha9.15">Peaceful
+          <li><a href="/?.alpha9.15">Peaceful
                   Pulse</a>: a simple and clean 9.15 Hz alpha wave to cultivate a sense of
               peacefulness.</li>
   
-          <li><a href="https://audiovisualmedicine.github.io/?.betas">Cognitive
+          <li><a href="/?.betas">Cognitive
                   Crescendo</a>: a sequence of low, med, and high beta waves, often the best
               choice for learning.</li>
   
-          <li><a href="https://audiovisualmedicine.github.io/?.gamma40_">Genius
+          <li><a href="/?.gamma40_">Genius
                   Glow</a>: two simple 40 Hz gamma waves with periodic pan transitions and
               symmetries in 5 and 3, used to enhance the creativity flow.</li>
   
-          <li><a href="https://audiovisualmedicine.github.io/?.midLowAlpha2">Harmony
+          <li><a href="/?.midLowAlpha2">Harmony
                   Haven</a>: a 10 Hz alpha wave to promote a feeling of harmony.</li>
   
-          <li><a href="https://audiovisualmedicine.github.io/?.40-1_sim1-..4__">Expanded
+          <li><a href="/?.40-1_sim1-..4__">Expanded
                   Enlightenment</a>: a combo of gamma waves at 40 Hz and delta waves at 1Hz, with
               symmetries, to foster deep meditation and altered states of consciousness.</li>
       </ul>

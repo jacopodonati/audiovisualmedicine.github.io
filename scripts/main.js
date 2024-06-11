@@ -42,9 +42,11 @@ const uargs = wand.router.urlAllArguments()
 // ~ or - (version 2 through mkLight)
 // sync is specified with <sync id>=<participant ref>
 // else just welcome page
+
 let found = false
 wand.$('<div/>', { id: 'canvasDiv' }).appendTo('body')
 if (uargs.keys[0] === 'doc') {
+  wand.utils.checkLogged()
   const userRef = uargs.values[0]
   console.log(`lab/user with id: ${userRef}`)
   wand.currentMed = new wand.med.Doc()
@@ -53,16 +55,17 @@ if (uargs.keys[0] === 'doc') {
   const k = uargs.keys[0]
   found = true
   if (k[0] === '_') { // meditation model 1:
+    wand.utils.checkLogged()
     wand.currentMed = wand.med.model(k.slice(1))
     wand.utils.confirmExit()
   } else if ('~-@.'.includes(k[0])) { // meditation model 2 or 3
+    wand.utils.checkLogged()
     const query = { 'header.med2': k.slice(1) }
     if ('~-'.includes(k[0])) query['header.ancestral'] = { $exists: true } // created by mkLight. todo: remove '~' ?
     else if (k[0] !== '@') {
       query['header.onlyOnce'] = { $exists: true }
       query._id = { $gt: wand.utils.objectIdWithTimestamp('2021/06/05') }
     }
-    //  , $or: [{ 'header.datetime': { $gte: new Date('2021-04-29') } }, { 'header.onlyOnce': { $exists: true } }] }
     wand.transfer[k[0] === '@' ? 'findAll' : 'findAny'](query).then(r => {
       wand.currentSet = r
       // use r.lemniscate to decide model2 or 3
