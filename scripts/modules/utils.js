@@ -695,6 +695,7 @@ e.mkRegisterModal = names => {
       })
     }
   }).appendTo(mfeedback)
+  console.log('arrived to the definition of it')
   window.registerModal = {
     show: (ms, msg) => {
       $('#myRegisterModal').fadeIn(ms || 'slow') // show() // .css('display', 'block')
