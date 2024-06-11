@@ -5,6 +5,7 @@ const monk = require('./monk')
 
 let count = 0
 e.mkGrid = (cols, el, w, bgc, tcol) => {
+  console.log({ cols, el, w, bgc, tcol })
   return $('<div/>', {
     class: 'mgrid',
     id: `mgrid-${count++}`,
@@ -43,6 +44,7 @@ e.centerDiv = (width, container, color, margin, padding) => {
   return $('<div/>', {
     css: {
       'background-color': color || '#c2F6c3',
+      // margin: `0px auto ${d(margin, 0)}%`,
       margin: `0px auto ${d(margin, 0)}%`,
       padding: `${d(padding, 1)}%`,
       width: d(width, '50%'),
@@ -52,6 +54,7 @@ e.centerDiv = (width, container, color, margin, padding) => {
 }
 
 e.chooseUnique = (marray, nelements) => {
+  nelements = nelements || 1
   let i = marray.length
   marray = [...marray]
   if (i === 0) { return false }
@@ -67,6 +70,7 @@ e.chooseUnique = (marray, nelements) => {
     c++
     if (c === nelements) { return choice }
   }
+  console.log({ choice })
   return choice
 }
 
