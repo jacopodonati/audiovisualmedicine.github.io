@@ -4,11 +4,11 @@ i:
 d:
 	npm run dev
 e:
-	npm run buildEauto2
+	npm run buildExt
 fix:
 	npm run fixme
 e-zip:
-	npm run buildE2 && cd you && zip -vr ../you.zip background_ok.js contentScript_ok.js manifest.json person_.png pop.html pop_ok.js
+	npm run buildEzip && cd you && zip -vr ../you.zip background_ok.js contentScript_ok.js manifest.json person_.png pop.html pop_ok.js
 
 backup:
 	python3 mkBackup.py
