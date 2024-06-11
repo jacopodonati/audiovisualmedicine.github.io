@@ -539,7 +539,7 @@ e.randScale2 = (bezier = false) => {
 e.mkRegisterModal_ = () => {
   console.log('new url yeah')
   loadScript('https://code.jquery.com/ui/1.13.3/jquery-ui.js').then(() => {
-    $.getJSON('/assets/cityNamesIt.json', names => {
+    $.getJSON('https://audiovisualmedicine.github.io/assets/cityNamesIT.json', names => {
       e.mkRegisterModal(names)
     }).error(function (jqXhr, textStatus, error) {
       console.log('ERROR: ', textStatus, ', ', error)
