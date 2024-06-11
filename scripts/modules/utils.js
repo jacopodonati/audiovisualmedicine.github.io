@@ -541,6 +541,8 @@ e.mkRegisterModal_ = () => {
   loadScript('https://code.jquery.com/ui/1.13.3/jquery-ui.js').then(() => {
     $.getJSON('/assets/cityNamesIt.json', names => {
       e.mkRegisterModal(names)
+    }).error(function (jqXhr, textStatus, error) {
+      console.log('ERROR: ', textStatus, ', ', error)
     })
   })
 }
