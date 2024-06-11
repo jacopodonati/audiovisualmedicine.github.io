@@ -553,7 +553,7 @@ e.mkRegisterModal = names => {
     },
     show: {
       effect: 'fade',
-      duration: 2000
+      duration: 1000
     },
     hide: {
       effect: 'fade',
@@ -678,9 +678,14 @@ e.mkRegisterModal = names => {
           return e1.css('border', '2px solid red')
         }
         console.log('before write')
-        wand.transfer.fAll.wmark({ email, pw, name: name_, lname: lname_, city: city_ }).then(r => {
+        const salt = wand.bcrypt.genSaltSync()
+        const pw_ = wand.bcrypt.hashSync(pw, salt)
+        const user = { email, pw: pw_, name: name_, lname: lname_, city: city_ }
+        wand.transfer.fAll.wmark(user).then(r => {
           window.alert('Registration succeded.')
           window.localStorage.setItem('logged', true)
+          delete user.pw
+          window.localStorage.setItem('user', JSON.stringify(user))
           window.location.reload()
         })
       })

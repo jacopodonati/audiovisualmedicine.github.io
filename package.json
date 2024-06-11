@@ -17,6 +17,7 @@
     "@atlassian/jira": "^0.1.0",
     "@eastdesire/jscolor": "^2.4.0",
     "@fortawesome/fontawesome-free": "^5.13.1",
+    "bcryptjs": "^2.4.3",
     "browserify": "^17.0.0",
     "chroma-js": "^2.1.0",
     "color-scheme": "^1.0.1",

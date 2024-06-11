@@ -125,14 +125,16 @@ e.mkFooter = () => {
   // if (uargs.keys[0] && uargs.keys[0][0] === '_') disqus(uargs.keys[0][0].slice(1))
   const ldiv = $('<div/>', { css: { width: '50%', margin: 'auto', padding: '1%' } }).prependTo('body')
   if (window.localStorage.getItem('logged')) {
-    $('<span/>')
-      .text('logged in')
+    wand.user = JSON.parse(window.localStorage.getItem('user'))
+    $('<span/>', { css: { 'margin-right': '1%' } })
+      .text(`logged in as: ${wand.user.name}`)
       .appendTo(ldiv)
     $('<button/>')
       .text('logout')
       .appendTo(ldiv)
       .click(() => {
         window.localStorage.removeItem('logged')
+        window.localStorage.removeItem('user')
         window.location.reload()
       })
   } else {
@@ -145,9 +147,12 @@ e.mkFooter = () => {
       .appendTo(ldiv)
       .click(() => {
         $('#loading').show()
-        wand.transfer.fAll.omark({ email: email.val(), pw: pw.val() }).then(r => {
-          if (r) {
+        wand.transfer.fAll.omark({ email: email.val() }).then(r => {
+          if (r && wand.bcrypt.compareSync(pw.val(), r.pw)) {
+            delete r.pw
+            wand.user = r
             window.localStorage.setItem('logged', true)
+            window.localStorage.setItem('user', JSON.stringify(r))
             window.location.reload()
           } else {
             window.alert('email and password were not matched in database')

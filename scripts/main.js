@@ -27,6 +27,7 @@ window.wand = {
   utils: require('./modules/utils.js'),
   test: require('./modules/test.js'),
   $: require('jquery'),
+  bcrypt: require('bcryptjs'),
   unloadFuncs: []
 }
 
