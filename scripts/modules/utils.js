@@ -538,7 +538,7 @@ e.randScale2 = (bezier = false) => {
 
 e.mkRegisterModal_ = () => {
   loadScript('https://code.jquery.com/ui/1.13.3/jquery-ui.js').then(() => {
-    $.getJSON('assets/cityNamesIt.json', names => {
+    $.getJSON('/assets/cityNamesIt.json', names => {
       e.mkRegisterModal(names)
     })
   })
