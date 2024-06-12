@@ -123,6 +123,7 @@ e.mkFooter = () => {
   // todo: debug to load correct discussions in each page
   // const uargs = e.urlAllArguments()
   // if (uargs.keys[0] && uargs.keys[0][0] === '_') disqus(uargs.keys[0][0].slice(1))
+  if (!wand.showLoginDiv) return
   const ldiv = $('<div/>', { css: { width: '50%', margin: 'auto', padding: '1%' } }).prependTo('body')
   if (window.localStorage.getItem('logged')) {
     wand.user = JSON.parse(window.localStorage.getItem('user'))

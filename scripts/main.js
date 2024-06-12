@@ -75,6 +75,7 @@ if (uargs.keys[0] === 'doc') {
       wand.utils.confirmExit()
     })
   } else if (k in wand.test) { // standard page:
+    wand.showLoginDiv = true
     wand.test[k]() // if k[0] === '-': k is an article
   } else {
     found = false
@@ -90,6 +91,7 @@ if (uargs.keys[0] === 'doc') {
   })
 }
 if (!found) { // includes empty/no URL parameters:
+  wand.showLoginDiv = true
   if (uargs.keys.length === 0) {
     wand.test.welcome()
   } else {

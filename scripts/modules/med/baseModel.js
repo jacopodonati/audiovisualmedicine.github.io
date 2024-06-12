@@ -376,6 +376,9 @@ e.Med = class {
         this.pset.destroy()
         this.startGoodTimer(s)
         $('#cpar').css('opacity', 1)
+        label.click(() => {
+          window.location.reload()
+        })
       }
     })
     $('<div/>', { class: 'slideraa round' }).appendTo(label)
