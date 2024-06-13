@@ -426,6 +426,7 @@ e.Med = class {
       $('<p/>').appendTo(cdiv)
     )
     const instr = [
+      'Imposta il volume perché sia confortevole.',
       'Avvia la sessione premendo il pulsante qui sotto, e sincronizza la respirazione con il movimento del disco o gli stimoli uditivi.',
       'Puoi concentrarti sull\'animazione, ma puoi anche meditare, lavorare, leggere o studiare.',
       'Pur non essendo obbligatorie, consigliamo l\'uso di cuffie per massimizzare i benefici.',
