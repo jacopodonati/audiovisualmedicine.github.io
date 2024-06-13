@@ -427,6 +427,7 @@ e.Med = class {
       'Turn on using the switch below, and breath in sync with the cues.',
       'You may try and meditate, or do something else completely, such as work or reading.',
       'Often best results are obtained using headphones.',
+      'Adjust the volume to your comfort.',
       'For advanced usage, please see <a href="?guide" target="_blank">this page</a>.'
     ]
     instr.forEach(i => {
