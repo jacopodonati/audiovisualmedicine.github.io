@@ -742,8 +742,8 @@ function loadScript (src) {
 
 e.checkLogged = () => {
   // HC:
-  // const logged = window.localStorage.getItem('logged')
-  const logged = true
+  const logged = window.localStorage.getItem('logged')
+  // const logged = true
   if (!logged) {
     window.alert('Please login to access audiovisual stimulation gadgets')
     window.location.replace('/')

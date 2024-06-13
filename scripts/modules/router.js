@@ -130,14 +130,14 @@ e.mkFooter = () => {
   // const uargs = e.urlAllArguments()
   // if (uargs.keys[0] && uargs.keys[0][0] === '_') disqus(uargs.keys[0][0].slice(1))
   if (!wand.showLoginDiv) return
-  const ldiv = $('<div/>', { css: { width: '50%', margin: 'auto', padding: '1%' } }).prependTo('body')
+  const ldiv = $('<div/>', { css: { width: '50%', margin: 'auto', padding: '1%', 'font-size': '.8rem' } }).prependTo('body')
   if (window.localStorage.getItem('logged')) {
     wand.user = JSON.parse(window.localStorage.getItem('user'))
     $('<span/>', { css: { 'margin-right': '1%' } })
-      .text(`logged in as: ${wand.user.name}`)
+      .text(`login eseguito come: ${wand.user.name}`)
       .appendTo(ldiv)
     $('<button/>')
-      .text('logout')
+      .text('esci')
       .appendTo(ldiv)
       .click(() => {
         window.localStorage.removeItem('logged')
@@ -150,7 +150,7 @@ e.mkFooter = () => {
     const pw = $('<input/>', { type: 'password', id: 'upwd', placeholder: 'password', css: { 'margin-right': '1%' } })
       .appendTo(ldiv)
     $('<button/>', { css: { 'margin-right': '1%' } })
-      .text('login')
+      .text('entra')
       .appendTo(ldiv)
       .click(() => {
         $('#loading').show()
@@ -162,7 +162,7 @@ e.mkFooter = () => {
             window.localStorage.setItem('user', JSON.stringify(r))
             window.location.reload()
           } else {
-            window.alert('email and password were not matched in database')
+            window.alert('Email e password non presenti nel database')
           }
           $('#loading').hide()
         })
@@ -170,7 +170,7 @@ e.mkFooter = () => {
     utils.mkRegisterModal_()
     console.log('jas')
     $('<button/>', { css: { float: 'right' } })
-      .text('register')
+      .text('registrati')
       .appendTo(ldiv)
       .click(() => {
         window.registerModal.show()

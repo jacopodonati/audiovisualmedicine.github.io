@@ -2193,11 +2193,13 @@ e.welcome = () => {
 
   <h3>Scegli la tua sessione</h3>
   <ul>
-      <li><a href="/?.midLowAlpha2">Accordo Armonioso</a>: un'onda per promuovere un senso di armonia.</li>
-      <li><a href="/?.alpha9.15">Pulsazione Pacifica</a>: una sequenza coltivare un senso di tranquillità.</li>
-      <li><a href="/?.gamma40_">Estro Eclettico</a>: due semplici onde per migliorare il flusso creativo.</li>
-      <li><a href="/?.40-1_sim1-..4__">Illuminazione Intensa</a>: una combinazione di onde e simmetrie per la meditazione profonda.</li>
-      <li><a href="/?.betas">Crescita Cognitiva</a>: una sequenza per aiutare l'apprendimento.</li>
+      <li><a href="/?.emicrania">Emicrania</a></li>
+      <li><a href="/?.insonnia">Insonnia</a></li>
+      <li><a href="/?.rilassamento">Rilassamento</a></li>
+      <li><a href="/?.studioEnergizzante">Studio (energizzante)</a></li>
+      <li><a href="/?.studioRilassante">Studio (rilassante)</a></li>
+      <li><a href="/?.meditazione">Meditazione</a></li>
+      <li><a href="/?.usoRicreativo">Uso ricreativo</a></li>
     </ul>
 
   <b style="color:red">AVVERTENZE</b>
