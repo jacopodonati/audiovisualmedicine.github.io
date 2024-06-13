@@ -267,6 +267,16 @@
   .dg .cr.number input[type=text] {
     color: #F2C66B;
   }
+  .byebye {
+    visibility: hidden !important;
+    display: none !important;
+    opacity: 0 !important;
+  }
 </style>
-
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    const badge = document.querySelector('a[rel=nofollow]');
+    badge.classList.add('byebye');
+  });
+</script>
 </html>
