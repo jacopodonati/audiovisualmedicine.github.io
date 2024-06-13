@@ -2198,8 +2198,10 @@ e.welcome = () => {
       <li><a href="/?.rilassamento">Rilassamento</a></li>
       <li><a href="/?.studioEnergizzante">Studio (energizzante)</a></li>
       <li><a href="/?.studioRilassante">Studio (rilassante)</a></li>
+      <li><a href="/?.lavoroFocalizzato">Lavoro focalizzato</a></li>
       <li><a href="/?.meditazione">Meditazione</a></li>
       <li><a href="/?.usoRicreativo">Uso ricreativo</a></li>
+      <li><a href="/?.guadagnoQI">Uso ricreativo</a></li>
     </ul>
 
   <b style="color:red">AVVERTENZE</b>
