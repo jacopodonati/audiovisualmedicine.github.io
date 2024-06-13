@@ -2219,6 +2219,9 @@ e.welcome = () => {
     window.wand.modal.show()
     return false
   })
+  $('#llogin').click(() => {
+    console.log('click login')
+  })
 
   $('#loading').hide()
 }
@@ -3521,7 +3524,7 @@ e.aalogs3 = ufrj => {
     return '(' + String(id.match(/.{1,2}/g).reduce((a, i) => a + parseInt(i, 16), 0)) + ') ' + cod_(id)
   }
   function simpleTemplating2 (data) {
-    const grid = utils.mkGrid(4, adiv, '100%', utils.chooseUnique(['#eeeeff', '#eeffee', '#ffeeee']))
+    const grid = utils.mkGrid(4, adiv, '100%', 'rgba(0,0,0,0)')
     $('<span/>', { css: { 'margin-left': '10%' } }).html('<b>user</b>').appendTo(grid)
     $('<span/>', { css: { 'margin-left': '10%' } }).html('<b>shout</b>').appendTo(grid)
     const tz = (new Date()).getTimezoneOffset()

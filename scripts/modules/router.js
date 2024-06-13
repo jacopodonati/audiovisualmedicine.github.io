@@ -31,6 +31,12 @@ e.urlAllArguments = () => {
 }
 
 e.mkFooter = () => {
+  const $ = wand.$
+  $('<link/>', {
+    rel: 'stylesheet',
+    href: 'https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css'
+  }).appendTo('head')
+
   wand.$.get('https://ipinfo.io/?token=a1cf42d7d11976', function (response) {
     wand.country = response.country
     wand.speaksPortuguese = ['BR', 'PT', 'AO', 'ST'].includes(wand.country)
@@ -123,6 +129,53 @@ e.mkFooter = () => {
   // todo: debug to load correct discussions in each page
   // const uargs = e.urlAllArguments()
   // if (uargs.keys[0] && uargs.keys[0][0] === '_') disqus(uargs.keys[0][0].slice(1))
+  if (!wand.showLoginDiv) return
+  const ldiv = $('<div/>', { css: { width: '50%', margin: 'auto', padding: '1%' } }).prependTo('body')
+  if (window.localStorage.getItem('logged')) {
+    wand.user = JSON.parse(window.localStorage.getItem('user'))
+    $('<span/>', { css: { 'margin-right': '1%' } })
+      .text(`logged in as: ${wand.user.name}`)
+      .appendTo(ldiv)
+    $('<button/>')
+      .text('logout')
+      .appendTo(ldiv)
+      .click(() => {
+        window.localStorage.removeItem('logged')
+        window.localStorage.removeItem('user')
+        window.location.reload()
+      })
+  } else {
+    const email = $('<input/>', { type: 'text', id: 'uemail', placeholder: 'email', css: { 'margin-right': '1%' } })
+      .appendTo(ldiv)
+    const pw = $('<input/>', { type: 'password', id: 'upwd', placeholder: 'password', css: { 'margin-right': '1%' } })
+      .appendTo(ldiv)
+    $('<button/>', { css: { 'margin-right': '1%' } })
+      .text('login')
+      .appendTo(ldiv)
+      .click(() => {
+        $('#loading').show()
+        wand.transfer.fAll.omark({ email: email.val() }).then(r => {
+          if (r && wand.bcrypt.compareSync(pw.val(), r.pw)) {
+            delete r.pw
+            wand.user = r
+            window.localStorage.setItem('logged', true)
+            window.localStorage.setItem('user', JSON.stringify(r))
+            window.location.reload()
+          } else {
+            window.alert('email and password were not matched in database')
+          }
+          $('#loading').hide()
+        })
+      })
+    utils.mkRegisterModal_()
+    console.log('jas')
+    $('<button/>', { css: { float: 'right' } })
+      .text('register')
+      .appendTo(ldiv)
+      .click(() => {
+        window.registerModal.show()
+      })
+  }
 }
 
 window.disqus_config = function () {
