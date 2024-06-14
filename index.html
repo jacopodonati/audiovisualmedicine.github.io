@@ -276,7 +276,9 @@
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {
     const badge = document.querySelector('a[rel=nofollow]');
-    badge.classList.add('byebye');
+    if (badge) {
+      badge.classList.add('byebye');
+    }
   });
 </script>
 </html>
