@@ -5570,6 +5570,51 @@ e.step3 = () => {
   $('#loading').hide()
 }
 
+e.counting = () => {
+  const ex = { $exists: true }
+  // number artifacts
+  let count = 0
+  transfer.findAll({ meditation: ex }).then(s => { // model1
+    count += s.length
+    console.log({ count, s })
+    transfer.findAll({ 'header.med2': ex }).then(s => { // model2
+      count += s.length
+      const hasCreator = s.filter(s => s.header.creator)
+      const anonymCreated = count - hasCreator.length
+      const nCreators = new Set(hasCreator.map(i => i.header.creator)).size
+      window.s = s
+      transfer.fAll.costa().then(r => {
+        window.r = r
+        const sessionsStarted = r.filter(i => i.started).length
+        // finishedSessions = wand.transfer.fAll.costa({ finishedSession: ex }).then(r => console.log({ r })) = 741
+        // finishedAndStartedSessions = wand.transfer.fAll.costa({ started: ex, finishedSession: ex }).then(r => console.log({ r })) = 607
+        const chanceOfLogging = 607 / 741
+        const visits = Math.round(r.length * (1 / chanceOfLogging))
+
+        const numSessions = Math.round(sessionsStarted * ((1 / chanceOfLogging) ** 2)) // has to log visit + session start
+        const difUsers = Math.round(new Set(r.map(i => i.ip)).size * (1 / chanceOfLogging))
+
+        console.log({ artifactsCreated: count, hasCreator: hasCreator.length, anonymCreated, nCreators })
+        console.log({ sessionsStarted, numSessions, visits, difUsers })
+        const d = r.filter(i => i.started).map(i => i.date.getHours())
+        d.reduce((a, i) => {
+          console.log({ a, i })
+          if (i in a) {
+            a[i]++
+          } else {
+            a[i] = 1
+          }
+          return a
+        }, {})
+      })
+      // window.alert('check console')
+    })
+  })
+  // logins?
+  // recentions
+  // people intructed
+}
+
 e['m001-elisa'] = () => {
   const mkListing = list => list.reduce((a, i) => a + `<li>${i}</li>`, '')
   const items = [
