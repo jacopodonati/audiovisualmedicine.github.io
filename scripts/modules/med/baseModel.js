@@ -433,6 +433,10 @@ e.Med = class {
     instr.forEach(i => {
       $('<li/>').html(i).appendTo(ul)
     })
+    // const user = JSON.parse(window.localStorage.getItem('user'))
+    // $('<div/>')
+    //   .html(`<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf1pUBaBhxPnoHlXzRkljmoGlKVWtCrjibDXLOAe6DwMaMBvg/viewform?usp=pp_url&entry.926757749=${user.email}&embedded=true" width="640" height="43%" frameborder="0" marginheight="0" marginwidth="0" id="gForm">Carregando…</iframe>`)
+    //   .appendTo(cdiv)
   }
 
   setPanner (s, synthL, synthR, mod) {
