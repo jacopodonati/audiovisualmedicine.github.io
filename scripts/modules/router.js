@@ -145,13 +145,14 @@ e.mkFooter = () => {
         window.location.reload()
       })
   } else {
+    const loginForm = $('<form>').appendTo(ldiv)
     const email = $('<input/>', { type: 'text', id: 'uemail', placeholder: 'email', css: { 'margin-right': '1%' } })
-      .appendTo(ldiv)
+      .appendTo(loginForm)
     const pw = $('<input/>', { type: 'password', id: 'upwd', placeholder: 'password', css: { 'margin-right': '1%' } })
-      .appendTo(ldiv)
+      .appendTo(loginForm)
     $('<button/>', { css: { 'margin-right': '1%' } })
       .text('entra')
-      .appendTo(ldiv)
+      .appendTo(loginForm)
       .click(() => {
         $('#loading').show()
         wand.transfer.fAll.omark({ email: email.val() }).then(r => {
@@ -171,7 +172,7 @@ e.mkFooter = () => {
     console.log('jas')
     $('<button/>', { css: { float: 'right' } })
       .text('registrati')
-      .appendTo(ldiv)
+      .appendTo(loginForm)
       .click(() => {
         window.registerModal.show()
       })
