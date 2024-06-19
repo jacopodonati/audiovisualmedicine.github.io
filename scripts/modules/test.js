@@ -5833,3 +5833,28 @@ function mkMember (p) {
     $('#loading').hide()
   }
 }
+
+e.testForm = () => {
+  window.wand.userFuncs.push(() => {
+    utils.stdDiv().html(`
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdxNqsmvpxu8DwbofGGxlWebC7De97EOjPOCv9pEr80ONMt_A/viewform?usp=pp_url&entry.1397449603=${window.wand.user.email}&embedded=true" width="640" height="977" frameborder="0" marginheight="0" marginwidth="0" id="googleFormIframe">Caricamento…</iframe>
+    `)
+    $('#loading').hide()
+  })
+}
+
+e.profiloForm = () => {
+  window.wand.userFuncs.push(() => {
+    utils.stdDiv().html(`
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdxNqsmvpxu8DwbofGGxlWebC7De97EOjPOCv9pEr80ONMt_A/viewform?usp=pp_url&entry.1397449603=${window.wand.user.email}&embedded=true" width="640" height="977" frameborder="0" marginheight="0" marginwidth="0" id="googleFormIframe">Caricamento…</iframe>
+    `)
+    // let load = 0
+    // document.getElementById('googleFormIframe').onload = function () {
+    //   load++
+    //   if (load > 1) {
+    //     document.location = '/'
+    //   }
+    // }
+    $('#loading').hide()
+  })
+}

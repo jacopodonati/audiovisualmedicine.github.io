@@ -127,6 +127,7 @@ e.mkFooter = () => {
   const ldiv = $('<div/>', { css: { width: '50%', margin: 'auto', padding: '1%' } }).prependTo('body')
   if (window.localStorage.getItem('logged')) {
     wand.user = JSON.parse(window.localStorage.getItem('user'))
+    wand.userFuncs.forEach(f => f())
     $('<span/>', { css: { 'margin-right': '1%' } })
       .text(`logged in as: ${wand.user.name}`)
       .appendTo(ldiv)
@@ -138,6 +139,12 @@ e.mkFooter = () => {
         window.localStorage.removeItem('user')
         window.location.reload()
       })
+    // $('<a/>', { href: '?profiloForm', target: '_blank', css: { float: 'right' } })
+    //   .text('Compilare il form del profilo')
+    //   .appendTo(ldiv)
+    //   .click(() => {
+    //     window.registerModal.show()
+    //   })
   } else {
     const email = $('<input/>', { type: 'text', id: 'uemail', placeholder: 'email', css: { 'margin-right': '1%' } })
       .appendTo(ldiv)
@@ -151,7 +158,6 @@ e.mkFooter = () => {
         wand.transfer.fAll.omark({ email: email.val() }).then(r => {
           if (r && wand.bcrypt.compareSync(pw.val(), r.pw)) {
             delete r.pw
-            wand.user = r
             window.localStorage.setItem('logged', true)
             window.localStorage.setItem('user', JSON.stringify(r))
             window.location.reload()
