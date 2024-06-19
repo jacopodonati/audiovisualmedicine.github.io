@@ -253,24 +253,27 @@ e.mkModal = content => {
   ${content || e.stdMsg}
   <br><br><br>:::
   `)
-  const descArea = $('<textarea/>', {
-    maxlength: 3200,
-    css: {
-      'background-color': 'white',
-      margin: 'auto',
-      width: '50%',
-      height: '10%'
-    }
-  }).appendTo('#mfeedback')
-  $('<button/>', { css: { margin: '1%' } }).html('Send / Enviar Feedback').on('click', () => {
-    window.wand.transfer.fAll.ucosta(
-      { _id: window.sessionL.insertedId },
-      { feedback: descArea.val() }
-    ).then(r => {
-      descArea.val('')
-      window.alert('Thank you / Obrigado.')
-    })
-  }).appendTo('#mfeedback')
+  $('<div/>')
+    .html('<a target="_blank" href="mailto:aeterni.anima@gmail.com?subject=contact%20about%20harmonicare">Contact us</a>')
+    .appendTo('#mfeedback')
+  // const descArea = $('<textarea/>', {
+  //   maxlength: 3200,
+  //   css: {
+  //     'background-color': 'white',
+  //     margin: 'auto',
+  //     width: '50%',
+  //     height: '10%'
+  //   }
+  // }).appendTo('#mfeedback')
+  // $('<button/>', { css: { margin: '1%' } }).html('Send / Enviar Feedback').on('click', () => {
+  //   window.wand.transfer.fAll.ucosta(
+  //     { _id: window.sessionL.insertedId },
+  //     { feedback: descArea.val() }
+  //   ).then(r => {
+  //     descArea.val('')
+  //     window.alert('Thank you / Obrigado.')
+  //   })
+  // }).appendTo('#mfeedback')
   return {
     show: (ms, msg) => {
       // $('#mcontent').html((msg || e.stdMsg()) + '<br><br><br>:::')
