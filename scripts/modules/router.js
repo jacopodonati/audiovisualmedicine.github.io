@@ -145,7 +145,7 @@ e.mkFooter = () => {
         window.location.reload()
       })
   } else {
-    const loginForm = $('<form>').appendTo(ldiv)
+    const loginForm = $('<form>', { onsubmit: 'event.preventDefault();' }).appendTo(ldiv)
     const email = $('<input/>', { type: 'text', id: 'uemail', placeholder: 'email', css: { 'margin-right': '1%' } })
       .appendTo(loginForm)
     const pw = $('<input/>', { type: 'password', id: 'upwd', placeholder: 'password', css: { 'margin-right': '1%' } })
