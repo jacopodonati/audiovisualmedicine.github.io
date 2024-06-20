@@ -157,7 +157,7 @@ e.mkFooter = () => {
       })
     if (!wand.user.profileForm) {
       $('<a/>', { id: 'pfLink', href: '?profiloForm2', target: '_blank', css: { float: 'right' } })
-        .text('Compilare il form del profilo')
+        .text('Compila il questionario utente')
         .appendTo(ldiv)
         .click(() => {
           window.registerModal.show()
