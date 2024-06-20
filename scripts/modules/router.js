@@ -149,12 +149,14 @@ e.mkFooter = () => {
         window.localStorage.removeItem('user')
         window.location.reload()
       })
-    $('<a/>', { href: '?profiloForm', target: '_blank', css: { float: 'right' } })
-      .text('Compilare il form del profilo')
-      .appendTo(ldiv)
-      .click(() => {
-        window.registerModal.show()
-      })
+    if (!wand.user.profileForm) {
+      $('<a/>', { id: 'pfLink', href: '?profiloForm2', target: '_blank', css: { float: 'right' } })
+        .text('Compilare il form del profilo')
+        .appendTo(ldiv)
+        .click(() => {
+          window.registerModal.show()
+        })
+    }
   } else {
     const loginForm = $('<form/>', { onsubmit: 'event.preventDefault()' }).appendTo(ldiv)
     const email = $('<input/>', { type: 'text', id: 'uemail', placeholder: 'email', css: { 'margin-right': '1%' } })

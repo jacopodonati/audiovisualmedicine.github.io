@@ -456,7 +456,8 @@ e.Med = class {
       ['qualche', 'some'],
       ['molto', 'much']
     ]
-    const index = 1 // change to 0 if using italian, e.g. for hc
+    const isHC = window.location.href.includes('harmonicare')
+    const index = isHC ? 0 : 1
     const tdiv = $('<fieldset/>', { css: { 'overflow-x': 'auto', 'text-align': 'center', border: '1px solid black', padding: '2%' } })
       .appendTo(cdiv)
       .append($('<legend/>').html('Track your wellness'))
@@ -514,10 +515,10 @@ e.Med = class {
         }
         prom.then(() => {
           tdiv.empty()
-          tdiv.html('scores sent')
+          tdiv.html(isHC ? 'punteggi inviati' : 'scores sent')
         }).catch(err => {
           console.log({ err })
-          window.alert('scores not sent, try again')
+          window.alert(isHC ? 'punteggi non inviati, riprovare' : 'scores not sent, try again')
         }).finally(() => {
           $('#loading').hide()
         })
