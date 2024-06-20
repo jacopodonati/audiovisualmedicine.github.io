@@ -322,7 +322,7 @@ e.Med = class {
       this.isOnlyOnce = true
       return
     }
-    s.datetime = nextSync()
+    s.datetime = nextSync(false, true)
     this.isOnlyOnce = false
   }
 
@@ -683,7 +683,7 @@ e.Med = class {
 
   updateScheduling (s) {
     if (u('s')) {
-      s.datetime = utils.timeArgument()
+      s.datetime = wand.router.timeArgument()
     } else if (u('t')) {
       const dt = new Date()
       dt.setSeconds(dt.getSeconds() + parseFloat(u('t')))

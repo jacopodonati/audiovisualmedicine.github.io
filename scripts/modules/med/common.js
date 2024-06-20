@@ -42,8 +42,9 @@ e.times = [
   [23, 23]
 ]
 
-e.nextSync = justStr => {
+e.nextSync = (justStr, fake) => {
   const d = new Date()
+  if (fake) d.setUTCFullYear(d.getUTCFullYear() + 1)
   let ii
   if (d.getHours() === 23 && d.getMinutes() > 22) ii = 0
   else {
