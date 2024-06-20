@@ -423,7 +423,7 @@ e.Med = class {
     $('<h2/>', { id: 'hh', style: 'text-align:center;font-size: 4rem;font-weight: 400;letter-spacing: 0.1rem;color: #ffffff;' })
       .appendTo(cdiv)
       .text('Istruzioni')
-    const ul = $('<ul/>', { css: { 'text-align': 'left', color: '#ffffff' } }).appendTo(
+    const ul = $('<ul/>', { class: 'tutorial', css: { 'text-align': 'left', color: '#ffffff' } }).appendTo(
       $('<p/>').appendTo(cdiv)
     )
     const instr = [
@@ -446,28 +446,28 @@ e.Med = class {
   mkQuestionGrid (cdiv, end = false) {
     this.email = this.user ? this.user.email : undefined
     const items = [
-      ['Melancolia', 'Melancholia'],
+      ['Problemi di umore', 'Melancholia'],
       ['Dolore', 'Pain'],
       ['Rilassamento', 'Relaxation'],
       ['Sonnolenza', 'Sleepiness'],
       ['Concentrazione', 'Concentration']
     ]
     const degrees = [
-      ['affatto', 'none'],
-      ['no', 'no'],
-      ['neutro', 'neutral'],
-      ['qualche', 'some'],
+      ['per niente', 'none'],
+      ['meno del normale', 'no'],
+      ['normale', 'neutral'],
+      ['più del normale', 'some'],
       ['molto', 'much']
     ]
     const isHC = window.location.href.includes('harmonicare')
     const index = isHC ? 0 : 1
     const tdiv = $('<fieldset/>', { class: 'questionario', css: { 'overflow-x': 'auto', 'text-align': 'center', border: '1px solid black', padding: '2%' } })
       .appendTo(cdiv)
-      .append($('<legend/>').html('Track your wellness'))
+      .append($('<legend/>').html('Registra il tuo stato psicofisico'))
     const table = $('<table/>', { class: 'w-100', css: { margin: 'auto', 'border-collapse': 'collapse', 'table-layout': 'auto !important' } })
       .appendTo(tdiv)
-    const prep = end ? 'After' : 'Before'
-    $('<caption/>', { css: { 'margin-bottom': '2%' } }).html(`<b>${prep} session</b>`)
+    const prep = end ? 'Dopo la' : 'Prima della'
+    $('<caption/>', { css: { 'margin-bottom': '2%' } }).html(`<b>${prep} sessione</b>`)
       .appendTo(table)
     const trh = $('<tr/>').appendTo(table)
     $('<td/>').appendTo(trh)
