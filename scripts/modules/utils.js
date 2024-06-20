@@ -206,7 +206,7 @@ Luz e Paz ~
   return `
   <div id="main-content" class="wiki-content group">
   <h1 id="Contact-nuova-Getintouch">Contattaci</h1>
-  <p>Sono molti i modi nei quali ci puoi aiutare::</p>
+  <p>Sono molti i modi nei quali ci puoi aiutare:</p>
   <ul>
     <li>
       <p><strong>Condividi le tue idee e fai domande:</strong> ci piacerebbe sapere quali parti di HarmoniCare secondo te funzionano meglio e cosa dovremmo migliorare.</p>
@@ -272,7 +272,7 @@ e.mkModal = content => {
   <br><br><br>:::
   `)
   $('<div/>')
-    .html('<a target="_blank" href="mailto:aeterni.anima@gmail.com?subject=contact%20about%20harmonicare">Contact us</a>')
+    .html('<a target="_blank" href="mailto:aeterni.anima@gmail.com?subject=contact%20about%20harmonicare">Contattaci</a>')
     .appendTo('#mfeedback')
   // const descArea = $('<textarea/>', {
   //   maxlength: 3200,
