@@ -5762,3 +5762,95 @@ e.profiloForm = () => {
     $('#loading').hide()
   })
 }
+
+e.profiloForm2 = () => {
+  const isHC = window.location.href.includes('harmonicare')
+  const index = isHC ? 0 : 1 // change to 0 if using italian, e.g. for hc
+  const name = isHC ? 'HarmoniCare' : 'AudiovisualMedicine'
+  const legend = [
+    `Vuoi utilizzare ${name} per`, `You want to use ${name} for`
+  ]
+  const items = [
+    ['Emicrania', 'Migraine'],
+    ['Dolore muscolare', 'Muscle pain'],
+    ['Insonnia', 'Insomnia'],
+    ['Rilassare', 'Relax'],
+    ['Studio', 'Study'],
+    ['Lavoro', 'Work'],
+    ['Meditazione', 'Meditation'],
+    ['Aumento QI', 'IQ increase'],
+    ['Uso ricreativo', 'Recreational use'],
+    ['Imparare sulla neurodulazione', 'Learning about neurodulation'],
+    ['Curiosità', 'Curiosity']
+  ]
+  const q1 = [
+    `Come hai trovato ${name}?`, `How did you find ${name}?`
+  ]
+  const q2 = [
+    'Hai già fatto uso di tecnologie di neuromodulazione?',
+    'Have you used neuromodulation technologies before?'
+  ]
+  const adiv = utils.stdDiv()
+  window.wand.userFuncs.push(() => {
+    const tdiv_ = $('<fieldset/>', { css: { 'overflow-x': 'auto', 'text-align': 'center', padding: '2%' } })
+      .append($('<legend/>').html(legend[index]))
+      .appendTo(adiv)
+    const tdiv = $('<div/>', { css: { 'text-align': 'left', display: 'inline-block' } }).appendTo(tdiv_)
+
+    items.forEach((i, ii) => {
+      const id = 'reason' + ii
+      $('<input/>', { type: 'checkbox', class: 'mcheck', name: 'reason', value: i[index], id }).appendTo(tdiv)
+      $('<label/>', { for: id }).html(i[index]).appendTo(tdiv)
+      $('<br/>').appendTo(tdiv)
+    })
+
+    $('<fieldset/>', { css: { 'overflow-x': 'auto', 'text-align': 'center', padding: '2%' } })
+      .appendTo(adiv)
+      .append($('<legend/>').html(q1[index]))
+      .append($('<input/>', { type: 'text', id: 'q1', css: { width: '70%' } }))
+      .appendTo(adiv)
+
+    $('<fieldset/>', { css: { 'overflow-x': 'auto', 'text-align': 'center', padding: '2%' } })
+      .appendTo(adiv)
+      .append($('<legend/>').html(q2[index]))
+      .append($('<input/>', { type: 'radio', name: 'used', id: 'q2yes', value: '1' }))
+      .append($('<label/>', { for: 'q2yes' }).html(isHC ? 'sì' : 'yes'))
+      .append($('<br/>'))
+      .append($('<input/>', { type: 'radio', name: 'used', id: 'q2no', value: '0' }))
+      .append($('<label/>', { for: 'q2no' }).html('no'))
+      .appendTo(adiv)
+
+    $('<button/>', { css: { margin: '2%' } })
+      .html('send')
+      .appendTo(adiv)
+      .click(() => {
+        $('#loading').show()
+        const reasons = []
+        $('input:checkbox[name=reason]:checked').each(function () {
+          window.mcheck = this
+          reasons.push($(this).val())
+        })
+        const usedNeuromodulation = $('input[name=used]:checked').val()
+        const hcFoundThrough = $('#q1').val()
+
+        const profileForm = { reasons, usedNeuromodulation, hcFoundThrough, answeredAt: new Date() }
+        const filter = { email: window.wand.user.email, name: { $exists: true } }
+        transfer.fAll.umark(filter, { profileForm }).then(rr => {
+          console.log({ rr }, 'written')
+          adiv.empty()
+          adiv.html($('<div/>', { css: { 'text-align': 'center' } }).html(isHC ? 'modulo inviato' : 'form sent'))
+          window.wand.user.profileForm = profileForm
+          window.localStorage.setItem('user', JSON.stringify(window.wand.user))
+
+          $('#pfLink').hide()
+        }).catch(err => {
+          console.log({ err })
+          window.alert(isHC ? 'modulo non inviato, riprovare' : 'form not sent, try again')
+        }).finally(() => {
+          $('#loading').hide()
+        })
+      })
+
+    $('#loading').hide()
+  })
+}
