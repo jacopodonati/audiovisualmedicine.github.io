@@ -5768,13 +5768,13 @@ e.profiloForm2 = () => {
   const index = isHC ? 0 : 1 // change to 0 if using italian, e.g. for hc
   const name = isHC ? 'HarmoniCare' : 'AudiovisualMedicine'
   const legend = [
-    `Vuoi utilizzare ${name} per`, `You want to use ${name} for`
+    `Per cosa vuoi utilizzare ${name}?`, `You want to use ${name} for`
   ]
   const items = [
     ['Emicrania', 'Migraine'],
     ['Dolore muscolare', 'Muscle pain'],
     ['Insonnia', 'Insomnia'],
-    ['Rilassare', 'Relax'],
+    ['Rilassamento', 'Relax'],
     ['Studio', 'Study'],
     ['Lavoro', 'Work'],
     ['Meditazione', 'Meditation'],
@@ -5784,7 +5784,7 @@ e.profiloForm2 = () => {
     ['Curiosità', 'Curiosity']
   ]
   const q1 = [
-    `Come hai trovato ${name}?`, `How did you find ${name}?`
+    `Come hai scoperto ${name}?`, `How did you find ${name}?`
   ]
   const q2 = [
     'Hai già fatto uso di tecnologie di neuromodulazione?',
@@ -5821,7 +5821,7 @@ e.profiloForm2 = () => {
       .appendTo(adiv)
 
     $('<button/>', { css: { margin: '2%' } })
-      .html('send')
+      .html('Invia')
       .appendTo(adiv)
       .click(() => {
         $('#loading').show()
