@@ -230,6 +230,7 @@ e.mkModal = content => {
   }).appendTo('body')
     .append($('<div/>', {
       class: 'modal-content',
+      id: 'feedbackModalContent',
       css: {
         background: e.chooseUnique(['#eeeeff', '#eeffee', '#ffeeee'], 1)[0],
         height: window.innerHeight * 0.75,

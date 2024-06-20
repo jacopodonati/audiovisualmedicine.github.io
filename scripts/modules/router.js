@@ -139,12 +139,12 @@ e.mkFooter = () => {
         window.localStorage.removeItem('user')
         window.location.reload()
       })
-    // $('<a/>', { href: '?profiloForm', target: '_blank', css: { float: 'right' } })
-    //   .text('Compilare il form del profilo')
-    //   .appendTo(ldiv)
-    //   .click(() => {
-    //     window.registerModal.show()
-    //   })
+    $('<a/>', { href: '?profiloForm', target: '_blank', css: { float: 'right' } })
+      .text('Compilare il form del profilo')
+      .appendTo(ldiv)
+      .click(() => {
+        window.registerModal.show()
+      })
   } else {
     const email = $('<input/>', { type: 'text', id: 'uemail', placeholder: 'email', css: { 'margin-right': '1%' } })
       .appendTo(ldiv)
