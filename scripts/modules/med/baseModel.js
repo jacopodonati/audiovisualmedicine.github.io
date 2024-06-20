@@ -503,7 +503,7 @@ e.Med = class {
 
     if (!end) return
     $('<button/>', { css: { margin: '2%' } })
-      .html('send')
+      .html('invia')
       .appendTo(tdiv)
       .click(() => {
         $('#loading').show()
