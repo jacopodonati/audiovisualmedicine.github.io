@@ -2189,7 +2189,7 @@ e.welcome = () => {
     color: darkred;
   }
 </style>
-  <h2 style="text-align:center;font-size: 4rem;font-weight: 400;letter-spacing: 0.1rem;color: ffeeee;text-shadow: 0px 4px 2px #174147a3;">HarmoniCare</h2>
+  <h2 class="site-title">HarmoniCare</h2>
   <p>Questo sito offre una soluzione audio-visiva e scientificamente provata per migliorare la tua salute mentale.</p>
 
   <p>Puoi iniziare subito la tua sessione scegliendo una delle sequenze elencate qui sotto. Per massimizzare i benefici che puoi ricavare sa questa esperienza, ti consigliamo di <a href="?guide">leggere le Linee Guida</a>.</p>
