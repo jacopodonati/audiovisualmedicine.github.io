@@ -272,7 +272,7 @@ e.mkModal = content => {
   <br><br><br>:::
   `)
   $('<div/>')
-    .html('<a target="_blank" href="mailto:aeterni.anima@gmail.com?subject=contact%20about%20harmonicare">Contattaci</a>')
+    .html('Scrivici un\'email cliccando qui: <a target="_blank" href="mailto:aeterni.anima@gmail.com?subject=Contatto%20da%20HarmoniCare">aeterni.anima@gmail.com</a>')
     .appendTo('#mfeedback')
   // const descArea = $('<textarea/>', {
   //   maxlength: 3200,
@@ -749,7 +749,7 @@ e.checkLogged = () => {
   const logged = window.localStorage.getItem('logged')
   // const logged = true
   if (!logged) {
-    window.alert('Please login to access audiovisual stimulation gadgets')
+    window.alert('Fai l\'accesso per utilizzare la stimolazione audiovisiva.')
     window.location.replace('/')
   }
 }

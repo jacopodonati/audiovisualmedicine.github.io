@@ -461,7 +461,7 @@ e.Med = class {
     ]
     const isHC = window.location.href.includes('harmonicare')
     const index = isHC ? 0 : 1
-    const tdiv = $('<fieldset/>', { css: { 'overflow-x': 'auto', 'text-align': 'center', border: '1px solid black', padding: '2%' } })
+    const tdiv = $('<fieldset/>', { class: 'questionario', css: { 'overflow-x': 'auto', 'text-align': 'center', border: '1px solid black', padding: '2%' } })
       .appendTo(cdiv)
       .append($('<legend/>').html('Track your wellness'))
     const table = $('<table/>', { class: 'w-100', css: { margin: 'auto', 'border-collapse': 'collapse', 'table-layout': 'auto !important' } })
