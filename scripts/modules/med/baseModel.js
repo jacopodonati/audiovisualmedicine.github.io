@@ -446,11 +446,11 @@ e.Med = class {
   mkQuestionGrid (cdiv, end = false) {
     this.email = this.user ? this.user.email : undefined
     const items = [
-      ['Problemi di umore', 'Melancholia'],
-      ['Dolore', 'Pain'],
-      ['Rilassamento', 'Relaxation'],
-      ['Sonnolenza', 'Sleepiness'],
-      ['Concentrazione', 'Concentration']
+      ['Problemi di umore', 'Melancholia', 'mood'],
+      ['Dolore', 'Pain', 'pain'],
+      ['Rilassamento', 'Relaxation', 'relax'],
+      ['Sonnolenza', 'Sleepiness', 'sleepiness'],
+      ['Concentrazione', 'Concentration', 'concentration']
     ]
     const degrees = [
       ['per niente', 'none'],
@@ -481,9 +481,11 @@ e.Med = class {
       }
       const tr = $('<tr/>', { css }).appendTo(table)
       const i_ = i[index]
+      const disorder = i[2]
+      console.log(i, i[2])
       $('<td/>').html(i_).appendTo(tr)
       degrees.forEach((_, i) => {
-        $('<input/>', { type: 'radio', class: 'mradio', name: i_, value: i.toString() })
+        $('<input/>', { type: 'radio', class: 'mradio', name: disorder, value: i.toString() })
           .appendTo(
             $('<td/>', { css: { 'text-align': 'center', 'border-left': '1px solid gray', 'white-space': 'nowrap', 'max-width': '100%', width: 'auto !important' } }).appendTo(tr)
           )
