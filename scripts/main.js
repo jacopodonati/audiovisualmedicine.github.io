@@ -28,7 +28,8 @@ window.wand = {
   test: require('./modules/test.js'),
   $: require('jquery'),
   bcrypt: require('bcryptjs'),
-  unloadFuncs: []
+  unloadFuncs: [],
+  userFuncs: []
 }
 
 // cleaning facebook auto added argument (aesthetics, cleaning for users):

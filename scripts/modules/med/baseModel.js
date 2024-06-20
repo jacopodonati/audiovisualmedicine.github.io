@@ -31,8 +31,9 @@ e.Med = class {
   }
 
   constructor (r) {
-    if (wand.user) {
-      this.sessionLog = { user: wand.user, artifact: r, opened: new Date() }
+    this.user = JSON.parse(window.localStorage.getItem('user'))
+    if (this.user) {
+      this.sessionLog = { email: this.user.email, artifact: r, opened: new Date() }
       wand.transfer.fAll.wmark(this.sessionLog).then(rr => {
         this.sessionId = rr
         this.registerLeave()
@@ -321,7 +322,7 @@ e.Med = class {
       this.isOnlyOnce = true
       return
     }
-    s.datetime = nextSync()
+    s.datetime = nextSync(false, true)
     this.isOnlyOnce = false
   }
 
@@ -435,6 +436,94 @@ e.Med = class {
     instr.forEach(i => {
       $('<li/>').html(i).appendTo(ul)
     })
+    // $('<div/>')
+    //   .html(`<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf1pUBaBhxPnoHlXzRkljmoGlKVWtCrjibDXLOAe6DwMaMBvg/viewform?usp=pp_url&entry.926757749=${user.email}&embedded=true" width="640" height="43%" frameborder="0" marginheight="0" marginwidth="0" id="gForm">Carregando…</iframe>`)
+    //   .appendTo(cdiv)
+    this.mkQuestionGrid(cdiv)
+  }
+
+  mkQuestionGrid (cdiv, end = false) {
+    this.email = this.user ? this.user.email : undefined
+    const items = [
+      ['Melancolia', 'Melancholia'],
+      ['Dolore', 'Pain'],
+      ['Rilassamento', 'Relaxation'],
+      ['Sonnolenza', 'Sleepiness'],
+      ['Concentrazione', 'Concentration']
+    ]
+    const degrees = [
+      ['affatto', 'none'],
+      ['no', 'no'],
+      ['neutro', 'neutral'],
+      ['qualche', 'some'],
+      ['molto', 'much']
+    ]
+    const index = 1 // change to 0 if using italian, e.g. for hc
+    const tdiv = $('<fieldset/>', { css: { 'overflow-x': 'auto', 'text-align': 'center', border: '1px solid black', padding: '2%' } })
+      .appendTo(cdiv)
+      .append($('<legend/>').html('Track your wellness'))
+    const table = $('<table/>', { class: 'w-100', css: { margin: 'auto', 'border-collapse': 'collapse', 'table-layout': 'auto !important' } })
+      .appendTo(tdiv)
+    const prep = end ? 'After' : 'Before'
+    $('<caption/>', { css: { 'margin-bottom': '2%' } }).html(`<b>${prep} session</b>`)
+      .appendTo(table)
+    const trh = $('<tr/>').appendTo(table)
+    $('<td/>').appendTo(trh)
+    degrees.forEach(d => {
+      $('<td/>', { css: { 'text-align': 'center' } }).html(d[index]).appendTo(trh)
+    })
+    items.forEach((i, ii) => {
+      const css = {}
+      if (ii !== (items.length - 1)) {
+        css['border-bottom'] = '1px solid gray'
+      }
+      const tr = $('<tr/>', { css }).appendTo(table)
+      const i_ = i[index]
+      $('<td/>').html(i_).appendTo(tr)
+      degrees.forEach((_, i) => {
+        $('<input/>', { type: 'radio', class: 'mradio', name: i_, value: i.toString() })
+          .appendTo(
+            $('<td/>', { css: { 'text-align': 'center', 'border-left': '1px solid gray', 'white-space': 'nowrap', 'max-width': '100%', width: 'auto !important' } }).appendTo(tr)
+          )
+      })
+    })
+    this.scores = {}
+    const self = this
+    $('.mradio').on('change', function () {
+      const val = $(this).val()
+      const row = $(this).attr('name')
+      console.log('value for ' + row + ': ' + val)
+      self.scores[row] = val
+    })
+    window.items = { items, degrees, index, table }
+
+    if (!end) return
+    $('<button/>', { css: { margin: '2%' } })
+      .html('send')
+      .appendTo(tdiv)
+      .click(() => {
+        $('#loading').show()
+        const data = {
+          endScores: this.scores
+        }
+        let prom
+        if (this.sessionLog) {
+          const filter = { _id: this.sessionId.insertedId }
+          this.sessionLog.started = new Date()
+          prom = wand.transfer.fAll.umark(filter, data)
+        } else {
+          prom = wand.transfer.fAll.wmark(data)
+        }
+        prom.then(() => {
+          tdiv.empty()
+          tdiv.html('scores sent')
+        }).catch(err => {
+          console.log({ err })
+          window.alert('scores not sent, try again')
+        }).finally(() => {
+          $('#loading').hide()
+        })
+      })
   }
 
   setPanner (s, synthL, synthR, mod) {
@@ -509,11 +598,17 @@ e.Med = class {
     t.Transport.schedule((time) => { // change message to ongoing
       started = true
       t.Draw.schedule(() => {
-        this.guiEls.countdownMsg.html('conto alla rovescia al termine:')
+        this.guiEls.countdownMsg.html('countdown to finish:')
+        const data = {
+          started: new Date(),
+          initialScores: this.scores
+        }
         if (this.sessionLog) {
           const filter = { _id: this.sessionId.insertedId }
           this.sessionLog.started = new Date()
-          wand.transfer.fAll.umark(filter, { started: new Date() })
+          wand.transfer.fAll.umark(filter, data)
+        } else {
+          wand.transfer.fAll.wmark(data)
         }
         if (!window.sessionL) return
         window.wand.transfer.fAll.ucosta(
@@ -529,6 +624,7 @@ e.Med = class {
       t.Draw.schedule(() => {
         this.guiEls.countdownMsg.html('session finished. Time elapsed:')
         window.wand.modal.show(5000)
+        this.mkQuestionGrid('#feedbackModalContent', true)
         if (this.sessionLog) {
           this.sessionLog.finished = new Date()
           const filter = { _id: this.sessionId.insertedId }
@@ -589,7 +685,7 @@ e.Med = class {
 
   updateScheduling (s) {
     if (u('s')) {
-      s.datetime = utils.timeArgument()
+      s.datetime = wand.router.timeArgument()
     } else if (u('t')) {
       const dt = new Date()
       dt.setSeconds(dt.getSeconds() + parseFloat(u('t')))
