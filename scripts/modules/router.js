@@ -88,6 +88,16 @@ e.mkFooter = () => {
   }).html(`<b>Regarding <span class="notranslate">${window.location.hostname === 'aeterni.github.io' ? 'Æterni' : 'AV Medicine'}</span></b>`).appendTo(ft)
   // wand.$('<div/>', { css: { display: 'inline-block', 'margin-left': '1%', float: 'left' } }).appendTo(ft).html(' | ')
   wand.$('<a/>', {
+    href: '/',
+    css: {
+      // 'margin-left': '1%',
+      margin: 'auto',
+      display: 'inline-block',
+      'font-size': isMobile ? '3vw' : '1vw',
+      float: 'center'
+    }
+  }).html('<b>Home</b>').appendTo(ft)
+  wand.$('<a/>', {
     // href: `?angel${lflag}`,
     // target: '_blank',
     href: '',
