@@ -2193,7 +2193,7 @@ e.welcome = () => {
   <p>Questo sito offre una soluzione audio-visiva e scientificamente provata per migliorare la tua salute mentale.</p>
 
   <p>Puoi iniziare subito la tua sessione scegliendo una delle sequenze elencate qui sotto. Per massimizzare i benefici che puoi ricavare sa questa esperienza, ti consigliamo di <a href="?guide">leggere le Linee Guida</a>.</p>
-  <p>Se vuoi lasciarci un feedback o condividere con noi la tua esperienza, <a href="" class="contactThing">non esitare a contattarci</a>.</p>
+  <p>Se vuoi lasciarci un feedback o condividere con noi la tua esperienza, contattaci.</p>
 
   <h3>Scegli la tua sessione</h3>
   <ul>
@@ -2210,7 +2210,7 @@ e.welcome = () => {
 
   <b style="color:red">AVVERTENZE</b>
   <p>
-  HarmoniCare è sicuro e offre grandi benefici. Anche così, <span class="highlighted">può essere pericoloso se si ha una storia di epilessia o convulsioni</span>, in tal caso ti consigliamo di contattare il tuo medico prima di iniziare la sessione. <a href="" class="contactThing">Contattaci</a> se hai bisogno di ulteriori informazioni. Ricorda che questa è un'iniziativa noprofit e open source, quindi la responsabilità del suo utilizzo ricade sull'utente. Usa HarmoniCare in maniera responsabile.</p>
+  HarmoniCare è sicuro e offre grandi benefici. Anche così, <span class="highlighted">può essere pericoloso se si ha una storia di epilessia o convulsioni</span>, in tal caso ti consigliamo di contattare il tuo medico prima di iniziare la sessione. Contattaci se hai bisogno di ulteriori informazioni. Ricorda che questa è un'iniziativa noprofit e open source, quindi la responsabilità del suo utilizzo ricade sull'utente. Usa HarmoniCare in maniera responsabile.</p>
   `)
   $('#createme')
     .css('text-align', 'center')
