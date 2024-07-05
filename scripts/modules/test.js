@@ -2198,14 +2198,20 @@ e.welcome = () => {
   <h3>Scegli la tua sessione</h3>
   <ul class="presets">
       <li><a href="/?.emicrania">Emicrania</a></li>
+      <li><a href="/?.dolori">Dolori cronici</a></li>
+      <br>
+      <li><a href="/?.depressione">Depressione</a></li>
+      <li><a href="/?.ansia">Ansia</a></li>
       <li><a href="/?.insonnia">Insonnia</a></li>
       <li><a href="/?.rilassamento">Rilassamento</a></li>
+      <br>
       <li><a href="/?.studioEnergizzante">Studio (energizzante)</a></li>
       <li><a href="/?.studioRilassante">Studio (rilassante)</a></li>
       <li><a href="/?.lavoroFocalizzato">Lavoro focalizzato</a></li>
+      <li><a href="/?.guadagnoQI">Aumento QI</a></li>
+      <br>
       <li><a href="/?.meditazione">Meditazione</a></li>
       <li><a href="/?.usoRicreativo">Uso ricreativo</a></li>
-      <li><a href="/?.guadagnoQI">Aumento QI</a></li>
     </ul>
 
   <b style="color:red">AVVERTENZE</b>
