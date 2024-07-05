@@ -2196,7 +2196,7 @@ e.welcome = () => {
   <p>Se vuoi lasciarci un feedback o condividere con noi la tua esperienza, contattaci.</p>
 
   <h3>Scegli la tua sessione</h3>
-  <ul>
+  <ul class="presets">
       <li><a href="/?.emicrania">Emicrania</a></li>
       <li><a href="/?.insonnia">Insonnia</a></li>
       <li><a href="/?.rilassamento">Rilassamento</a></li>
