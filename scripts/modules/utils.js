@@ -48,7 +48,7 @@ e.centerDiv = (width, container, color, margin, padding) => {
       margin: `0px auto ${d(margin, 0)}%`,
       padding: `${d(padding, 1)}%`,
       width: d(width, '50%'),
-      'border-radius': '5%'
+      'border-radius': '3rem'
     }
   }).appendTo(container || 'body')
 }
