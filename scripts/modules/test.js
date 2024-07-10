@@ -2090,7 +2090,7 @@ e.guide = () => {
 <p>Iniziare il tuo viaggio è molto semplice. Segui questi passaggi:</p>
 <ol>
     <li>Scegli una delle nostre sequenze preconfigurate:</li>
-    <ul class="presets">
+    <ul class="presets guideline">
       <li><a href="/?.emicrania">Emicrania</a></li>
       <li><a href="/?.dolori">Dolori cronici</a></li>
       <br>
