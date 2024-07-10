@@ -2090,16 +2090,21 @@ e.guide = () => {
 <p>Iniziare il tuo viaggio è molto semplice. Segui questi passaggi:</p>
 <ol>
     <li>Scegli una delle nostre sequenze preconfigurate:</li>
-    <ul>
+    <ul class="presets">
       <li><a href="/?.emicrania">Emicrania</a></li>
+      <li><a href="/?.dolori">Dolori cronici</a></li>
+      <br>
+      <li><a href="/?.ansiaDepressione">Ansia e depressione</a></li>
       <li><a href="/?.insonnia">Insonnia</a></li>
       <li><a href="/?.rilassamento">Rilassamento</a></li>
+      <br>
       <li><a href="/?.studioEnergizzante">Studio (energizzante)</a></li>
       <li><a href="/?.studioRilassante">Studio (rilassante)</a></li>
       <li><a href="/?.lavoroFocalizzato">Lavoro focalizzato</a></li>
+      <li><a href="/?.guadagnoQI">Aumento QI</a></li>
+      <br>
       <li><a href="/?.meditazione">Meditazione</a></li>
       <li><a href="/?.usoRicreativo">Uso ricreativo</a></li>
-      <li><a href="/?.guadagnoQI">Aumento QI</a></li>
     </ul>
     <li>Clicca su "Apri Controlli" e poi su "Inizia ora!".</li>
     <li>Puoi usare delle cuffie o lasciare che il suono venga riprodotto da un altoparlante. Nel frattempo, puoi lavorare, meditare o fare qualsiasi cosa ti piaccia.</li>
