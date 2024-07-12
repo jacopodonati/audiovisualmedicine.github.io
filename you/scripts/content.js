@@ -73,21 +73,22 @@ function loginFB () {
     const membername = h1el.innerText
     const parts = membername.match(/[^\r\n]+/g)
     const name = parts[0]
-    let codename
+    let codename // abbiamo perso codename, guardi: https://www.facebook.com/renato.fabbri.125
     if (parts.length > 1) {
       codename = parts[1]
     }
     const userData = { name, codename, sid, nid, id, newfb: true }
     chrome.storage.sync.set({ userData }, () => {
       console.log('userData set', { userData })
+      window.alert('login succeded.')
     })
   }
 }
 
-function getFriends () {
+function getFriends (isFriends) { // if isFriends is false, getting friendships
   scrollTillEnd(() => chrome.storage.sync.get(
     ['userData'],
-    ({ userData }) => scrappeFriends(userData, true)
+    ({ userData }) => scrappeFriends(userData, isFriends)
   ), true)
 }
 
@@ -156,19 +157,25 @@ function scrappeFriends (userData, isFriends) {
   })
   console.log({ structs })
   chrome.runtime.sendMessage({ command: 'absorb', background: true, structs }, () => {
-    chrome.storage.sync.set({ nfriends: structs.length }, () => {
-      console.log('friends scrapped, absorbed in network, and their number written to storage:', structs.length)
-    })
+    console.log('friends(ships) scrapped and sent to background:', structs.length)
+    if (isFriends) {
+      window.alert('friends registered.')
+    } else {
+      window.alert('friendships registered for 1 more friend.')
+    }
   })
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   console.log({ request, sender, sendResponse })
   if (!request.content) return
-  if (request.command === 'login') {
+  const { command } = request
+  if (command === 'login') {
     console.log('lets get this login data!')
     loginFB()
-  } if (request.command === 'scrappeFriends') {
-    getFriends()
+  } if (command === 'scrappeFriends') {
+    getFriends(true)
+  } if (command === 'scrappeFriendships') {
+    getFriends(false)
   }
 })

@@ -8,7 +8,8 @@
     "activeTab",
     "storage",
     "unlimitedStorage",
-    "tabs"
+    "tabs",
+    "notifications"
   ],
   "icons": {
     "16": "imgs2/person16.ico",

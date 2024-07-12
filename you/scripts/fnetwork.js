@@ -123,7 +123,7 @@ class FNetwork {
   getNextURL () {
     // we are only visiting the nodes with numeric id,
     // which implies the giant component
-    // todo: visit string ids to have the small components as well
+    // TODO: visit string ids to have the small components as well
     const nodeIds = []
     this.graph.forEachNode((n, a) => {
       if (a.nid === undefined) return
@@ -137,7 +137,8 @@ class FNetwork {
     let url
     nodeIds.some(i => {
       if (!i.scrapped) {
-        url = `https://www.facebook.com/browse/mutual_friends/?uid=${i.nid}`
+        // url = `https://www.facebook.com/browse/mutual_friends/?uid=${i.nid}`  // old
+        url = `https://www.facebook.com/profile.php?id=${i.nid}&sk=friends_mutual`
         this.lastId = i.id
       }
       return Boolean(url)
@@ -145,7 +146,8 @@ class FNetwork {
     if (!url) {
       nodeIds.some(i => {
         if (i.scrapped < this.round) {
-          url = `https://www.facebook.com/browse/mutual_friends/?uid=${i.nid}`
+          // url = `https://www.facebook.com/browse/mutual_friends/?uid=${i.nid}` // old
+          url = `https://www.facebook.com/profile.php?id=${i.nid}&sk=friends_mutual`
           this.lastId = i.id
         }
         return Boolean(url)

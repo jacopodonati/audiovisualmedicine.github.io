@@ -1,6 +1,7 @@
 /* global wand */
 const e = module.exports
 const Graph = require('graphology')
+window.amgraph = Graph
 const { erdosRenyi } = require('graphology-generators/random')
 const PIXI = require('pixi.js')
 const { random } = require('graphology-layout')
@@ -287,6 +288,7 @@ e.ParticleNet2 = class { // using graphology net and positions as given by force
       circle.interactive = this.interactive
       this.nodeContainer.addChild(circle)
       a.pixiElement = circle
+      a.name = a.name || 'anonym'
       if (a.name) { // todo: implement rendering of the names on the fly
         const texto = new PIXI.Text(
           a.name,

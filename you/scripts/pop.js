@@ -1,6 +1,7 @@
 /* global chrome */
 console.log('popup (script) initiated')
 const $ = window.$ = require('jquery')
+const fAll = require('../../scripts/modules/transfer.js').fAll
 const { stdDiv, mkGrid, gridDivider, chooseUnique } = require('../../scripts/modules/utils.js')
 
 let cDiv
@@ -49,8 +50,8 @@ function setFacebook () {
     addRow(name, dict, grid, attr)
   }
   chrome.storage.sync.get(
-    ['userData', 'nfriends', 'metaData', 'lastScrapped', 'sround'],
-    ({ userData, nfriends, metaData, lastScrapped, sround }) => {
+    ['userData', 'nfriends', 'nfriendships', 'nscrapped', 'metaData', 'lastScrapped', 'sround'],
+    ({ userData, nfriends, nfriendships, nscrapped, metaData, lastScrapped, sround }) => {
       console.log({ userData, nfriends, metaData, lastScrapped, sround })
       userData = userData || {}
       add('name', userData)
@@ -60,8 +61,10 @@ function setFacebook () {
       metaData = metaData || {}
       $('<span/>').html('friends:').appendTo(grid)
       $('<span/>').html(nfriends).appendTo(grid)
-      add('friendships', metaData)
-      add('scrapped', metaData) // friends scrapped?
+      $('<span/>').html('friendships:').appendTo(grid)
+      $('<span/>').html(nfriendships).appendTo(grid)
+      $('<span/>').html('scrapped:').appendTo(grid)
+      $('<span/>').html(nscrapped).appendTo(grid)
       gridDivider(160, 160, 160, grid, 1)
       $('<span/>').html('previous scrappe:').appendTo(grid)
       $('<span/>').html(mkDate(lastScrapped)).appendTo(grid)
@@ -77,10 +80,17 @@ function setFacebook () {
         .appendTo('#dFacebook')
         .text(command)
         .click(() => {
-          chrome.runtime.sendMessage({
-            command,
-            background: true
-          })
+          if (command === 'logout') {
+            chrome.storage.sync.remove(['userData', 'lastScrapped', 'nfriends', 'nfriendships', 'nscrapped'], () => {
+              console.log('yeah, logged out')
+              setTimeout(() => window.close(), 1000)
+            })
+          } else {
+            chrome.runtime.sendMessage({
+              command,
+              background: true
+            })
+          }
         })
 
       const disabled = command === 'login'
@@ -123,6 +133,12 @@ function setFacebook () {
       })
         .appendTo('#dFacebook')
         .text('See yourself')
+        .click(() => {
+          chrome.runtime.sendMessage({
+            command: 'seeNetwork',
+            background: true
+          })
+        })
     }
   )
 }
@@ -156,4 +172,23 @@ $(document).ready(() => {
       console.log('received message on popup!', { request, sender, sendResponse })
     }
   )
+})
+
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  if (!request.popup) return
+  const { command } = request
+  if (command === 'writeNet') {
+    chrome.storage.sync.get(
+      ['userData'],
+      ({ userData }) => {
+        fAll.df4b({ 'userData.id': userData.id }).then(() => {
+          userData.net = request.net
+          fAll.wf4b({ userData }).then(() => {
+            console.log('net written')
+            chrome.tabs.create({ url: `http://audiovisualmedicine.github.io?you&fid=${userData.id}&deg=true` })
+          })
+        })
+      }
+    )
+  }
 })

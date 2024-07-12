@@ -4,6 +4,7 @@ const fnet = chrome.fnet = require('./fnetwork.js')
 
 let currentTabId
 let currentStep
+// let visitCount
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   console.log('received message on background!', { request, sender, sendResponse })
@@ -15,10 +16,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         currentTabId = r.tabs[0].id
         currentStep = command
       })
-    })
-  } else if (command === 'logout') {
-    chrome.storage.sync.remove(['userData', 'lastScrapped'], () => {
-      console.log('yeah, logged out')
     })
   } else if (command === 'scrappeFriends') {
     chrome.storage.sync.get(['userData'], ({ userData }) => {
@@ -34,8 +31,45 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         currentStep = command
       })
     })
+  } else if (command === 'scrappeFriendships') {
+    const url = fnet.getNextURL()
+    console.log({ url })
+    chrome.tabs.create({ url }).then(r => {
+      currentTabId = r.id
+      currentStep = command
+    })
+    // visitCount = 1
+  } else if (command === 'seeNetwork') {
+    // write net to database (send to content or popup to do so)
+    // then open tab with url
+    chrome.runtime.sendMessage({
+      command: 'writeNet',
+      net: fnet.graph.toJSON(),
+      popup: true
+    })
   } else if (command === 'absorb') {
-    fnet.absorb(request.structs)
+    const { structs } = request
+    console.log('absorb', { structs })
+    fnet.absorb(structs)
+    chrome.storage.sync.set({
+      nfriends: fnet.graph.order,
+      nfriendships: fnet.graph.size,
+      nscrapped: fnet.nScrapped()
+    }, () => {
+      console.log('friends(ships) absorbed in network, and their number written to storage:', { structs })
+      // if (fnet.graph.size) { // was getting friendship
+      //   if (visitCount === 10) {
+      //     visitCount = undefined
+      //   } else {
+      //     const url = fnet.getNextURL()
+      //     chrome.tabs.create({ url }).then(r => {
+      //       currentTabId = r.id
+      //       currentStep = command
+      //     })
+      //     visitCount++
+      //   }
+      // }
+    })
   }
 })
 
