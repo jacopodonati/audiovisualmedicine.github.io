@@ -610,7 +610,7 @@ e.mkRegisterModal = names => {
   })
   const youfs = $('<fieldset/>')
     .appendTo(mcontent)
-    .append($('<legend/>').text('You'))
+    .append($('<legend/>').text('Le tue informazioni'))
 
   const emailfs = $('<fieldset/>')
     .appendTo(mcontent)
@@ -620,31 +620,45 @@ e.mkRegisterModal = names => {
     .appendTo(mcontent)
     .append($('<legend/>').text('Password'))
 
-  $('<input/>', { type: 'text', class: 'lwidget', id: 'rname', placeholder: 'name' })
+  $('<input/>', { type: 'text', class: 'lwidget', id: 'rname', placeholder: 'Nome' }).attr({
+    autocomplete: 'given-name'
+  })
     .appendTo(youfs)
   $('<br/>').appendTo(youfs)
-  $('<input/>', { type: 'text', class: 'lwidget', id: 'rlname', placeholder: 'surname', css: { margin: '1%' } })
+  $('<input/>', { type: 'text', class: 'lwidget', id: 'rlname', placeholder: 'Cognome', css: { margin: '1%' } }).attr({
+    autocomplete: 'family-name'
+  })
     .appendTo(youfs)
   $('<br/>').appendTo(youfs)
 
-  $('<input/>', { type: 'text', class: 'lwidget', id: 'rcity', name: 'rcity', placeholder: 'city (optional)', css: { margin: '1%' } })
+  $('<input/>', { type: 'text', class: 'lwidget', id: 'rcity', name: 'rcity', placeholder: 'Città (facoltativo)', css: { margin: '1%' } }).attr({
+    autocomplete: 'address-level2'
+  })
     .appendTo(youfs)
   $('#rcity').autocomplete({
     source: names
   })
 
-  $('<input/>', { type: 'text', class: 'lwidget', id: 'ruemail', placeholder: 'address' })
+  $('<input/>', { type: 'text', class: 'lwidget', id: 'ruemail', placeholder: 'Indirizzo' }).attr({
+    autocomplete: 'email'
+  })
     .appendTo(emailfs)
   $('<br/>')
     .appendTo(emailfs)
-  $('<input/>', { type: 'text', class: 'lwidget', id: 'ruemail2', placeholder: 'repeat address', css: { margin: '1%' } })
+  $('<input/>', { type: 'text', class: 'lwidget', id: 'ruemail2', placeholder: 'Ripeti l\'indirizzo', css: { margin: '1%' } }).attr({
+    autocomplete: 'email'
+  })
     .appendTo(emailfs)
 
-  $('<input/>', { type: 'password', class: 'lwidget', id: 'rupwd', placeholder: 'password' })
+  $('<input/>', { type: 'password', class: 'lwidget', id: 'rupwd', placeholder: 'Password' }).attr({
+    autocomplete: 'new-password'
+  })
     .appendTo(pwfs)
   $('<br/>')
     .appendTo(pwfs)
-  $('<input/>', { type: 'password', class: 'lwidget', id: 'rupwd2', placeholder: 'verify password', css: { margin: '1%' } })
+  $('<input/>', { type: 'password', class: 'lwidget', id: 'rupwd2', placeholder: 'Ripeti la password', css: { margin: '1%' } }).attr({
+    autocomplete: 'new-password'
+  })
     .appendTo(pwfs)
 
   const emsg = $('<p/>', { id: 'emsg' }).appendTo(mfeedback)

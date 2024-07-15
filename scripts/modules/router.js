@@ -167,10 +167,10 @@ e.mkFooter = () => {
     }
   } else {
     const loginForm = $('<form/>', { onsubmit: 'event.preventDefault()' }).appendTo(ldiv)
-    const email = $('<input/>', { type: 'text', id: 'uemail', placeholder: 'email', css: { 'margin-right': '1%' } })
+    const email = $('<input/>', { type: 'text', id: 'uemail', placeholder: 'email', css: { 'margin-right': '1%' }, autocomplete: 'username' })
       .appendTo(loginForm)
       .appendTo(loginForm)
-    const pw = $('<input/>', { type: 'password', id: 'upwd', placeholder: 'password', css: { 'margin-right': '1%' } })
+    const pw = $('<input/>', { type: 'password', id: 'upwd', placeholder: 'password', css: { 'margin-right': '1%' }, autocomplete: 'current-password' })
       .appendTo(loginForm)
       .appendTo(loginForm)
     $('<button/>', { css: { 'margin-right': '1%' } })
