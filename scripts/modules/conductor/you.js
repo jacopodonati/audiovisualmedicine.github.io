@@ -28,11 +28,23 @@ module.exports.You = class {
     })
     app.stage.sortableChildren = true
     document.body.appendChild(app.view)
-    if (u('id') || u('cid')) {
-      (u('id') ? transfer.fAll.mark({ 'userData.id': u('id') }) : transfer.fAll.aeterni({ comName: u('cid') })).then(r => {
-        const foo = u('id') ? 'net' : 'network'
+    if (u('id') || u('cid') || u('fid')) {
+      let prom
+      if (u('fid')) {
+        prom = transfer.fAll.f4b({ 'userData.id': u('fid') })
+      } else {
+        prom = u('id') ? transfer.fAll.mark({ 'userData.id': u('id') }) : transfer.fAll.aeterni({ comName: u('cid') })
+      }
+      prom.then(r => {
         window.rrr = r
-        const anet = window.anet = r[0][foo]
+        let anet
+        if (u('fid')) {
+          anet = window.anet = r[0].userData.net
+        } else {
+          const foo = u('cid') ? 'network' : 'net'
+          anet = window.anet = r[0][foo]
+        }
+
         const pfm = window.pfm = net.plotFromMongo(anet, app, u('deg'))
         const dn = new net.ParticleNet2(app, pfm.net, pfm.atlas, true, true)
         pfm.dn = dn

@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "You",
+  "name": "Yours",
   "version": "2.0",
   "description": "Accessing your social self",
   "permissions": [
@@ -8,25 +8,24 @@
     "activeTab",
     "storage",
     "unlimitedStorage",
-    "tabs"
+    "tabs",
+    "notifications"
   ],
   "icons": {
-    "16": "imgs/person16.png",
-    "32": "imgs/person32.ico",
-    "48": "imgs/person48.ico",
-    "128": "imgs/person128.ico"
+    "16": "imgs2/person16.ico",
+    "32": "imgs2/person32.ico",
+    "48": "imgs2/person48.ico",
+    "128": "imgs2/person128.ico"
   },
   "action": {
     "default_popup": "pop.html",
-    "default_icon": "imgs/person16.png"
+    "default_icon": "imgs2/person16.ico"
   },
   "background": {
     "service_worker": "scripts/ok/background.js"
   },
-  "content_scripts": [
-    {
-      "js": ["scripts/ok/content.js"],
-      "matches": ["<all_urls>"]
-    }
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
   ]
 }
