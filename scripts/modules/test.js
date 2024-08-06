@@ -2333,7 +2333,7 @@ e.welcomeOLD = () => {
     .css('color', 'red')
     .css('font-size', '150%')
     .css('text-align', 'center')
-    // .fadeOut(1000).fadeIn(1000).fadeOut(1000).fadeIn(1000)
+  // .fadeOut(1000).fadeIn(1000).fadeOut(1000).fadeIn(1000)
   $('#createme')
     // .css('color', 'black')
     // .css('backgroundColor', 'yellow')
@@ -2341,8 +2341,8 @@ e.welcomeOLD = () => {
     .css('text-align', 'center')
     // .css('margin', '5%')
     .css('text-align', 'center')
-    // .css('border-radius', '5%')
-    // .fadeOut(1000).fadeIn(1000).fadeOut(1000).fadeIn(1000)
+  // .css('border-radius', '5%')
+  // .fadeOut(1000).fadeIn(1000).fadeOut(1000).fadeIn(1000)
   $('#createbutton')
     .css('font-size', 'larger')
     .css('padding', '5%')
@@ -4194,30 +4194,30 @@ e['003-pequeno-historico'] = () => {
   // como chegou à conclusão que ajudaria pessoas tristes ou com prolemas
 
   const parags = [
-  `
+    `
   Em oração constante e estudando diariamente a Palavra, procurei com diligência
   saber a vontade dA Fonte (dO Criador) para meus dias.
   Ele mostrou o que talvez seja a incumbência de todos. Entendi que ao menos minha ela é. 
   Devemos ter uma vida mais funcional, confortável
   e apta a ajudar outras pessoas, a sociedade e o planeta.
   `,
-  `
+    `
   Mantive-me, então, alternando oração e leitura da Palavra com modelagem,
   escrita de códigos computacionais e pesquisa científica.
   Uma constante busca de orientação divina para influenciar na Terra da melhor forma
   o que nos fosse dada permissão para influenciar.
   `,
-  `
+    `
   Contei com os Martelos do Recomeço
   ao aplicar MMM (meditação, mentalização e manifestação), com o suporte do audiovisual,
   para a obtenção de entendimentos, revelações e para harmonizar corpo e mente, individual e social.
   `,
-  `
+    `
   As explorações duraram cerca de duas décadas,
   mas este percurso final em que empregamos conscientemente nossos entendimentos
   levou poucos meses até o momento.
   `,
-  `
+    `
   Encontrei grande orientação vinculada à alcunha de "Arcturianos".
   As vias pelas quais eram disponibilizadas as mensagens não existem mais e tenho esperança de que estabeleçam novamente
   contato tão luminoso.
@@ -4226,7 +4226,7 @@ e['003-pequeno-historico'] = () => {
   Com recorrência associei os Arcturianos ao corpo de Luz que estamos ativando por meio dos
   Artefatos Audiovisuais (a.k.a. Artefatos Arcturianos).
   `,
-  `
+    `
   -- Ferreiros Renascidos, 01/Mar/2021
   `
   ].reduce((a, i) => a + `<p>${i}</p>`, '')
@@ -4247,52 +4247,52 @@ e['002-caminho'] = () => {
   // como chegou à conclusão que ajudaria pessoas tristes ou com prolemas
 
   const parags = [
-  `A história do surgimento do artefato,
+    `A história do surgimento do artefato,
   de como surgiu a ideia de usá-lo para meditação,
   e como chegamos à conclusão de que é uma panaceia.`,
-  `A Verdadeira Luz da Dedicação pediu para eu lhe contar.
+    `A Verdadeira Luz da Dedicação pediu para eu lhe contar.
   `,
-  `Conto aqui nestas linhas.
+    `Conto aqui nestas linhas.
   Em oração constante e estudando diariamente a Palavra, procurei com diligência
   saber a vontade dA Fonte (dO Criador) para meus dias.
   `,
-  `Ele mostrou minha preparação, meu contexto, e então minha incumbência.
+    `Ele mostrou minha preparação, meu contexto, e então minha incumbência.
   De fato, "os ouvidos que ouvem e os olhos que veem foram feitos pelo Senhor" (Provérbios 20:12)
   e bastava olhar. 
   `,
-  `Devemos ter uma vida mais funcional, confortável
+    `Devemos ter uma vida mais funcional, confortável
   e apta a ajudar outras pessoas, a sociedade e o planeta.
   `,
-  `
+    `
   Nem sempre é fácil resistir ao dinheiro imediato.
   Seduz a ideia de alcançar melhores condições materiais, mas sei por experiência que
   obedecer a Deus é o melhor que a vida tem para nos oferecer, e além disso
   "Deleite-se no Senhor, e Ele atenderá aos desejos do seu coração" (Salmos 37:4).
   `,
-  `
+    `
   Assim, apliquei os amadurecimentos que tínhamos, eu e Os Martelos do Recomeço,
   sobre meditação, mentalização e manifestação, sobre os usos do audiovisual
   para obtenção de entendimentos, revelações e para harmonizar o corpo e a mente.
   `,
-  `
+    `
   O processo durou muitos anos se levados em conta nossas explorações,
   mas este percurso final em que aplicamos conscientemente nossos entendimentos
   levou poucos meses.
   `,
-  `
+    `
   Foi um processo permeado de oração e leitura da Palavra alternado com modelagem,
   contas e escrita de códigos computacionais.
   Uma constante busca de orientação divina para influenciar na Terra da melhor forma
   o que nos fosse dada permissão.
   `,
-  `
+    `
   "Não consigo estabelecer relações entre você, os Martelos do Recomeço, e o 'arcturianos'",
   a Verdadeira Luz da Dedicação lembrou.
   Nas dificuldades que enfrentei encontrei grande orientação em mensagens
   transmitidas em nome destes nossos irmãos.
   Diz-se que eles tem a missão aqui na Terra de unir espiritualidade e tecnologia.
   `,
-  `
+    `
   -- Ferreiros Renascidos, 01/Mar/2021
   `
   ].reduce((a, i) => a + `<p>${i}</p>`, '')
@@ -5160,7 +5160,7 @@ e.testLoc = () => {
   // )
 
   $.get('https://ipinfo.io/?token=a1cf42d7d11976', function (response) {
-  // $.get('https://ipinfo.io/', function (response) {
+    // $.get('https://ipinfo.io/', function (response) {
     console.log(response.city, response.country, response, 'BBBB')
   }, 'jsonp')
   console.log('yey man')
@@ -5862,5 +5862,82 @@ e.profiloForm2 = () => {
       })
 
     $('#loading').hide()
+  })
+}
+
+e.tabellaUtenti = () => {
+  transfer.fAll.mark({ email: { $exists: true } }).then(r => {
+    const users = r.filter((user) => { return user.hasOwnProperty('pw') })
+    // const sessions = r.filter((user) => { return user.hasOwnProperty('artifact') })
+    const artifacts = ['emicrania', 'dolori', 'ansiaDepressione', 'insonnia', 'rilassamento', 'studioEnergizzante', 'studioRilassante', 'lavoroFocalizzato', 'guadagnoQI', 'meditazione', 'usoRicreativo']
+    const adiv = utils.stdDiv()
+    window.wand.userFuncs.push(() => {
+      $('<h1/>').text('Tabella utenti')
+        .appendTo(adiv)
+
+      const table = $('<table/>', { style: ['font-size: .8rem'] })
+        .appendTo(adiv)
+
+      const thead = $('<thead/>')
+      const theadTr = $('<tr/>')
+        .append($('<th/>').text('Utente'))
+      // .append($('<th/>').text('Sessioni iniziate'))
+      // .append($('<th/>').text('Sessioni concluse'))
+      artifacts.forEach(artifact => {
+        theadTr.append($('<th/>').text(artifact))
+      })
+
+      thead.appendTo(table)
+      theadTr.appendTo(thead)
+
+      users.forEach(user => {
+        // const userSessions = ''
+        // const artifactSessions = r.filter((item) => { return item.hasOwnProperty('artifact') && item.artifact.header.med2 === artifact })
+        const userRow = $('<tr/>')
+          .append($('<td/>').text(user.email))
+        artifacts.forEach(artifact => {
+          const artifactSessions = r.filter((item) => { return (item.email === user.email) && item.hasOwnProperty('artifact') && (item.artifact.header.med2 === artifact) })
+          $('<td/>').text(`${artifactSessions.length}`)
+            .appendTo(userRow)
+        })
+
+        userRow.appendTo(table)
+      })
+
+      $('#loading').hide()
+    })
+  })
+}
+
+e.statisticheUtilizzo = () => {
+  transfer.fAll.mark({ email: { $exists: true } }).then(r => {
+    const users = r.filter((user) => { return user.hasOwnProperty('pw') })
+    const sessions = r.filter((user) => { return user.hasOwnProperty('artifact') })
+    const artifacts = ['emicrania', 'dolori', 'ansiaDepressione', 'insonnia', 'rilassamento', 'studioEnergizzante', 'studioRilassante', 'lavoroFocalizzato', 'guadagnoQI', 'meditazione', 'usoRicreativo']
+    const adiv = utils.stdDiv()
+    window.wand.userFuncs.push(() => {
+      $('<h1/>').text('Statistiche di utilizzo')
+        .appendTo(adiv)
+
+      const list = $('<ul/>')
+        .appendTo(adiv)
+      const artifactsList = $('<ul/>')
+
+      $('<li/>').text(`Utenti: ${users.length}`)
+        .appendTo(list)
+      $('<li/>').text(`Sessioni: ${sessions.length}`)
+        .appendTo(list)
+      $('<li/>').text('Dispositivi:').append(artifactsList)
+        .appendTo(list)
+
+      artifacts.forEach(artifact => {
+        const artifactSessions = r.filter((item) => { return item.hasOwnProperty('artifact') && item.artifact.header.med2 === artifact })
+
+        $('<li/>').text(`${artifact}: ${artifactSessions.length}`)
+          .appendTo(artifactsList)
+      })
+
+      $('#loading').hide()
+    })
   })
 }
