@@ -5870,42 +5870,40 @@ e.tabellaUtenti = () => {
     const users = r.filter((user) => { return user.hasOwnProperty('pw') })
     // const sessions = r.filter((user) => { return user.hasOwnProperty('artifact') })
     const artifacts = ['emicrania', 'dolori', 'ansiaDepressione', 'insonnia', 'rilassamento', 'studioEnergizzante', 'studioRilassante', 'lavoroFocalizzato', 'guadagnoQI', 'meditazione', 'usoRicreativo']
-    const adiv = utils.stdDiv()
-    window.wand.userFuncs.push(() => {
-      $('<h1/>').text('Tabella utenti')
-        .appendTo(adiv)
+    const adiv = utils.stdDiv().appendTo('body')
+    $('<h1/>').text('Tabella utenti')
+      .appendTo(adiv)
 
-      const table = $('<table/>', { style: ['font-size: .8rem'] })
-        .appendTo(adiv)
+    const table = $('<table/>', { style: ['font-size: .8rem'] })
+      .appendTo(adiv)
 
-      const thead = $('<thead/>')
-      const theadTr = $('<tr/>')
-        .append($('<th/>').text('Utente'))
-      // .append($('<th/>').text('Sessioni iniziate'))
-      // .append($('<th/>').text('Sessioni concluse'))
-      artifacts.forEach(artifact => {
-        theadTr.append($('<th/>').text(artifact))
-      })
-
-      thead.appendTo(table)
-      theadTr.appendTo(thead)
-
-      users.forEach(user => {
-        // const userSessions = ''
-        // const artifactSessions = r.filter((item) => { return item.hasOwnProperty('artifact') && item.artifact.header.med2 === artifact })
-        const userRow = $('<tr/>')
-          .append($('<td/>').text(user.email))
-        artifacts.forEach(artifact => {
-          const artifactSessions = r.filter((item) => { return (item.email === user.email) && item.hasOwnProperty('artifact') && (item.artifact.header.med2 === artifact) })
-          $('<td/>').text(`${artifactSessions.length}`)
-            .appendTo(userRow)
-        })
-
-        userRow.appendTo(table)
-      })
-
-      $('#loading').hide()
+    const thead = $('<thead/>')
+    const theadTr = $('<tr/>')
+      .append($('<th/>').text('Utente'))
+    // .append($('<th/>').text('Sessioni iniziate'))
+    // .append($('<th/>').text('Sessioni concluse'))
+    artifacts.forEach(artifact => {
+      theadTr.append($('<th/>').text(artifact))
     })
+
+    thead.appendTo(table)
+    theadTr.appendTo(thead)
+
+    users.forEach(user => {
+      // const userSessions = ''
+      // const artifactSessions = r.filter((item) => { return item.hasOwnProperty('artifact') && item.artifact.header.med2 === artifact })
+      const userRow = $('<tr/>')
+        .append($('<td/>').text(user.email))
+      artifacts.forEach(artifact => {
+        const artifactSessions = r.filter((item) => { return (item.email === user.email) && item.hasOwnProperty('artifact') && (item.artifact.header.med2 === artifact) })
+        $('<td/>').text(`${artifactSessions.length}`)
+          .appendTo(userRow)
+      })
+
+      userRow.appendTo(table)
+    })
+
+    $('#loading').hide()
   })
 }
 
@@ -5914,30 +5912,27 @@ e.statisticheUtilizzo = () => {
     const users = r.filter((user) => { return user.hasOwnProperty('pw') })
     const sessions = r.filter((user) => { return user.hasOwnProperty('artifact') })
     const artifacts = ['emicrania', 'dolori', 'ansiaDepressione', 'insonnia', 'rilassamento', 'studioEnergizzante', 'studioRilassante', 'lavoroFocalizzato', 'guadagnoQI', 'meditazione', 'usoRicreativo']
-    const adiv = utils.stdDiv()
-    window.wand.userFuncs.push(() => {
-      $('<h1/>').text('Statistiche di utilizzo')
-        .appendTo(adiv)
+    const adiv = utils.stdDiv().appendTo('body')
+    $('<h1/>').text('Statistiche di utilizzo')
+      .appendTo(adiv)
 
-      const list = $('<ul/>')
-        .appendTo(adiv)
-      const artifactsList = $('<ul/>')
+    const list = $('<ul/>')
+      .appendTo(adiv)
+    const artifactsList = $('<ul/>')
 
-      $('<li/>').text(`Utenti: ${users.length}`)
-        .appendTo(list)
-      $('<li/>').text(`Sessioni: ${sessions.length}`)
-        .appendTo(list)
-      $('<li/>').text('Dispositivi:').append(artifactsList)
-        .appendTo(list)
+    $('<li/>').text(`Utenti: ${users.length}`)
+      .appendTo(list)
+    $('<li/>').text(`Sessioni: ${sessions.length}`)
+      .appendTo(list)
+    $('<li/>').text('Dispositivi:').append(artifactsList)
+      .appendTo(list)
 
-      artifacts.forEach(artifact => {
-        const artifactSessions = r.filter((item) => { return item.hasOwnProperty('artifact') && item.artifact.header.med2 === artifact })
+    artifacts.forEach(artifact => {
+      const artifactSessions = r.filter((item) => { return item.hasOwnProperty('artifact') && item.artifact.header.med2 === artifact })
 
-        $('<li/>').text(`${artifact}: ${artifactSessions.length}`)
-          .appendTo(artifactsList)
-      })
-
-      $('#loading').hide()
+      $('<li/>').text(`${artifact}: ${artifactSessions.length}`)
+        .appendTo(artifactsList)
     })
   })
+  $('#loading').hide()
 }
