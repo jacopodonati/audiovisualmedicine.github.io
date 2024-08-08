@@ -5867,8 +5867,8 @@ e.profiloForm2 = () => {
 
 e.tabellaUtenti = () => {
   transfer.fAll.mark({ email: { $exists: true } }).then(r => {
-    const users = r.filter((user) => { return user.hasOwnProperty('pw') })
-    // const sessions = r.filter((user) => { return user.hasOwnProperty('artifact') })
+    const users = r.filter((user) => { return Object.prototype.hasOwnProperty.call(user, 'pw') })
+    // const sessions = r.filter((user) => { return Object.prototype.hasOwnProperty.call(user, 'artifact') })
     const artifacts = ['emicrania', 'dolori', 'ansiaDepressione', 'insonnia', 'rilassamento', 'studioEnergizzante', 'studioRilassante', 'lavoroFocalizzato', 'guadagnoQI', 'meditazione', 'usoRicreativo']
     const adiv = utils.stdDiv().appendTo('body')
     $('<h1/>').text('Tabella utenti')
@@ -5891,11 +5891,11 @@ e.tabellaUtenti = () => {
 
     users.forEach(user => {
       // const userSessions = ''
-      // const artifactSessions = r.filter((item) => { return item.hasOwnProperty('artifact') && item.artifact.header.med2 === artifact })
+      // const artifactSessions = r.filter((item) => { return Object.prototype.hasOwnProperty.call(item, 'artifact') && item.artifact.header.med2 === artifact })
       const userRow = $('<tr/>')
         .append($('<td/>').text(user.email))
       artifacts.forEach(artifact => {
-        const artifactSessions = r.filter((item) => { return (item.email === user.email) && item.hasOwnProperty('artifact') && (item.artifact.header.med2 === artifact) })
+        const artifactSessions = r.filter((item) => { return (item.email === user.email) && Object.prototype.hasOwnProperty.call(item, 'artifact') && (item.artifact.header.med2 === artifact) })
         $('<td/>').text(`${artifactSessions.length}`)
           .appendTo(userRow)
       })
@@ -5909,8 +5909,8 @@ e.tabellaUtenti = () => {
 
 e.statisticheUtilizzo = () => {
   transfer.fAll.mark({ email: { $exists: true } }).then(r => {
-    const users = r.filter((user) => { return user.hasOwnProperty('pw') })
-    const sessions = r.filter((user) => { return user.hasOwnProperty('artifact') })
+    const users = r.filter((user) => { return Object.prototype.hasOwnProperty.call(user, 'pw') })
+    const sessions = r.filter((user) => { return Object.prototype.hasOwnProperty.call(user, 'artifact') })
     const artifacts = ['emicrania', 'dolori', 'ansiaDepressione', 'insonnia', 'rilassamento', 'studioEnergizzante', 'studioRilassante', 'lavoroFocalizzato', 'guadagnoQI', 'meditazione', 'usoRicreativo']
     const adiv = utils.stdDiv().appendTo('body')
     $('<h1/>').text('Statistiche di utilizzo')
@@ -5928,7 +5928,7 @@ e.statisticheUtilizzo = () => {
       .appendTo(list)
 
     artifacts.forEach(artifact => {
-      const artifactSessions = r.filter((item) => { return item.hasOwnProperty('artifact') && item.artifact.header.med2 === artifact })
+      const artifactSessions = r.filter((item) => { return Object.prototype.hasOwnProperty.call(item, 'artifact') && item.artifact.header.med2 === artifact })
 
       $('<li/>').text(`${artifact}: ${artifactSessions.length}`)
         .appendTo(artifactsList)
