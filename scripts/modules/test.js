@@ -2094,6 +2094,10 @@ e.guide = () => {
       <li><a href="/?.emicrania">Emicrania</a></li>
       <li><a href="/?.dolori">Dolori cronici</a></li>
       <br>
+      <li><a href="/?.focus_">Concentrazione</a></li>
+      <li><a href="/?.meditazione">Meditazione</a></li>
+      <li><a href="/?.usoRicreativo">Uso ricreativo</a></li>
+      <br>
       <li><a href="/?.ansiaDepressione">Ansia e depressione</a></li>
       <li><a href="/?.insonnia">Insonnia</a></li>
       <li><a href="/?.rilassamento">Rilassamento</a></li>
@@ -2102,9 +2106,6 @@ e.guide = () => {
       <li><a href="/?.studioRilassante">Studio (rilassante)</a></li>
       <li><a href="/?.lavoroFocalizzato">Lavoro focalizzato</a></li>
       <li><a href="/?.guadagnoQI">Aumento QI</a></li>
-      <br>
-      <li><a href="/?.meditazione">Meditazione</a></li>
-      <li><a href="/?.usoRicreativo">Uso ricreativo</a></li>
     </ul>
     <li>Clicca su "Apri Controlli" e poi su "Inizia ora!".</li>
     <li>Puoi usare delle cuffie o lasciare che il suono venga riprodotto da un altoparlante. Nel frattempo, puoi lavorare, meditare o fare qualsiasi cosa ti piaccia.</li>
@@ -5869,7 +5870,7 @@ e.tabellaUtenti = () => {
   transfer.fAll.mark({ email: { $exists: true } }).then(r => {
     const users = r.filter((user) => { return Object.prototype.hasOwnProperty.call(user, 'pw') })
     // const sessions = r.filter((user) => { return Object.prototype.hasOwnProperty.call(user, 'artifact') })
-    const artifacts = ['emicrania', 'dolori', 'ansiaDepressione', 'insonnia', 'rilassamento', 'studioEnergizzante', 'studioRilassante', 'lavoroFocalizzato', 'guadagnoQI', 'meditazione', 'usoRicreativo']
+    const artifacts = ['emicrania', 'dolori', 'ansiaDepressione', 'insonnia', 'rilassamento', 'studioEnergizzante', 'studioRilassante', 'lavoroFocalizzato', 'guadagnoQI', 'meditazione', 'usoRicreativo', 'focus_']
     const adiv = utils.stdDiv().appendTo('body')
     $('<h1/>').text('Tabella utenti')
       .appendTo(adiv)
@@ -5911,7 +5912,7 @@ e.statisticheUtilizzo = () => {
   transfer.fAll.mark({ email: { $exists: true } }).then(r => {
     const users = r.filter((user) => { return Object.prototype.hasOwnProperty.call(user, 'pw') })
     const sessions = r.filter((user) => { return Object.prototype.hasOwnProperty.call(user, 'artifact') })
-    const artifacts = ['emicrania', 'dolori', 'ansiaDepressione', 'insonnia', 'rilassamento', 'studioEnergizzante', 'studioRilassante', 'lavoroFocalizzato', 'guadagnoQI', 'meditazione', 'usoRicreativo']
+    const artifacts = ['emicrania', 'dolori', 'ansiaDepressione', 'insonnia', 'rilassamento', 'studioEnergizzante', 'studioRilassante', 'lavoroFocalizzato', 'guadagnoQI', 'meditazione', 'usoRicreativo', 'focus_']
     const adiv = utils.stdDiv().appendTo('body')
     $('<h1/>').text('Statistiche di utilizzo')
       .appendTo(adiv)
