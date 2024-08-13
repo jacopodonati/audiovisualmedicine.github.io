@@ -507,7 +507,7 @@ e.Med = class {
     const table = $('<table/>', { class: 'w-100', css: { margin: 'auto', 'border-collapse': 'collapse', 'table-layout': 'auto !important' } })
       .appendTo(tdiv)
     const prep = end ? labels.postsessione[index] : labels.presessione[index]
-    $('<caption/>', { css: { 'margin-bottom': '2%' } }).html(`<b>${prep} sessione</b>`)
+    $('<caption/>', { css: { 'margin-bottom': '2%' } }).html(`${prep}: <span id="scoreboard">0</span> pt.`)
       .appendTo(table)
     const trh = $('<tr/>').appendTo(table)
     $('<td/>').appendTo(trh)
@@ -538,6 +538,28 @@ e.Med = class {
       const row = $(this).attr('name')
       console.log('value for ' + row + ': ' + val)
       self.scores[row] = val
+
+      let score = 0
+      const radios = document.querySelectorAll('.mradio:checked')
+      radios.forEach(radio => {
+        const name = radio.getAttribute('name')
+        const value = radio.value - 2
+        switch (name) {
+          case 'mood':
+          case 'pain':
+          case 'sleepiness':
+            score -= value
+            break
+          case 'relax':
+          case 'concentration':
+            score += value
+            break
+          default:
+            break
+        }
+      })
+      const scoreboard = document.querySelector('#scoreboard')
+      scoreboard.textContent = score
     })
     window.items = { items, degrees, index, table }
 
