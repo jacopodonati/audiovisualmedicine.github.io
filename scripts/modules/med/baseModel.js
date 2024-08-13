@@ -327,6 +327,22 @@ e.Med = class {
   }
 
   setStage (s) {
+    const isHC = window.location.href.includes('harmonicare')
+    const index = isHC ? 0 : 1
+    const labels = {
+      countdown: [
+        'Conto alla rovescia all\'inizio',
+        'Countdown to start'
+      ],
+      inspira: [
+        ' inspira ',
+        ' inhale '
+      ],
+      espira: [
+        ' espira ',
+        ' exhale '
+      ]
+    }
     this.setTimeToStart(s)
     const isMobile = this.isMobile
     const adiv = utils.centerDiv(undefined, $('#canvasDiv'), utils.chooseUnique(['#bddfe3'], 1)[0])
@@ -339,7 +355,7 @@ e.Med = class {
         'font-size': isMobile ? '3vw' : '1vw'
       }
     // }).html(`countdown to start (at ${nextSync(true)}):`)
-    }).html('conto alla rovescia all\'inizio:')
+    }).html(`${labels.countdown[index]}:`)
     const countdownCount = $('<span/>', {
       class: 'notranslate',
       css: {
@@ -386,8 +402,8 @@ e.Med = class {
     })
     $('<div/>', { class: 'slideraa round' }).appendTo(label)
 
-    const inhale = $('<span/>').html(' inspira ')
-    const exhale = $('<span/>').html(' espira ')
+    const inhale = $('<span/>').html(labels.inspira[index])
+    const exhale = $('<span/>').html(labels.espira[index])
     $('<p/>', {
       css: {
         'font-size': isMobile ? '3vw' : '1vw'
@@ -420,21 +436,31 @@ e.Med = class {
     const adiv = $('<div/>', { css: { width: canvas.width(), height: canvas.height(), 'background-color': '#000000', 'text-align': 'center', 'justify-content': 'center', 'align-items': 'center', display: 'flex' }, id: 'hdiv' }).prependTo('#canvasDiv')
     const cdiv = $('<div/>', { class: 'p-5 m-5', css: { width: '60%', 'justify-content': 'center', 'align-items': 'center' } }).appendTo(adiv)
     $('#canvasDiv canvas').hide()
+
+    const labels = {
+      title: [
+        'Istruzioni',
+        'Instructions'
+      ],
+      instructions: [
+        ['Imposta il volume perché sia confortevole.', 'Set the volume to a comfortable level.'],
+        ['Avvia la sessione premendo il pulsante qui sotto, e sincronizza la respirazione con il movimento del disco o gli stimoli uditivi.', 'Start your session by pressing the button on the bottom of the page, and syncronize your breath to the movement of the disc or to the sound'],
+        ['Puoi concentrarti sull\'animazione, ma puoi anche meditare, lavorare, leggere o studiare.', 'You can focus on the animation, but you can also meditate, work, read or study.'],
+        ['Pur non essendo obbligatorie, consigliamo l\'uso di cuffie per massimizzare i benefici.', 'While not required, we reccomend the use of headphones to maximize the advantages'],
+        ['Per un uso avanzato, <a href="?guide" target="_blank">leggi le Linee Guida</a>.', 'For an advanced use, <a href="?guide" target="_blank">read the Guidelines</a>']
+      ]
+    }
+    const isHC = window.location.href.includes('harmonicare')
+    const index = isHC ? 0 : 1
+
     $('<h2/>', { id: 'hh', style: 'text-align:center;font-size: 4rem;font-weight: 400;letter-spacing: 0.1rem;color: #ffffff;' })
       .appendTo(cdiv)
-      .text('Istruzioni')
+      .text(labels.title[index])
     const ul = $('<ul/>', { class: 'tutorial', css: { 'text-align': 'left', color: '#ffffff' } }).appendTo(
       $('<p/>').appendTo(cdiv)
     )
-    const instr = [
-      'Imposta il volume perché sia confortevole.',
-      'Avvia la sessione premendo il pulsante qui sotto, e sincronizza la respirazione con il movimento del disco o gli stimoli uditivi.',
-      'Puoi concentrarti sull\'animazione, ma puoi anche meditare, lavorare, leggere o studiare.',
-      'Pur non essendo obbligatorie, consigliamo l\'uso di cuffie per massimizzare i benefici.',
-      'Per un uso avanzato, <a href="?guide" target="_blank">leggi le Linee Guida</a>.'
-    ]
-    instr.forEach(i => {
-      $('<li/>').html(i).appendTo(ul)
+    labels.instructions.forEach(i => {
+      $('<li/>').html(i[index]).appendTo(ul)
     })
     // const user = JSON.parse(window.localStorage.getItem('user'))
     // $('<div/>')
@@ -459,14 +485,28 @@ e.Med = class {
       ['più del normale', 'some'],
       ['molto', 'much']
     ]
+    const labels = {
+      legend: [
+        'Registra il tuo stato psicofisico',
+        'Record your wellness'
+      ],
+      presessione: [
+        'Prima della sessione',
+        'Before your session'
+      ],
+      postsessione: [
+        'Dopo la sessione',
+        'After your session'
+      ]
+    }
     const isHC = window.location.href.includes('harmonicare')
     const index = isHC ? 0 : 1
     const tdiv = $('<fieldset/>', { class: 'questionario', css: { 'overflow-x': 'auto', 'text-align': 'center', border: '1px solid black', padding: '2%' } })
       .appendTo(cdiv)
-      .append($('<legend/>').html('Registra il tuo stato psicofisico'))
+      .append($('<legend/>').html(labels.legend[index]))
     const table = $('<table/>', { class: 'w-100', css: { margin: 'auto', 'border-collapse': 'collapse', 'table-layout': 'auto !important' } })
       .appendTo(tdiv)
-    const prep = end ? 'Dopo la' : 'Prima della'
+    const prep = end ? labels.postsessione[index] : labels.presessione[index]
     $('<caption/>', { css: { 'margin-bottom': '2%' } }).html(`<b>${prep} sessione</b>`)
       .appendTo(table)
     const trh = $('<tr/>').appendTo(table)
