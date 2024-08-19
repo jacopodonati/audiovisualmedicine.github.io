@@ -40,6 +40,10 @@ e.Med = class {
       })
     }
     this.PIXI = PIXI
+    this.score = {
+      true: 0, // questionario fine sessione
+      false: 0 // questionario inizio sessione
+    }
     this.tone = t
     this.finalFade = 5
     this.initialFade = 2
@@ -507,7 +511,8 @@ e.Med = class {
     const table = $('<table/>', { class: 'w-100', css: { margin: 'auto', 'border-collapse': 'collapse', 'table-layout': 'auto !important' } })
       .appendTo(tdiv)
     const prep = end ? labels.postsessione[index] : labels.presessione[index]
-    $('<caption/>', { css: { 'margin-bottom': '2%' } }).html(`${prep}: <span id="scoreboard">0</span> pt.`)
+    const scoreboard = end ? '<span id="scoreboard">0</span> pt. (<span id="scoreboard-diff">0</span> pt di differenza' : '<span id="scoreboard">0</span> pt.'
+    $('<caption/>', { css: { 'margin-bottom': '2%' } }).html(`${prep}: ${scoreboard}`)
       .appendTo(table)
     const trh = $('<tr/>').appendTo(table)
     $('<td/>').appendTo(trh)
@@ -558,8 +563,16 @@ e.Med = class {
             break
         }
       })
+      if (end) {
+        self.score[end] = score
+        const scoreDifference = self.score[end] - self.score[!end]
+        const scoreboardDifference = document.querySelector('#scoreboard-diff')
+        scoreboardDifference.textContent = scoreDifference
+      } else {
+        self.score[!end] = score
+      }
       const scoreboard = document.querySelector('#scoreboard')
-      scoreboard.textContent = score
+      scoreboard.textContent = self.score[!end]
     })
     window.items = { items, degrees, index, table }
 

@@ -2196,28 +2196,28 @@ e.welcome = () => {
   }
 </style>
   <h2 class="site-title">HarmoniCare</h2>
-  <p>Questo sito offre una soluzione audio-visiva e scientificamente provata per migliorare la tua salute mentale.</p>
+  <p>Questo sito offre una soluzione audio-visiva e scientificamente provata per migliorare le tue performance e il tuo benessere.</p>
 
   <p>Puoi iniziare subito la tua sessione scegliendo una delle sequenze elencate qui sotto. Per massimizzare i benefici che puoi ricavare sa questa esperienza, ti consigliamo di <a href="?guide">leggere le Linee Guida</a>.</p>
-  <p>Se vuoi lasciarci un feedback o condividere con noi la tua esperienza, contattaci.</p>
+  <p>Se vuoi lasciarci un feedback o condividere con noi la tua esperienza, contattaci. Se non hai raggiunto l’effetto desiderato con HarmoniCare, scrivici e creeremo una sessione personalizzata sui tuoi bisogni oppure organizzeremo un incontro privato per capire meglio il tuo caso.</p>
 
   <h3>Scegli la tua sessione</h3>
   <ul class="presets">
-      <li><a href="/?.emicrania">Emicrania</a></li>
-      <li><a href="/?.dolori">Dolori cronici</a></li>
-      <br>
-      <li><a href="/?.ansiaDepressione">Ansia e depressione</a></li>
-      <li><a href="/?.insonnia">Insonnia</a></li>
-      <li><a href="/?.rilassamento">Rilassamento</a></li>
-      <br>
-      <li><a href="/?.studioEnergizzante">Studio (energizzante)</a></li>
-      <li><a href="/?.studioRilassante">Studio (rilassante)</a></li>
-      <li><a href="/?.lavoroFocalizzato">Lavoro focalizzato</a></li>
-      <li><a href="/?.guadagnoQI">Aumento QI</a></li>
-      <br>
-      <li><a href="/?.meditazione">Meditazione</a></li>
-      <li><a href="/?.usoRicreativo">Uso ricreativo</a></li>
-    </ul>
+    <li><a href="/?.usoRicreativo">Uso ricreativo</a></li>
+    <li><a href="/?.meditazione">Meditazione</a></li>
+    <br>
+    <li><a href="/?.guadagnoQI">Aumento QI</a></li>
+    <li><a href="/?.lavoroFocalizzato">Lavoro focalizzato</a></li>
+    <li><a href="/?.studioRilassante">Studio (rilassante)</a></li>
+    <li><a href="/?.studioEnergizzante">Studio (energizzante)</a></li>
+    <br>
+    <li><a href="/?.rilassamento">Rilassamento</a></li>
+    <li><a href="/?.insonnia">Insonnia</a></li>
+    <li><a href="/?.ansiaDepressione">Ansia e depressione</a></li>
+    <br>
+    <li><a href="/?.dolori">Dolori cronici</a></li>
+    <li><a href="/?.emicrania">Emicrania</a></li>
+  </ul>
 
   <b style="color:red">AVVERTENZE</b>
   <p>
