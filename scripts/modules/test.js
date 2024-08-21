@@ -2198,7 +2198,7 @@ e.welcome = () => {
   <h2 class="site-title">HarmoniCare</h2>
   <p>Questo sito offre una soluzione audio-visiva e scientificamente provata per migliorare le tue performance e il tuo benessere.</p>
 
-  <p>Puoi iniziare subito la tua sessione scegliendo una delle sequenze elencate qui sotto. Per massimizzare i benefici che puoi ricavare sa questa esperienza, ti consigliamo di <a href="?guide">leggere le Linee Guida</a>.</p>
+  <p>Puoi iniziare subito la tua sessione scegliendo una delle sequenze elencate qui sotto. Per massimizzare i benefici basta una sessione giornaliera di <strong>15 minuti</strong>. Ti consigliamo di <a href="?guide">leggere le Linee Guida</a>.</p>
   <p>Se vuoi lasciarci un feedback o condividere con noi la tua esperienza, contattaci. Se non hai raggiunto l’effetto desiderato con HarmoniCare, scrivici e creeremo una sessione personalizzata sui tuoi bisogni oppure organizzeremo un incontro privato per capire meglio il tuo caso.</p>
 
   <h3>Scegli la tua sessione</h3>
