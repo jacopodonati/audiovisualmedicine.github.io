@@ -2214,6 +2214,7 @@ e.welcome = () => {
     <li><a href="/?.rilassamento">Rilassamento</a></li>
     <li><a href="/?.insonnia">Insonnia</a></li>
     <li><a href="/?.ansiaDepressione">Ansia e depressione</a></li>
+    <li><a href="/?.dipendenza">Dipendenza e perdita di peso</a></li>
     <br>
     <li><a href="/?.dolori">Dolori cronici</a></li>
     <li><a href="/?.emicrania">Emicrania</a></li>
