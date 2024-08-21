@@ -563,17 +563,21 @@ e.Med = class {
             break
         }
       })
+      self.score[end] = score
+      const scoreboard = document.querySelector('#scoreboard')
+      scoreboard.textContent = self.score[end]
       if (end) {
-        self.score[end] = score
+        const modalScoreboard = document.querySelector('#myModal #scoreboard')
+        modalScoreboard.textContent = self.score[end]
         const scoreDifference = self.score[end] - self.score[!end]
         const scoreboardDifference = document.querySelector('#scoreboard-diff')
         scoreboardDifference.textContent = scoreDifference
-      } else {
-        self.score[!end] = score
       }
-      const scoreboard = document.querySelector('#scoreboard')
-      scoreboard.textContent = self.score[!end]
     })
+    if (end) {
+      const scoreboardDifference = document.querySelector('#scoreboard-diff')
+      scoreboardDifference.textContent = 0 - self.score[!end]
+    }
     window.items = { items, degrees, index, table }
 
     if (!end) return
