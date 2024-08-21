@@ -478,8 +478,8 @@ e.Med = class {
     const items = [
       ['Problemi di umore', 'Melancholia', 'mood'],
       ['Dolore', 'Pain', 'pain'],
-      ['Rilassamento', 'Relaxation', 'relax'],
       ['Sonnolenza', 'Sleepiness', 'sleepiness'],
+      ['Rilassamento', 'Relaxation', 'relax'],
       ['Concentrazione', 'Concentration', 'concentration']
     ]
     const degrees = [
@@ -511,7 +511,7 @@ e.Med = class {
     const table = $('<table/>', { class: 'w-100', css: { margin: 'auto', 'border-collapse': 'collapse', 'table-layout': 'auto !important' } })
       .appendTo(tdiv)
     const prep = end ? labels.postsessione[index] : labels.presessione[index]
-    const scoreboard = end ? '<span id="scoreboard">0</span> pt. (<span id="scoreboard-diff">0</span> pt di differenza' : '<span id="scoreboard">0</span> pt.'
+    const scoreboard = end ? '<span id="scoreboard">0</span> pt. (<span id="scoreboard-diff">0</span> pt di differenza)' : '<span id="scoreboard">0</span> pt.'
     $('<caption/>', { css: { 'margin-bottom': '2%' } }).html(`${prep}: ${scoreboard}`)
       .appendTo(table)
     const trh = $('<tr/>').appendTo(table)
@@ -520,17 +520,17 @@ e.Med = class {
       $('<td/>', { css: { 'text-align': 'center' } }).html(d[index]).appendTo(trh)
     })
     items.forEach((i, ii) => {
-      const css = {}
+      const disorder = i[2]
+      const css = { }
       if (ii !== (items.length - 1)) {
         css['border-bottom'] = '1px solid gray'
       }
-      const tr = $('<tr/>', { css }).appendTo(table)
+      const tr = $('<tr/>', { class: `dis-${disorder}`, css }).appendTo(table)
       const i_ = i[index]
-      const disorder = i[2]
       console.log(i, i[2])
       $('<td/>').html(i_).appendTo(tr)
       degrees.forEach((_, i) => {
-        $('<input/>', { type: 'radio', class: 'mradio', name: disorder, value: i.toString() })
+        $('<input/>', { type: 'radio', class: 'mradio', name: disorder, value: i.toString(), checked: i===2 })
           .appendTo(
             $('<td/>', { css: { 'text-align': 'center', 'border-left': '1px solid gray', 'white-space': 'nowrap', 'max-width': '100%', width: 'auto !important' } }).appendTo(tr)
           )
