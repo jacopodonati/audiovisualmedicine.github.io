@@ -530,7 +530,7 @@ e.Med = class {
       console.log(i, i[2])
       $('<td/>').html(i_).appendTo(tr)
       degrees.forEach((_, i) => {
-        $('<input/>', { type: 'radio', class: 'mradio', name: disorder, value: i.toString(), checked: i===2 })
+        $('<input/>', { type: 'radio', class: 'mradio', name: disorder, value: i.toString(), checked: i === 2 })
           .appendTo(
             $('<td/>', { css: { 'text-align': 'center', 'border-left': '1px solid gray', 'white-space': 'nowrap', 'max-width': '100%', width: 'auto !important' } }).appendTo(tr)
           )

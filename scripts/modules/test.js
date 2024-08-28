@@ -2195,7 +2195,8 @@ e.welcome = () => {
     color: darkred;
   }
 </style>
-  <h2 class="site-title">HarmoniCare</h2>
+  <h3 class="site-title">HarmoniCare</h3>
+  <h2 class="site-subtitle">15 minuti al benessere</h2>
   <p>Questo sito offre una soluzione audio-visiva e scientificamente provata per migliorare le tue performance e il tuo benessere.</p>
 
   <p>Puoi iniziare subito la tua sessione scegliendo una delle sequenze elencate qui sotto. Per massimizzare i benefici basta una sessione giornaliera di <strong>15 minuti</strong>. Ti consigliamo di <a href="?guide">leggere le Linee Guida</a>.</p>
