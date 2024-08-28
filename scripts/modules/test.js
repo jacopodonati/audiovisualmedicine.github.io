@@ -2200,7 +2200,7 @@ e.welcome = () => {
   <p>Questo sito offre una soluzione audio-visiva e scientificamente provata per migliorare le tue performance e il tuo benessere.</p>
 
   <p>Puoi iniziare subito la tua sessione scegliendo una delle sequenze elencate qui sotto. Per massimizzare i benefici basta una sessione giornaliera di <strong>15 minuti</strong>. Ti consigliamo di <a href="?guide">leggere le Linee Guida</a>.</p>
-  <p>Se vuoi lasciarci un feedback o condividere con noi la tua esperienza, contattaci. Se non hai raggiunto l’effetto desiderato con HarmoniCare, scrivici e creeremo una sessione personalizzata sui tuoi bisogni oppure organizzeremo un incontro privato per capire meglio il tuo caso.</p>
+  <p>Contattaci se vuoi lasciarci un feedback o condividere con noi la tua esperienza. Se non hai raggiunto l’effetto desiderato con HarmoniCare, scrivici e creeremo una sessione personalizzata sui tuoi bisogni oppure organizzeremo un incontro privato per capire meglio il tuo caso.</p>
 
   <h3>Scegli la tua sessione</h3>
   <ul class="presets">
@@ -2410,7 +2410,7 @@ e.about = () => {
 
   <p>HarmoniCare è uno strumento che vi aiuta a migliorare il vostro benessere attraverso alcune sequenze audio-visive realizzate con grande precisione.</p>
 
-  <p>Questo progetto è nato quando abbiamo notato che la maggior parte della popolazione non aveva accesso ai benefici prodotti da queste tecniche di stimolazione audio-visiva.</p>
+  <p>Questo progetto è nato quando abbiamo notato che la maggior parte della popolazione non aveva accesso affidabile ai benefici prodotti da queste tecniche di stimolazione audio-visiva in modo a.</p>
 
   <p>La nostra tecnologia è fondata su studi scientifici. Se vuoi saperne di più, puoi leggere questi articoli:</p>
 
