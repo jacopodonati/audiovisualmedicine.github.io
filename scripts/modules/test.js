@@ -2090,22 +2090,22 @@ e.guide = () => {
 <p>Iniziare il tuo viaggio è molto semplice. Segui questi passaggi:</p>
 <ol>
     <li>Scegli una delle nostre sequenze preconfigurate:</li>
-    <ul class="presets guideline">
-      <li><a href="/?.emicrania">Emicrania</a></li>
-      <li><a href="/?.dolori">Dolori cronici</a></li>
-      <br>
-      <li><a href="/?.focus_">Concentrazione</a></li>
-      <li><a href="/?.meditazione">Meditazione</a></li>
+    <ul class="presets2">
       <li><a href="/?.usoRicreativo">Uso ricreativo</a></li>
+      <li><a href="/?.meditazione">Meditazione</a></li>
       <br>
-      <li><a href="/?.ansiaDepressione">Ansia e depressione</a></li>
-      <li><a href="/?.insonnia">Insonnia</a></li>
-      <li><a href="/?.rilassamento">Rilassamento</a></li>
-      <br>
-      <li><a href="/?.studioEnergizzante">Studio (energizzante)</a></li>
-      <li><a href="/?.studioRilassante">Studio (rilassante)</a></li>
-      <li><a href="/?.lavoroFocalizzato">Lavoro focalizzato</a></li>
       <li><a href="/?.guadagnoQI">Aumento QI</a></li>
+      <li><a href="/?.lavoroFocalizzato">Lavoro focalizzato</a></li>
+      <li><a href="/?.studioRilassante">Studio (rilassante)</a></li>
+      <li><a href="/?.studioEnergizzante">Studio (energizzante)</a></li>
+      <br>
+      <li><a href="/?.rilassamento">Rilassamento</a></li>
+      <li><a href="/?.insonnia">Insonnia</a></li>
+      <li><a href="/?.ansiaDepressione">Ansia e depressione</a></li>
+      <li><a href="/?.dipendenza">Dipendenza e perdita di peso</a></li>
+      <br>
+      <li><a href="/?.dolori">Dolori cronici</a></li>
+      <li><a href="/?.emicrania">Emicrania</a></li>
     </ul>
     <li>Clicca su "Apri Controlli" e poi su "Inizia ora!".</li>
     <li>Puoi usare delle cuffie o lasciare che il suono venga riprodotto da un altoparlante. Nel frattempo, puoi lavorare, meditare o fare qualsiasi cosa ti piaccia.</li>
@@ -2410,7 +2410,7 @@ e.about = () => {
 
   <p>HarmoniCare è uno strumento che vi aiuta a migliorare il vostro benessere attraverso alcune sequenze audio-visive realizzate con grande precisione.</p>
 
-  <p>Questo progetto è nato quando abbiamo notato che la maggior parte della popolazione non aveva accesso affidabile ai benefici prodotti da queste tecniche di stimolazione audio-visiva in modo a.</p>
+  <p>Questo progetto è nato quando abbiamo notato che la maggior parte della popolazione non aveva accesso <b>affidabile</b> ai benefici prodotti da queste tecniche di stimolazione audio-visiva.</p>
 
   <p>La nostra tecnologia è fondata su studi scientifici. Se vuoi saperne di più, puoi leggere questi articoli:</p>
 
