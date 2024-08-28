@@ -2221,9 +2221,9 @@ e.welcome = () => {
     <li><a href="/?.emicrania">Emicrania</a></li>
   </ul>
 
-  <b style="color:red">AVVERTENZE</b>
+  <b class="avvertenza">AVVERTENZE</b>
   <p>
-  HarmoniCare è sicuro e offre grandi benefici. Anche così, <span class="highlighted">può essere pericoloso se si ha una storia di epilessia o convulsioni</span>, in tal caso ti consigliamo di contattare il tuo medico prima di iniziare la sessione. Contattaci se hai bisogno di ulteriori informazioni. Ricorda che questa è un'iniziativa noprofit e open source, quindi la responsabilità del suo utilizzo ricade sull'utente. Usa HarmoniCare in maniera responsabile.</p>
+  HarmoniCare <span class="avvertenza-inline">è sicuro e offre grandi benefici. Anche così, può essere insicuro se si ha una storia di epilessia o convulsioni</span>, in tal caso ti consigliamo di contattare il tuo medico prima di iniziare la sessione. Contattaci se hai bisogno di ulteriori informazioni. Ricorda che questa è un'iniziativa noprofit e open source, quindi la responsabilità del suo utilizzo ricade sull'utente. Usa HarmoniCare in maniera responsabile.</p>
   `)
   $('#createme')
     .css('text-align', 'center')
