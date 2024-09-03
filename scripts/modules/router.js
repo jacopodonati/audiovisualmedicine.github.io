@@ -126,28 +126,22 @@ e.mkFooter = () => {
       'background-color': '#dddddd'
     }
   })
-  // wand.$('<div/>', {
-  //   id: 'disqus_thread',
-  //   css: {
-  //     margin: '0 auto',
-  //     padding: '1%',
-  //     width: '50%'
-  //   }
-  // }).appendTo('body')
+
   if (window.location.hostname === 'aeterni.github.io') {
     if (!urlArgument('nolang')) lang(ft)
   }
-  // uncomment to enable disqus
-  // todo: debug to load correct discussions in each page
-  // const uargs = e.urlAllArguments()
-  // if (uargs.keys[0] && uargs.keys[0][0] === '_') disqus(uargs.keys[0][0].slice(1))
+
+  const transdiv = wand.$('<div/>', {
+    id: 'google_translate_element'
+  })
+
   if (!wand.showLoginDiv) return
   const ldiv = $('<div/>', { css: { width: '50%', margin: 'auto', padding: '1%', 'font-size': '.8rem' } }).prependTo('body')
   if (window.localStorage.getItem('logged')) {
     wand.user = JSON.parse(window.localStorage.getItem('user'))
     wand.userFuncs.forEach(f => f())
     $('<span/>', { css: { 'margin-right': '1%' } })
-      .text(`login eseguito come: ${wand.user.name}`)
+      .text(`${wand.user.name}`)
       .appendTo(ldiv)
     $('<button/>')
       .text('esci')
@@ -157,6 +151,7 @@ e.mkFooter = () => {
         window.localStorage.removeItem('user')
         window.location.reload()
       })
+    transdiv.appendTo(ldiv)
     if (!wand.user.profileForm) {
       $('<a/>', { id: 'pfLink', href: '?profiloForm2', target: '_blank', css: { float: 'right' } })
         .text('Compila il questionario utente')
@@ -179,17 +174,21 @@ e.mkFooter = () => {
       .click(() => {
         $('#loading').show()
         wand.transfer.fAll.omark({ email: email.val() }).then(r => {
+          if (r.length === 0) {
+            return window.alert('Email non presente nel database. Registrati.')
+          }
           if (r && wand.bcrypt.compareSync(pw.val(), r.pw)) {
             delete r.pw
             window.localStorage.setItem('logged', true)
             window.localStorage.setItem('user', JSON.stringify(r))
             window.location.reload()
           } else {
-            window.alert('Email e password non presenti nel database')
+            window.alert('L\'indirizzo mail è registrato ma la password non è giusta. Riprova, registra un\'altra mail o contattaci: aeterni.anima@gmail.com')
           }
           $('#loading').hide()
         })
       })
+    transdiv.appendTo(loginForm)
     utils.mkRegisterModal_()
     $('<button/>', { css: { float: 'right' } })
       .text('registrati')
@@ -198,6 +197,10 @@ e.mkFooter = () => {
         window.registerModal.show()
       })
   }
+  wand.$('<script/>', {
+    type: 'text/javascript',
+    src: '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+  }).appendTo('body')
 }
 
 window.disqus_config = function () {
