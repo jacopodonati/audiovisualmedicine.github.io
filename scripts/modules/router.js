@@ -188,7 +188,7 @@ e.mkFooter = () => {
           $('#loading').hide()
         })
       })
-    transdiv.appendTo(loginForm)
+    if (!isMobile) transdiv.appendTo(loginForm)
     utils.mkRegisterModal_()
     $('<button/>', { css: { float: 'right' } })
       .text('registrati')
@@ -196,6 +196,7 @@ e.mkFooter = () => {
       .click(() => {
         window.registerModal.show()
       })
+    if (isMobile) transdiv.appendTo(ldiv)
   }
   wand.$('<script/>', {
     type: 'text/javascript',
