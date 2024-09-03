@@ -2245,6 +2245,8 @@ e.welcome = () => {
   })
 
   $('#loading').hide()
+
+  if (utils.mobileAndTabletCheck()) window.alert('Siamo al lavoro per migliorare l\'esperienza mobile. Grazie per la tua pazienza!\n\nWe are working to improve the mobile experience. Thank you for your patience!')
 }
 
 e.welcomeOLD = () => {

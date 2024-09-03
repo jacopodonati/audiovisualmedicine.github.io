@@ -72,6 +72,7 @@ if (uargs.keys[0] === 'doc') {
       // use r.lemniscate to decide model2 or 3
       // if (r.visSetting.lemniscate > 30) wand.currentMed = new wand.med.Model3(r, Boolean(r.header.ancestral))
       // else wand.currentMed = new wand.med.Model2(r, Boolean(r.header.ancestral))
+      if (wand.utils.mobileAndTabletCheck()) window.alert('Stai usando un dispositivo mobile. Per un\'esperienza ottimale, consigliamo l\'uso di cuffie.\n\nYou are using a mobile device. For an optimal experience, we recommend using headphones.')
       wand.currentMed = new wand.med.Model2(r)
       wand.utils.confirmExit()
     })
