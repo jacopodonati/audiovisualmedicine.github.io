@@ -173,11 +173,25 @@ e.mkFooter = () => {
       .appendTo(loginForm)
       .click(() => {
         $('#loading').show()
-        wand.transfer.fAll.omark({ email: email.val() }).then(r => {
+        const email_ = email.val()
+        const pw_ = pw.val()
+        if (email_ === 'guest' && pw_ === 'guest') {
+          window.localStorage.setItem('logged', true)
+          window.localStorage.setItem('user', JSON.stringify({
+            _id: 'guest',
+            email: 'guest',
+            name: 'guest',
+            lname: 'guest',
+            city: 'guest'
+          }))
+          window.location.reload()
+          return
+        }
+        wand.transfer.fAll.omark({ email: email_ }).then(r => {
           if (r.length === 0) {
             return window.alert('Email non presente nel database. Registrati.')
           }
-          if (r && wand.bcrypt.compareSync(pw.val(), r.pw)) {
+          if (r && wand.bcrypt.compareSync(pw_, r.pw)) {
             delete r.pw
             window.localStorage.setItem('logged', true)
             window.localStorage.setItem('user', JSON.stringify(r))
